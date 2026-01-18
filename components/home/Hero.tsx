@@ -73,10 +73,10 @@ export default function Hero() {
             className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8"
           >
             {[
-              { number: '500+', label: 'Global Clients' },
-              { number: '50+', label: 'Countries' },
-              { number: '1000+', label: 'Projects' },
-              { number: '15+', label: 'Years Experience' },
+              { number: '2025', label: 'Established' },
+              { number: 'Growing', label: 'Client Base' },
+              { number: 'Modern', label: 'Tech Stack' },
+              { number: '24/7', label: 'Support' },
             ].map((stat, index) => (
               <motion.div
                 key={stat.label}

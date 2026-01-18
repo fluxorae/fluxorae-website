@@ -6,23 +6,23 @@ import { Globe, Award, Users, Zap } from 'lucide-react'
 const reasons = [
   {
     icon: Globe,
-    title: 'Global Presence',
-    description: 'We operate across 50+ countries, bringing world-class solutions to businesses worldwide.',
+    title: 'Global Vision',
+    description: 'A startup with global ambitions, ready to serve clients worldwide with modern, scalable solutions.',
   },
   {
     icon: Award,
-    title: 'Proven Excellence',
-    description: '15+ years of delivering exceptional results with industry-recognized awards and certifications.',
+    title: 'Quality First',
+    description: 'New company, high standards. Committed to delivering exceptional results and building long-term partnerships.',
   },
   {
     icon: Users,
     title: 'Expert Team',
-    description: '500+ skilled professionals dedicated to your success, from strategy to execution.',
+    description: 'Experienced professionals bringing decades of collective industry expertise to your projects.',
   },
   {
     icon: Zap,
     title: 'Innovation First',
-    description: 'Cutting-edge technologies and methodologies that keep you ahead of the competition.',
+    description: 'Latest technologies and modern methodologies that keep you ahead of the competition.',
   },
 ]
 

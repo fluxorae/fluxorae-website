@@ -5,11 +5,11 @@ import { useInView } from 'framer-motion'
 import { useRef } from 'react'
 
 const stats = [
-  { number: '500+', label: 'Global Clients', suffix: '+' },
-  { number: '50', label: 'Countries Served', suffix: '+' },
-  { number: '1000', label: 'Projects Delivered', suffix: '+' },
-  { number: '15', label: 'Years of Excellence', suffix: '+' },
-  { number: '98', label: 'Client Satisfaction', suffix: '%' },
+  { number: '2025', label: 'Company Founded', suffix: '' },
+  { number: 'Growing', label: 'Client Portfolio', suffix: '' },
+  { number: 'Cloud', label: 'Solutions Ready', suffix: '' },
+  { number: 'Expert', label: 'Team Members', suffix: '' },
+  { number: 'India', label: 'Based', suffix: '' },
   { number: '24/7', label: 'Support Available', suffix: '' },
 ]
 

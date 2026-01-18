@@ -5,29 +5,24 @@ import { Calendar, TrendingUp } from 'lucide-react'
 
 const milestones = [
   {
-    year: '2009',
-    title: 'Company Founded',
-    description: 'Fluxorae was established with a vision to transform businesses through technology.',
+    year: '2025',
+    title: 'Company Incorporated',
+    description: 'Fluxorae Private Limited was officially incorporated on 16th October 2025 with a vision to transform businesses through technology.',
   },
   {
-    year: '2015',
-    title: 'Global Expansion',
-    description: 'Expanded operations to 20+ countries across North America, Europe, and Asia.',
+    year: '2025',
+    title: 'Foundation Team',
+    description: 'Assembled our core team of experienced technology experts and industry professionals.',
   },
   {
-    year: '2018',
-    title: '500+ Clients Milestone',
-    description: 'Reached a significant milestone of serving 500+ global clients across industries.',
+    year: '2026',
+    title: 'Growth Phase',
+    description: 'Expanding our service offerings and building strong client relationships across industries.',
   },
   {
-    year: '2020',
-    title: 'Digital Transformation Leadership',
-    description: 'Recognized as a leader in digital transformation solutions.',
-  },
-  {
-    year: '2024',
-    title: 'Innovation Hub Launch',
-    description: 'Launched innovation centers in key markets to drive cutting-edge solutions.',
+    year: '2026',
+    title: 'Innovation Focus',
+    description: 'Developing cutting-edge cloud, AI and digital transformation solutions for modern businesses.',
   },
 ]
 
@@ -60,9 +55,8 @@ export default function Timeline() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className={`flex flex-col md:flex-row items-center gap-8 ${
-                  index % 2 === 0 ? 'md:flex-row-reverse' : ''
-                }`}
+                className={`flex flex-col md:flex-row items-center gap-8 ${index % 2 === 0 ? 'md:flex-row-reverse' : ''
+                  }`}
               >
                 {/* Timeline Dot */}
                 <div className="relative z-10 w-24 flex-shrink-0 text-center">
@@ -73,9 +67,8 @@ export default function Timeline() {
                 </div>
 
                 {/* Content */}
-                <div className={`flex-1 bg-secondary-light p-8 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 ${
-                  index % 2 === 0 ? 'md:text-right' : 'md:text-left'
-                }`}>
+                <div className={`flex-1 bg-secondary-light p-8 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 ${index % 2 === 0 ? 'md:text-right' : 'md:text-left'
+                  }`}>
                   <h3 className="heading-3 text-xl mb-3">{milestone.title}</h3>
                   <p className="text-gray-600">{milestone.description}</p>
                 </div>
