@@ -3,13 +3,16 @@ import { createClient } from 'next-sanity'
 const projectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID
 const dataset = process.env.NEXT_PUBLIC_SANITY_DATASET || 'production'
 
-export const client = projectId
+// Only create client if projectId exists and is valid (a-z, 0-9, dashes only)
+const isValidProjectId = projectId && /^[a-z0-9-]+$/.test(projectId)
+
+export const client = isValidProjectId
   ? createClient({
-      projectId,
-      dataset,
-      apiVersion: '2024-01-01',
-      useCdn: process.env.NODE_ENV === 'production',
-    })
+    projectId: projectId!,
+    dataset,
+    apiVersion: '2024-01-01',
+    useCdn: process.env.NODE_ENV === 'production',
+  })
   : null
 
 export interface BlogPost {
