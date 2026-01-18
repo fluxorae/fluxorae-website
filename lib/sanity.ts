@@ -15,6 +15,9 @@ export const client = isValidProjectId
   })
   : null
 
+// Check if Sanity is properly configured
+export const isSanityConfigured = client !== null
+
 export interface BlogPost {
   _id: string
   title: string
