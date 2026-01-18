@@ -1,10 +1,8 @@
-# TODO: Improve Responsiveness and UI/UX of Login Button and Page
+# TODO: Add Form Validation to Admin Login Page
 
 ## Tasks
-- [x] Analyze current login page UI/UX issues
-- [x] Add loading spinner/icon to login button for better feedback
-- [x] Improve button styling and hover/focus states
-- [x] Enhance responsiveness for mobile devices
-- [x] Add smooth transitions and animations
-- [x] Test the updated login page
-- [x] Implement complete login page with all improvements
+- [x] Add zod schema for email and password validation
+- [x] Replace manual state with useForm hook
+- [x] Update form inputs to use register and display errors
+- [x] Update submit handler to use handleSubmit
+- [x] Test validation with invalid/valid data

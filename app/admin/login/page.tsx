@@ -2,20 +2,33 @@
 
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
+import { useForm } from 'react-hook-form'
+import { zodResolver } from '@hookform/resolvers/zod'
+import { z } from 'zod'
 import { Loader2, Eye, EyeOff } from 'lucide-react'
 
+const loginSchema = z.object({
+  id: z.string().email('Please enter a valid email address'),
+  password: z.string().min(6, 'Password must be at least 6 characters'),
+})
+
+type LoginFormData = z.infer<typeof loginSchema>
+
 export default function AdminLoginPage() {
-  const [formData, setFormData] = useState({
-    id: '',
-    password: ''
-  })
   const [isLoading, setIsLoading] = useState(false)
   const [error, setError] = useState('')
   const [showPassword, setShowPassword] = useState(false)
   const router = useRouter()
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<LoginFormData>({
+    resolver: zodResolver(loginSchema),
+  })
+
+  const onSubmit = async (data: LoginFormData) => {
     setIsLoading(true)
     setError('')
 
@@ -25,7 +38,7 @@ export default function AdminLoginPage() {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify(data),
       })
 
       if (response.ok) {
@@ -41,13 +54,6 @@ export default function AdminLoginPage() {
     }
   }
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setFormData(prev => ({
-      ...prev,
-      [e.target.name]: e.target.value
-    }))
-  }
-
   return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 to-indigo-100 px-4 sm:px-6 lg:px-8">
       <div className="max-w-md w-full space-y-8">
@@ -61,7 +67,7 @@ export default function AdminLoginPage() {
             </p>
           </div>
 
-          <form className="mt-8 space-y-6" onSubmit={handleSubmit}>
+          <form className="mt-8 space-y-6" onSubmit={handleSubmit(onSubmit)}>
             {error && (
               <div className="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-lg text-sm animate-fade-in">
                 {error}
@@ -75,16 +81,16 @@ export default function AdminLoginPage() {
                 </label>
                 <input
                   id="id"
-                  name="id"
                   type="email"
                   autoComplete="email"
-                  required
-                  value={formData.id}
-                  onChange={handleChange}
+                  {...register('id')}
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 text-gray-900 placeholder-gray-500"
                   placeholder="admin@fluxorae.com"
                   disabled={isLoading}
                 />
+                {errors.id && (
+                  <p className="mt-1 text-sm text-red-600">{errors.id.message}</p>
+                )}
               </div>
 
               <div>
@@ -94,12 +100,9 @@ export default function AdminLoginPage() {
                 <div className="relative">
                   <input
                     id="password"
-                    name="password"
                     type={showPassword ? 'text' : 'password'}
                     autoComplete="current-password"
-                    required
-                    value={formData.password}
-                    onChange={handleChange}
+                    {...register('password')}
                     className="w-full px-4 py-3 pr-12 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 text-gray-900 placeholder-gray-500"
                     placeholder="Enter your password"
                     disabled={isLoading}
@@ -117,6 +120,9 @@ export default function AdminLoginPage() {
                     )}
                   </button>
                 </div>
+                {errors.password && (
+                  <p className="mt-1 text-sm text-red-600">{errors.password.message}</p>
+                )}
               </div>
             </div>
 
