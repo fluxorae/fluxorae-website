@@ -34,3 +34,11 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# legacy deployment files
+*.zip
+*.bat
+.htaccess
+*.conf
+package-hosting.json
+hostinger-setup.sh
