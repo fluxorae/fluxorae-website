@@ -35,6 +35,9 @@ const config: Config = {
         'slide-in-left': 'slideInLeft 0.6s ease-out',
         'slide-in-right': 'slideInRight 0.6s ease-out',
       },
+      boxShadow: {
+        '3xl': '0 35px 60px -12px rgba(0, 0, 0, 0.25)',
+      },
       keyframes: {
         fadeIn: {
           '0%': { opacity: '0' },
