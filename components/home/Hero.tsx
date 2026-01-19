@@ -6,7 +6,7 @@ import { ArrowRight } from 'lucide-react'
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-primary via-primary-dark to-primary pt-20 overflow-hidden">
+    <section className="relative min-h-[80vh] md:min-h-screen flex items-center justify-center bg-gradient-to-br from-primary via-primary-dark to-primary pt-16 md:pt-20 overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute inset-0" style={{

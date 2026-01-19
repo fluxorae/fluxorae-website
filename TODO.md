@@ -1,11 +1,8 @@
-# TODO: Add Form Validation to Admin Login Page - COMPLETED
+# TODO: Make Entire Website Design Responsive
 
 ## Tasks
-- [x] Add zod schema for email and password validation
-- [x] Replace manual state with useForm hook
-- [x] Update form inputs to use register and display errors
-- [x] Update submit handler to use handleSubmit
-- [x] Test validation with invalid/valid data
-
-## Additional Fixes
-- [x] Fixed middleware.ts JWT verification (removed incorrect jwtVerify usage)
+- [ ] Update home page components for better mobile layouts
+- [ ] Review and update other key pages (about, contact, services, etc.)
+- [ ] Ensure consistent responsive behavior across all components
+- [ ] Improve mobile navigation and touch interactions
+- [ ] Test the website on different screen sizes
