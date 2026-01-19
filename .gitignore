@@ -1,44 +1,77 @@
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+# Python
+__pycache__/
+**/__pycache__/
+*/__pycache__/*
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+.dist
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
 
-# dependencies
-/node_modules
-/.pnp
-.pnp.js
-
-# testing
-/coverage
-
-# next.js
-/.next/
-/out/
-
-# production
-/build
-
-# misc
-.DS_Store
-*.pem
-
-# debug
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-
-# local env files
-.env*.local
+# Virtual Environment
+venv/
+env/
+ENV/
 .env
+.env.local
 
-# vercel
-.vercel
+# Runtime Temporary files
+tmp/
 
-# typescript
-*.tsbuildinfo
-next-env.d.ts
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+.DS_Store
 
-# legacy deployment files
-*.zip
-*.bat
-.htaccess
-*.conf
-package-hosting.json
-hostinger-setup.sh
+# Project specific
+owl/data
+owl/tmp
+owl/.env
+owl/utils/__pycache__/
+
+# Logs
+*.log
+logs/
+log/
+
+# Removed directories
+community_usecase/
+examples/
+
+# Data folders
+**/data/
+
+# Build artifacts
+.next/
+dist/
+out/
+
+# Coverage reports
+htmlcov/
+.tox/
+.coverage
+.coverage.*
+.cache
+coverage.xml
+*.cover
+
+owl/camel/types/__pycache__/
+owl/camel/__pycache__/
+owl/camel/utils/__pycache_/
+node_modules
