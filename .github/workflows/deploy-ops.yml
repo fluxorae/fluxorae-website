@@ -12,6 +12,10 @@ on:
       - 'Dockerfile.web'
       - '.github/workflows/deploy-ops.yml'
 
+concurrency:
+  group: deploy-fluxorae-in
+  cancel-in-progress: true
+
 env:
   AWS_REGION: eu-north-1
   ECR_REPO: fluxorae-in
@@ -23,34 +27,45 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+
       - uses: actions/setup-node@v4
         with:
           node-version: 18
+
+      # Optional: keep lint; Docker build will handle app build
       - name: Install dependencies
         run: npm ci
-      - name: Lint and build
-        run: |
-          npm run lint
-          npm run build
+      - name: Lint
+        run: npm run lint
+
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v4
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: ${{ env.AWS_REGION }}
+
+      - name: Ensure ECR repo exists
+        run: |
+          aws ecr describe-repositories --repository-names "${{ env.ECR_REPO }}" >/dev/null 2>&1 || \
+          aws ecr create-repository --repository-name "${{ env.ECR_REPO }}" >/dev/null
+
       - name: Login to ECR
         id: login-ecr
         uses: aws-actions/amazon-ecr-login@v2
+
       - name: Build, tag, and push image
         env:
           ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
           SHA_TAG: ${{ github.sha }}
           LATEST_TAG: latest
         run: |
-          docker build -f Dockerfile.web -t $ECR_REGISTRY/${{ env.ECR_REPO }}:${LATEST_TAG} .
-          docker tag $ECR_REGISTRY/${{ env.ECR_REPO }}:${LATEST_TAG} $ECR_REGISTRY/${{ env.ECR_REPO }}:${SHA_TAG}
-          docker push $ECR_REGISTRY/${{ env.ECR_REPO }}:${LATEST_TAG}
-          docker push $ECR_REGISTRY/${{ env.ECR_REPO }}:${SHA_TAG}
+          IMAGE="$ECR_REGISTRY/${{ env.ECR_REPO }}"
+          docker build -f Dockerfile.web -t "$IMAGE:${LATEST_TAG}" .
+          docker tag "$IMAGE:${LATEST_TAG}" "$IMAGE:${SHA_TAG}"
+          docker push "$IMAGE:${LATEST_TAG}"
+          docker push "$IMAGE:${SHA_TAG}"
+
       - name: Update ECS service
         run: |
           echo "Forcing new deployment: ${{ env.ECS_CLUSTER }} / ${{ env.ECS_SERVICE }}"
