@@ -1,0 +1,7 @@
+# Placeholder Dockerfile for NestJS API (to be added)
+FROM node:18-alpine AS base
+WORKDIR /app
+COPY package*.json ./
+RUN npm ci
+# TODO: copy api source when added
+# CMD ["node", "dist/main.js"]
