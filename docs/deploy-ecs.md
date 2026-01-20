@@ -24,6 +24,10 @@
 3. Prepare task definition family (e.g., `fluxorae-web`) with container from ECR and the env vars above.
 4. Uncomment `aws ecs update-service` in workflow and, if needed, use `aws ecs register-task-definition` to inject the new image.
 
+### Security Groups
+- RDS SG: `fluxorae-rds-sg` should allow inbound PostgreSQL 5432 **only from ECS task SG**.
+- ECS task SG (source to use in RDS rule): `sg-0a1b2c3d4e5f6g7h`.
+
 ### Notes
 - Keep `SKIP_DB=0` in production; use `SKIP_DB=1` only for builds without DB connectivity.
 - For API/Nest container, add a second ECR repo/service and ALB path-based routing (/api).
