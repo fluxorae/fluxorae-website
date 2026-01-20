@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Menu, X } from 'lucide-react'
+import { Menu, X, PhoneCall } from 'lucide-react'
 
 const navigation = [
   { name: 'Home', href: '/' },
@@ -31,20 +31,16 @@ export default function Header() {
   }, [])
 
   return (
-    <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled
-          ? 'bg-primary/80 backdrop-blur-md border-b border-white/10'
-          : 'bg-transparent'
-      }`}
-    >
+    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      isScrolled ? 'bg-primary/80 backdrop-blur-md border-b border-white/10 shadow-lg shadow-black/20' : 'bg-transparent'
+    }`}>
       <nav className="container-custom">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <Link href="/" className="flex items-center space-x-2">
+          <Link href="/" className="flex items-center space-x-2 group">
             <div className="flex items-center">
-              <span className="text-2xl font-bold text-white">Fluxorae</span>
-              <span className="ml-1 text-xs text-accent font-medium">Ar</span>
+              <span className="text-2xl font-bold text-white tracking-tight group-hover:text-accent transition-colors">Fluxorae</span>
+              <span className="ml-1 text-xs text-accent font-medium bg-white/5 rounded-full px-1.5 py-0.5">AI</span>
             </div>
           </Link>
 
@@ -72,6 +68,13 @@ export default function Header() {
                 </Link>
               )
             })}
+          </div>
+
+          <div className="hidden lg:flex items-center space-x-3">
+            <Link href="/contact" className="btn-secondary flex items-center gap-2">
+              <PhoneCall size={18} />
+              Book a Call
+            </Link>
           </div>
 
           {/* Mobile Menu Button */}
@@ -116,6 +119,13 @@ export default function Header() {
                   </Link>
                 )
               })}
+              <Link
+                href="/contact"
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="block px-4 py-3 rounded-lg font-semibold text-center bg-accent text-white hover:opacity-90 transition"
+              >
+                Book a Call
+              </Link>
             </div>
           </motion.div>
         )}

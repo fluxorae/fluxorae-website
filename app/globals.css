@@ -9,10 +9,10 @@
   
   body {
     @apply text-secondary antialiased;
-    background: radial-gradient(120% 120% at 15% 20%, rgba(139, 92, 246, 0.12), transparent),
-      radial-gradient(80% 80% at 80% 0%, rgba(20, 241, 149, 0.12), transparent),
-      radial-gradient(120% 120% at 50% 100%, rgba(59, 130, 246, 0.1), transparent),
-      #050816;
+    background:
+      radial-gradient(120% 120% at 20% 10%, rgba(124, 58, 237, 0.25), transparent 45%),
+      radial-gradient(80% 80% at 80% 0%, rgba(14, 165, 233, 0.18), transparent 40%),
+      linear-gradient(135deg, #050816 0%, #0a0f1f 50%, #0b1224 100%);
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -22,15 +22,15 @@
 
 @layer components {
   .btn-primary {
-    @apply bg-accent text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 hover:bg-accent-dark hover:shadow-lg hover:scale-105;
+    @apply bg-gradient-to-r from-accent to-electric-soft text-white px-6 py-3 rounded-xl font-semibold transition-all duration-300 hover:shadow-lg hover:shadow-accent/30 hover:scale-[1.02];
   }
 
   .btn-secondary {
-    @apply bg-primary-light text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 hover:bg-primary-dark hover:shadow-lg hover:scale-105;
+    @apply bg-white/5 text-white px-6 py-3 rounded-xl font-semibold transition-all duration-300 hover:bg-white/10 hover:shadow-lg hover:scale-[1.02] border border-white/10;
   }
 
   .btn-outline {
-    @apply border-2 border-accent text-accent px-6 py-3 rounded-lg font-semibold transition-all duration-300 hover:bg-accent hover:text-white;
+    @apply border border-white/30 text-white px-6 py-3 rounded-xl font-semibold transition-all duration-300 hover:bg-white hover:text-primary;
   }
 
   .section-padding {
@@ -54,7 +54,11 @@
   }
 
   .text-gradient {
-    @apply bg-gradient-to-r from-accent to-accent-light bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-accent via-electric-soft to-accent-light bg-clip-text text-transparent;
+  }
+
+  .glass-panel {
+    @apply bg-white/5 border border-white/10 backdrop-blur-lg;
   }
 }
 

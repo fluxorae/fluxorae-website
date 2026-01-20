@@ -5,8 +5,8 @@ import ServiceProcess from '@/components/services/ServiceProcess'
 import CTA from '@/components/common/CTA'
 
 export const metadata: Metadata = {
-  title: 'Global Services',
-  description: 'Comprehensive technology services designed to transform your business. From cloud solutions to digital transformation, we deliver excellence.',
+  title: 'Services',
+  description: 'AI + product engineering + growth. Fluxorae delivers automation, high-performance web, SEO, design systems, data, and cloud in one integrated team.',
 }
 
 export default function ServicesPage() {

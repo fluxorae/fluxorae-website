@@ -5,15 +5,15 @@ import { useInView } from 'framer-motion'
 import { useRef } from 'react'
 
 const stats = [
-  { number: '2025', label: 'Company Founded', suffix: '' },
-  { number: 'Growing', label: 'Client Portfolio', suffix: '' },
-  { number: 'Cloud', label: 'Solutions Ready', suffix: '' },
-  { number: 'Expert', label: 'Team Members', suffix: '' },
-  { number: 'India', label: 'Based', suffix: '' },
-  { number: '24/7', label: 'Support Available', suffix: '' },
+  { number: '2.3x', label: 'Avg pipeline lift on growth engagements' },
+  { number: '6-8', label: 'Week launch for AI pilot or MVP' },
+  { number: '95%', label: 'Core Web Vitals pass rate after rebuilds' },
+  { number: '24/7', label: 'Ops coverage with AI + human-in-loop' },
+  { number: 'NPS 9+', label: 'Client satisfaction on delivery' },
+  { number: 'Global', label: 'Delivery across timezones' },
 ]
 
-function AnimatedNumber({ value, suffix = '', delay = 0 }: { value: string; suffix?: string; delay?: number }) {
+function AnimatedNumber({ value, delay = 0 }: { value: string; delay?: number }) {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true })
 
@@ -26,14 +26,13 @@ function AnimatedNumber({ value, suffix = '', delay = 0 }: { value: string; suff
       className="inline-block"
     >
       {value}
-      {suffix && <span className="text-accent">{suffix}</span>}
     </motion.span>
   )
 }
 
 export default function StatsSection() {
   return (
-    <section className="section-padding bg-gradient-to-br from-primary to-primary-dark text-white">
+    <section className="section-padding bg-gradient-to-br from-primary-dark to-primary text-white">
       <div className="container-custom">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -42,9 +41,12 @@ export default function StatsSection() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="heading-2 mb-4 text-white">Our Impact in Numbers</h2>
+          <div className="inline-flex px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs uppercase tracking-[0.2em] text-gray-300 mb-4">
+            Impact metrics
+          </div>
+          <h2 className="heading-2 mb-4 text-white">Outcomes that keep compounding</h2>
           <p className="text-lg text-gray-300 max-w-3xl mx-auto">
-            Delivering excellence across the globe
+            We track every engagement to the numbers that matter—pipeline, conversion, uptime, and satisfaction.
           </p>
         </motion.div>
 
@@ -58,10 +60,10 @@ export default function StatsSection() {
               transition={{ duration: 0.6, delay: index * 0.1 }}
               className="text-center"
             >
-              <div className="text-4xl md:text-5xl font-bold mb-2">
-                <AnimatedNumber value={stat.number} suffix={stat.suffix} delay={index * 0.1} />
+              <div className="text-3xl md:text-4xl font-bold mb-3">
+                <AnimatedNumber value={stat.number} delay={index * 0.1} />
               </div>
-              <div className="text-gray-300 text-sm md:text-base">{stat.label}</div>
+              <div className="text-gray-300 text-sm md:text-base leading-snug">{stat.label}</div>
             </motion.div>
           ))}
         </div>

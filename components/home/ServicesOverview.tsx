@@ -1,51 +1,57 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Cloud, Code, Database, Shield, Smartphone, TrendingUp } from 'lucide-react'
+import { Bot, Code2, Megaphone, Palette, DatabaseZap, CloudCog, ArrowUpRight } from 'lucide-react'
 import Link from 'next/link'
 
 const services = [
   {
-    icon: Cloud,
-    title: 'Cloud Solutions',
-    description: 'Scalable cloud infrastructure and migration services for modern businesses.',
-    color: 'from-blue-500 to-cyan-500',
+    icon: Bot,
+    title: 'AI & Automation',
+    description: 'Copilots, workflow automation, data agents, and GenAI accelerators tuned to your stack.',
+    color: 'from-emerald-400/80 via-accent to-purple-600',
+    href: '/services',
   },
   {
-    icon: Code,
-    title: 'Software Development',
-    description: 'Custom software solutions built with cutting-edge technologies and best practices.',
-    color: 'from-purple-500 to-pink-500',
+    icon: Code2,
+    title: 'Product Engineering',
+    description: 'Modern web & mobile experiences built on Next.js, edge-first architectures, and design systems.',
+    color: 'from-sky-400 to-cyan-500',
+    href: '/services',
   },
   {
-    icon: Database,
-    title: 'Data Analytics',
-    description: 'Transform data into actionable insights with advanced analytics and AI.',
-    color: 'from-green-500 to-emerald-500',
+    icon: Megaphone,
+    title: 'Digital Marketing / SEO',
+    description: 'Full-funnel growth: technical SEO, CRO, performance ads, analytics, and attribution.',
+    color: 'from-orange-400 to-amber-500',
+    href: '/services',
   },
   {
-    icon: Shield,
-    title: 'Cybersecurity',
-    description: 'Comprehensive security solutions to protect your digital assets and data.',
-    color: 'from-red-500 to-orange-500',
+    icon: Palette,
+    title: 'UI/UX & Branding',
+    description: 'Research-backed design, brand identity, and motion systems crafted for conversion.',
+    color: 'from-pink-500 to-rose-500',
+    href: '/services',
   },
   {
-    icon: Smartphone,
-    title: 'Mobile Solutions',
-    description: 'Native and cross-platform mobile applications for iOS and Android.',
-    color: 'from-indigo-500 to-blue-500',
+    icon: DatabaseZap,
+    title: 'Data & Analytics',
+    description: 'Dashboards, customer 360, predictive models, and decision intelligence that ship quickly.',
+    color: 'from-blue-500 to-indigo-500',
+    href: '/services',
   },
   {
-    icon: TrendingUp,
-    title: 'Digital Transformation',
-    description: 'End-to-end digital transformation strategies to accelerate business growth.',
-    color: 'from-yellow-500 to-orange-500',
+    icon: CloudCog,
+    title: 'Cloud & DevOps',
+    description: 'Cloud modernization, SRE, FinOps, and secure-by-default infra automation.',
+    color: 'from-teal-400 to-emerald-500',
+    href: '/services',
   },
 ]
 
 export default function ServicesOverview() {
   return (
-    <section className="section-padding bg-secondary-light">
+    <section className="section-padding">
       <div className="container-custom">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -54,13 +60,16 @@ export default function ServicesOverview() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="heading-2 mb-4">Our Global Services</h2>
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-            Comprehensive technology solutions tailored to your business needs
+          <div className="inline-flex px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs uppercase tracking-[0.2em] text-gray-300 mb-4">
+            What we do
+          </div>
+          <h2 className="heading-2 mb-4">Full-stack services for modern teams</h2>
+          <p className="text-lg text-gray-300 max-w-3xl mx-auto">
+            Strategy to scale: AI, product engineering, growth, and brand—shipped as one integrated team.
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {services.map((service, index) => {
             const Icon = service.icon
             return (
@@ -70,18 +79,19 @@ export default function ServicesOverview() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 group"
+                className="glass-panel rounded-2xl p-6 hover:border-white/20 transition-all duration-300 group"
               >
-                <div className={`w-14 h-14 rounded-lg bg-gradient-to-br ${service.color} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
-                  <Icon className="text-white" size={28} />
+                <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${service.color} flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300`}>
+                  <Icon className="text-white" size={22} />
                 </div>
-                <h3 className="heading-3 text-xl mb-3">{service.title}</h3>
-                <p className="text-gray-600 mb-6">{service.description}</p>
+                <h3 className="heading-3 text-xl mb-2">{service.title}</h3>
+                <p className="text-gray-300 mb-5 leading-relaxed">{service.description}</p>
                 <Link
-                  href="/services"
-                  className="text-accent font-semibold hover:underline inline-flex items-center group-hover:translate-x-2 transition-transform duration-300"
+                  href={service.href}
+                  className="text-accent font-semibold inline-flex items-center gap-2 group-hover:gap-3 transition-all duration-300"
                 >
-                  Learn More
+                  Learn more
+                  <ArrowUpRight size={16} />
                 </Link>
               </motion.div>
             )
@@ -95,8 +105,8 @@ export default function ServicesOverview() {
           transition={{ duration: 0.6, delay: 0.6 }}
           className="text-center mt-12"
         >
-          <Link href="/services" className="btn-primary">
-            View All Services
+          <Link href="/contact" className="btn-primary">
+            Book a Strategy Call
           </Link>
         </motion.div>
       </div>

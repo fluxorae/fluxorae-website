@@ -20,8 +20,8 @@ const spaceGrotesk = Space_Grotesk({
 
 export const metadata: Metadata = {
   title: {
-    default: 'Fluxorae Private Limited – Global Technology Solutions',
-    template: '%s | Fluxorae'
+    default: 'Fluxorae Private Limited - Global Technology Solutions',
+    template: '%s | Fluxorae',
   },
   description: 'Fluxorae Private Limited - Global leader in Software Installation & Technology Services. Empowering businesses worldwide with cutting-edge technology.',
   keywords: ['Fluxorae', 'Technology Solutions', 'Digital Transformation', 'Innovation', 'Enterprise Solutions', 'Global Technology'],

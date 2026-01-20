@@ -5,6 +5,7 @@ import WhyFluxorae from '@/components/home/WhyFluxorae'
 import StatsSection from '@/components/home/StatsSection'
 import CTA from '@/components/common/CTA'
 import { Metadata } from 'next'
+import ServiceProcess from '@/components/services/ServiceProcess'
 
 export const metadata: Metadata = {
   title: 'Home',
@@ -19,10 +20,12 @@ export default function Home() {
       <SolutionsShowcase />
       <StatsSection />
       <WhyFluxorae />
+      <ServiceProcess />
       <CTA
-        description="Let's discuss how Fluxorae can help you achieve your goals with innovative technology solutions. FLUXORAE PRIVATE LIMITED is a global leader in Software Installation & Technology Services, empowering businesses through innovation and digital transformation."
-        primaryButton={{ text: 'Get Started', href: '/contact' }}
-        secondaryButton={{ text: 'Learn More', href: '/services' }}
+        title="Book a 30-minute consult"
+        description="Map your goals to an AI-powered roadmap, clear milestones, and first wins in 6-8 weeks."
+        primaryButton={{ text: 'Book a Free Consultation', href: '/contact' }}
+        secondaryButton={{ text: 'View Services', href: '/services' }}
         showContactDetails
       />
     </>

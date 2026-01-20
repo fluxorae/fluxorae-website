@@ -13,10 +13,10 @@ interface CTAProps {
 }
 
 export default function CTA({
-  title = 'Ready to Transform Your Business?',
-  description = 'Let\'s discuss how Fluxorae can help you achieve your goals with innovative technology solutions.',
-  primaryButton = { text: 'Get Started', href: '/contact' },
-  secondaryButton = { text: 'Learn More', href: '/about' },
+  title = 'Ready for a high-velocity build?',
+  description = 'Book a 30-minute session to map your goals to an AI-powered roadmap, timelines, and first wins in weeks.',
+  primaryButton = { text: 'Book a Free Consultation', href: '/contact' },
+  secondaryButton = { text: 'View Services', href: '/services' },
   showContactDetails = false,
 }: CTAProps) {
   return (

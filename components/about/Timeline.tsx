@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Calendar, TrendingUp } from 'lucide-react'
+import { Calendar } from 'lucide-react'
 
 const milestones = [
   {
@@ -11,24 +11,24 @@ const milestones = [
   },
   {
     year: '2025',
-    title: 'Foundation Team',
-    description: 'Assembled our core team of experienced technology experts and industry professionals.',
+    title: 'Ops & Public Stack',
+    description: 'Built the foundation across marketing site, ops portal, and API with security and governance baked in.',
   },
   {
     year: '2026',
-    title: 'Growth Phase',
-    description: 'Expanding our service offerings and building strong client relationships across industries.',
+    title: 'AI & Automation Sprints',
+    description: 'Delivered AI pilots, workflow automations, and data products for early clients—shipping in 6-8 week cycles.',
   },
   {
     year: '2026',
-    title: 'Innovation Focus',
-    description: 'Developing cutting-edge cloud, AI and digital transformation solutions for modern businesses.',
+    title: 'Growth Engines',
+    description: 'Launched performance marketing and SEO programs with analytics and CRO loops to scale customer acquisition.',
   },
 ]
 
 export default function Timeline() {
   return (
-    <section className="section-padding bg-white">
+    <section className="section-padding">
       <div className="container-custom">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -38,14 +38,14 @@ export default function Timeline() {
           className="text-center mb-16"
         >
           <h2 className="heading-2 mb-4">Our Journey</h2>
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-            Key milestones in our growth and evolution
+          <p className="text-lg text-gray-300 max-w-3xl mx-auto">
+            Momentum built through focused sprints, measurable outcomes, and long-term partnerships.
           </p>
         </motion.div>
 
         <div className="relative">
           {/* Timeline Line */}
-          <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-accent to-accent-light hidden md:block" />
+          <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-accent to-electric-soft hidden md:block" />
 
           <div className="space-y-12">
             {milestones.map((milestone, index) => (
@@ -60,17 +60,17 @@ export default function Timeline() {
               >
                 {/* Timeline Dot */}
                 <div className="relative z-10 w-24 flex-shrink-0 text-center">
-                  <div className="w-16 h-16 bg-accent rounded-full flex items-center justify-center mx-auto mb-2 shadow-lg">
+                  <div className="w-16 h-16 bg-accent rounded-full flex items-center justify-center mx-auto mb-2 shadow-lg shadow-accent/30">
                     <Calendar className="text-white" size={24} />
                   </div>
                   <div className="text-2xl font-bold text-accent">{milestone.year}</div>
                 </div>
 
                 {/* Content */}
-                <div className={`flex-1 bg-secondary-light p-8 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 ${index % 2 === 0 ? 'md:text-right' : 'md:text-left'
+                <div className={`flex-1 glass-panel p-8 rounded-2xl border border-white/10 hover:border-white/20 transition-all duration-300 ${index % 2 === 0 ? 'md:text-right' : 'md:text-left'
                   }`}>
                   <h3 className="heading-3 text-xl mb-3">{milestone.title}</h3>
-                  <p className="text-gray-600">{milestone.description}</p>
+                  <p className="text-gray-300 leading-relaxed">{milestone.description}</p>
                 </div>
 
                 {/* Empty space for alignment */}

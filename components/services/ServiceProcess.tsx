@@ -1,38 +1,44 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Search, Lightbulb, Rocket, CheckCircle } from 'lucide-react'
+import { Compass, Lightbulb, Cpu, Rocket, BarChart3 } from 'lucide-react'
 
 const processSteps = [
   {
-    icon: Search,
-    title: 'Discovery',
-    description: 'We analyze your business needs, challenges, and goals to understand your requirements.',
+    icon: Compass,
+    title: 'Assess & Align',
+    description: 'Define OKRs, map journeys, and pick the fastest path to value. Prioritize 6-8 week wins.',
     number: '01',
   },
   {
     icon: Lightbulb,
-    title: 'Strategy',
-    description: 'We develop a comprehensive strategy tailored to your business objectives and budget.',
+    title: 'Design the Blueprint',
+    description: 'Architect AI, product, and growth plans with security, governance, and analytics by default.',
     number: '02',
   },
   {
-    icon: Rocket,
-    title: 'Implementation',
-    description: 'Our expert team executes the solution with precision, ensuring quality and efficiency.',
+    icon: Cpu,
+    title: 'Build & Automate',
+    description: 'Ship features, pipelines, and automations in weekly sprints with clear demo-ready increments.',
     number: '03',
   },
   {
-    icon: CheckCircle,
-    title: 'Optimization',
-    description: 'We continuously monitor and optimize to ensure maximum performance and value.',
+    icon: Rocket,
+    title: 'Launch & Iterate',
+    description: 'Go live with guardrails, then iterate via experiments, CRO, and AI feedback loops.',
     number: '04',
+  },
+  {
+    icon: BarChart3,
+    title: 'Measure & Scale',
+    description: 'Dashboards, uptime, and cost visibility; scale what works with runbooks and training.',
+    number: '05',
   },
 ]
 
 export default function ServiceProcess() {
   return (
-    <section className="section-padding bg-white">
+    <section className="section-padding">
       <div className="container-custom">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -41,13 +47,16 @@ export default function ServiceProcess() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="heading-2 mb-4">Our Process</h2>
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-            A proven methodology that ensures successful project delivery
+          <div className="inline-flex px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs uppercase tracking-[0.2em] text-gray-300 mb-4">
+            How we work
+          </div>
+          <h2 className="heading-2 mb-4">From discovery to measurable scale</h2>
+          <p className="text-lg text-gray-300 max-w-3xl mx-auto">
+            A structured approach with weekly demos, clear SLAs, and outcomes tied to your OKRs.
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
           {processSteps.map((step, index) => {
             const Icon = step.icon
             return (
@@ -59,21 +68,16 @@ export default function ServiceProcess() {
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 className="relative"
               >
-                <div className="bg-secondary-light p-8 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 h-full">
-                  <div className="flex items-center justify-between mb-6">
-                    <div className="w-14 h-14 bg-accent/10 rounded-lg flex items-center justify-center">
-                      <Icon className="text-accent" size={28} />
+                <div className="glass-panel p-7 rounded-2xl border border-white/10 hover:border-white/20 transition-all duration-300 h-full flex flex-col gap-4">
+                  <div className="flex items-center justify-between">
+                    <div className="w-12 h-12 bg-accent/15 rounded-xl flex items-center justify-center">
+                      <Icon className="text-accent" size={24} />
                     </div>
-                    <span className="text-4xl font-bold text-gray-200">{step.number}</span>
+                    <span className="text-2xl font-bold text-gray-100">{step.number}</span>
                   </div>
-                  <h3 className="heading-3 text-xl mb-3">{step.title}</h3>
-                  <p className="text-gray-600">{step.description}</p>
+                  <h3 className="heading-3 text-xl mb-1">{step.title}</h3>
+                  <p className="text-gray-300 leading-relaxed">{step.description}</p>
                 </div>
-                {index < processSteps.length - 1 && (
-                  <div className="hidden lg:block absolute top-1/2 -right-4 transform -translate-y-1/2 z-10">
-                    <div className="w-8 h-0.5 bg-accent" />
-                  </div>
-                )}
               </motion.div>
             )
           })}

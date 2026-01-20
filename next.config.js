@@ -11,6 +11,32 @@ const nextConfig = {
       },
     ],
   },
+  async redirects() {
+    return [
+      {
+        source: '/:path*',
+        has: [
+          {
+            type: 'host',
+            value: 'fluxorae.in',
+          },
+        ],
+        destination: 'https://fluxorae.com/:path*',
+        permanent: true,
+      },
+      {
+        source: '/:path*',
+        has: [
+          {
+            type: 'host',
+            value: 'www.fluxorae.in',
+          },
+        ],
+        destination: 'https://www.fluxorae.com/:path*',
+        permanent: true,
+      },
+    ];
+  },
 };
 
 module.exports = nextConfig;
