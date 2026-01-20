@@ -13,6 +13,7 @@ const services = [
     outcomes: ['-30% ops time in 8 weeks', 'Human-in-loop safety', 'Secure model routing'],
     stack: ['OpenAI/Anthropic', 'LangChain', 'Vercel AI', 'Airflow'],
     color: 'from-emerald-400/80 via-accent to-purple-600',
+    href: '/services/ai-automation',
   },
   {
     icon: Code2,
@@ -22,6 +23,7 @@ const services = [
     outcomes: ['LCP < 2.5s', 'Design system governance', 'Weekly shipping cadence'],
     stack: ['Next.js', 'TypeScript', 'shadcn/ui', 'Prisma'],
     color: 'from-sky-400 to-cyan-500',
+    href: '/services/product-engineering',
   },
   {
     icon: Megaphone,
@@ -31,6 +33,7 @@ const services = [
     outcomes: ['+40% organic demos', 'CRO playbooks', 'Attribution clarity'],
     stack: ['GA4', 'Search Console', 'Tag Manager', 'Looker/Data Studio'],
     color: 'from-orange-400 to-amber-500',
+    href: '/services/marketing-seo',
   },
   {
     icon: Palette,
@@ -40,6 +43,7 @@ const services = [
     outcomes: ['Higher trust & clarity', 'Consistent design tokens', 'Faster build velocity'],
     stack: ['Figma', 'Lottie', 'Design Tokens', 'Storybook'],
     color: 'from-pink-500 to-rose-500',
+    href: '/services/ui-ux-branding',
   },
   {
     icon: DatabaseZap,
@@ -49,6 +53,7 @@ const services = [
     outcomes: ['Live metrics dashboards', 'Predictive scoring', 'Data quality SLAs'],
     stack: ['dbt', 'BigQuery/Postgres', 'Metabase', 'Python'],
     color: 'from-blue-500 to-indigo-500',
+    href: '/services/data-cloud-devops',
   },
   {
     icon: CloudCog,
@@ -58,6 +63,7 @@ const services = [
     outcomes: ['99.9%+ uptime targets', 'Cost visibility', 'Incident-ready playbooks'],
     stack: ['AWS', 'Docker', 'Kubernetes', 'Terraform'],
     color: 'from-teal-400 to-emerald-500',
+    href: '/services/data-cloud-devops',
   },
 ]
 
@@ -109,10 +115,10 @@ export default function ServicesGrid() {
                 </div>
                 <div className="pt-2">
                   <Link
-                    href="/contact"
+                    href={service.href}
                     className="text-accent font-semibold hover:underline inline-flex items-center gap-2"
                   >
-                    Book this service
+                    View service
                     <ArrowUpRight size={16} />
                   </Link>
                 </div>

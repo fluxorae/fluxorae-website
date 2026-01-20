@@ -33,6 +33,20 @@ const solutions = [
     solution: 'Customer 360, predictive scoring, and decision dashboards with governed data contracts.',
     results: ['Live exec dashboards', 'Faster approvals', 'Data quality SLAs'],
   },
+  {
+    title: 'Service Design + Copilots',
+    industry: 'Customer Support',
+    problem: 'High ticket volume, inconsistent resolutions, and limited self-serve.',
+    solution: 'Redesigned flows, built knowledge copilots, and automated common intents with safe handoffs.',
+    results: ['-25% ticket volume', '-30% handling time', 'Higher CSAT and deflection'],
+  },
+  {
+    title: 'Cloud Modernization',
+    industry: 'Enterprise',
+    problem: 'Rising cloud costs, unreliable deploys, and missing observability.',
+    solution: 'IaC, CI/CD, SRE runbooks, and cost visibility with alerts and budgets.',
+    results: ['99.9%+ uptime targets', 'Faster releases', 'Cost optimization levers identified'],
+  },
 ]
 
 export default function SolutionsShowcase() {
