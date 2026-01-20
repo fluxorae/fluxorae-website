@@ -10,33 +10,39 @@ const config: Config = {
     extend: {
       colors: {
         primary: {
-          DEFAULT: '#0A2540',
-          dark: '#061826',
-          light: '#0E3353',
+          DEFAULT: '#050816',
+          dark: '#02040a',
+          light: '#0f1629',
         },
         secondary: {
-          DEFAULT: '#FFFFFF',
-          light: '#F8F9FA',
-          dark: '#E9ECEF',
+          DEFAULT: '#E2E8F0',
+          light: '#F8FAFC',
+          dark: '#0B1224',
         },
         accent: {
-          DEFAULT: '#FF6B35',
-          dark: '#E55A2B',
-          light: '#FF8C61',
+          DEFAULT: '#8B5CF6',
+          dark: '#6D28D9',
+          light: '#A78BFA',
+        },
+        electric: {
+          DEFAULT: '#14F195',
+          soft: '#5AE6C8',
         },
       },
       fontFamily: {
         sans: ['Inter', 'system-ui', 'sans-serif'],
-        display: ['Poppins', 'system-ui', 'sans-serif'],
+        display: ['Space Grotesk', 'Inter', 'system-ui', 'sans-serif'],
       },
       animation: {
         'fade-in': 'fadeIn 0.6s ease-in-out',
         'slide-up': 'slideUp 0.6s ease-out',
         'slide-in-left': 'slideInLeft 0.6s ease-out',
         'slide-in-right': 'slideInRight 0.6s ease-out',
+        'pulse-glow': 'pulseGlow 2s ease-in-out infinite',
       },
       boxShadow: {
         '3xl': '0 35px 60px -12px rgba(0, 0, 0, 0.25)',
+        neon: '0 10px 40px rgba(139, 92, 246, 0.35)',
       },
       keyframes: {
         fadeIn: {
@@ -54,6 +60,10 @@ const config: Config = {
         slideInRight: {
           '0%': { transform: 'translateX(20px)', opacity: '0' },
           '100%': { transform: 'translateX(0)', opacity: '1' },
+        },
+        pulseGlow: {
+          '0%, 100%': { boxShadow: '0 0 0 0 rgba(20, 241, 149, 0.35)' },
+          '50%': { boxShadow: '0 0 0 12px rgba(20, 241, 149, 0)' },
         },
       },
     },

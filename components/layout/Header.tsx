@@ -34,7 +34,7 @@ export default function Header() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? 'bg-white/95 backdrop-blur-md shadow-lg'
+          ? 'bg-primary/80 backdrop-blur-md border-b border-white/10'
           : 'bg-transparent'
       }`}
     >
@@ -43,8 +43,8 @@ export default function Header() {
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2">
             <div className="flex items-center">
-              <span className="text-2xl font-bold text-primary">Fluxorae</span>
-              <span className="ml-1 text-xs text-accent font-medium">®</span>
+              <span className="text-2xl font-bold text-white">Fluxorae</span>
+              <span className="ml-1 text-xs text-accent font-medium">Ar</span>
             </div>
           </Link>
 
@@ -57,9 +57,7 @@ export default function Header() {
                   key={item.name}
                   href={item.href}
                   className={`relative font-medium transition-colors duration-200 ${
-                    isActive
-                      ? 'text-accent'
-                      : 'text-primary hover:text-accent'
+                    isActive ? 'text-accent' : 'text-secondary hover:text-accent'
                   }`}
                 >
                   {item.name}
@@ -79,7 +77,7 @@ export default function Header() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="lg:hidden p-2 text-primary hover:text-accent transition-colors"
+            className="lg:hidden p-2 text-secondary hover:text-accent transition-colors"
             aria-label="Toggle menu"
           >
             {isMobileMenuOpen ? (
@@ -98,7 +96,7 @@ export default function Header() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="lg:hidden bg-white border-t border-gray-200"
+            className="lg:hidden bg-primary/90 border-t border-white/10 backdrop-blur"
           >
             <div className="container-custom py-4 space-y-2">
               {navigation.map((item) => {
@@ -111,7 +109,7 @@ export default function Header() {
                     className={`block px-4 py-2 rounded-lg font-medium transition-colors ${
                       isActive
                         ? 'bg-accent text-white'
-                        : 'text-primary hover:bg-secondary-dark'
+                        : 'text-secondary hover:bg-primary-light/70'
                     }`}
                   >
                     {item.name}
