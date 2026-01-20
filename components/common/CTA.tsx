@@ -9,6 +9,7 @@ interface CTAProps {
   description?: string
   primaryButton?: { text: string; href: string }
   secondaryButton?: { text: string; href: string }
+  showContactDetails?: boolean
 }
 
 export default function CTA({
@@ -16,6 +17,7 @@ export default function CTA({
   description = 'Let\'s discuss how Fluxorae can help you achieve your goals with innovative technology solutions.',
   primaryButton = { text: 'Get Started', href: '/contact' },
   secondaryButton = { text: 'Learn More', href: '/about' },
+  showContactDetails = false,
 }: CTAProps) {
   return (
     <section className="section-padding bg-gradient-to-r from-primary via-primary-dark to-primary text-white">
@@ -40,6 +42,25 @@ export default function CTA({
               </Link>
             )}
           </div>
+          {showContactDetails && (
+            <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3 text-left text-sm text-gray-200">
+              <div className="space-y-1">
+                <p className="font-semibold text-white">Contact</p>
+                <p>contact@fluxorae.com</p>
+                <p>+91 9115377791</p>
+              </div>
+              <div className="space-y-1">
+                <p className="font-semibold text-white">Registered Office</p>
+                <p>Gata No. 316, Sahinwan, Gosaisinghpur,</p>
+                <p>Kadipur, Sultanpur, UP - 228131</p>
+              </div>
+              <div className="space-y-1">
+                <p className="font-semibold text-white">Legal</p>
+                <p>CIN: U62091UP2025PTC234934</p>
+                <p>GSTIN: 09AAGCF6673D1ZG</p>
+              </div>
+            </div>
+          )}
         </motion.div>
       </div>
     </section>

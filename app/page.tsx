@@ -19,7 +19,12 @@ export default function Home() {
       <SolutionsShowcase />
       <StatsSection />
       <WhyFluxorae />
-      <CTA />
+      <CTA
+        description="Let's discuss how Fluxorae can help you achieve your goals with innovative technology solutions. FLUXORAE PRIVATE LIMITED is a global leader in Software Installation & Technology Services, empowering businesses through innovation and digital transformation."
+        primaryButton={{ text: 'Get Started', href: '/contact' }}
+        secondaryButton={{ text: 'Learn More', href: '/services' }}
+        showContactDetails
+      />
     </>
   )
 }
