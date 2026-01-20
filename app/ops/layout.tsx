@@ -1,12 +1,10 @@
 import type { ReactNode } from 'react'
+import NeonGrid from '@/components/common/NeonGrid'
 
 export default function OpsLayout({ children }: { children: ReactNode }) {
   return (
     <div className="min-h-screen bg-gradient-to-br from-[#050816] via-[#0a0f24] to-[#0b132b] text-secondary">
-      <div className="absolute inset-0 pointer-events-none opacity-40">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(139,92,246,0.2),transparent_35%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_0%,rgba(20,241,149,0.15),transparent_30%)]" />
-      </div>
+      <NeonGrid />
       <div className="relative">
         <header className="sticky top-0 z-30 backdrop-blur border-b border-white/10 bg-primary/60">
           <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
