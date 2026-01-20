@@ -24,6 +24,11 @@ const config: Config = {
           dark: '#6D28D9',
           light: '#A78BFA',
         },
+        bharat: {
+          saffron: '#FF9933',
+          green: '#138808',
+          ashoka: '#3A75C4',
+        },
         electric: {
           DEFAULT: '#14F195',
           soft: '#5AE6C8',
