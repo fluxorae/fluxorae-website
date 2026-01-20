@@ -4,11 +4,11 @@ Author: Shivam (CEO) / Codex assistant
 Scope: Implement the PRD for Fluxorae’s unified business operating system across fluxorae.com (public) and fluxorae.in (operations).
 
 ## 1) Domains & Environments
-- **fluxorae.com**: Public marketing site, lead capture, insights/blog. (Next.js)
-- **fluxorae.in**: Auth-gated operational portal for admins/employees/clients/partners/freelancers. (Next.js app)
-- **api.fluxorae.in**: Backend API (NestJS) for auth, projects, billing, support, AI jobs.
+- **fluxorae.com**: Public marketing site, lead capture, insights/blog. (Next.js) — deployed on AWS (Amplify or CloudFront/Lambda@Edge).
+- **fluxorae.in**: Auth-gated operational portal for admins/employees/clients/partners/freelancers. (Next.js app) — deployed on AWS (Amplify for static/SSR or ECS/Fargate for custom runtime).
+- **api.fluxorae.in**: Backend API (NestJS) for auth, projects, billing, support, AI jobs — deployed on AWS ECS/Fargate behind ALB.
 - Environments: dev, staging, prod. Each with isolated Postgres/Redis buckets. Secrets via env vars + secret manager (AWS SSM/Secrets Manager).
-- CDN/DNS/SSL: Cloudflare in front; origin on AWS (Vercel acceptable for public, AWS ECS/Fargate/ALB for API/ops).
+- CDN/DNS/SSL: Cloudflare optional; Route53 + ACM + CloudFront are acceptable if Cloudflare not used. Origin everywhere is AWS to match existing domain wiring.
 
 ## 2) Stack Choices
 - **Frontend**: Next.js 14 (App Router), TypeScript, Tailwind, Framer Motion, Lucide. I18n-ready (EN/HI). Role-aware routes via middleware.
@@ -64,10 +64,10 @@ Scope: Implement the PRD for Fluxorae’s unified business operating system acro
 - **Phase 5 (2w)**: Support + KB scaffold, notifications (email), AI lead auto-reply + report draft endpoints with logging.
 - **Phase 6 (1w)**: Hardening, QA (unit/API/load), observability, runbooks, staging/prod deploys, backups.
 
-## 7) Deployment Plan (baseline)
-- Public (fluxorae.com): Deploy Next.js app on Vercel; connect Cloudflare DNS; preview envs via branches.
-+- Ops (fluxorae.in): Deploy Next.js ops app + NestJS API on AWS (ECS/Fargate) behind ALB, Cloudflare proxied. RDS Postgres, Elasticache Redis, S3 for files.
-- CI: GitHub Actions: lint + typecheck + test + build; push to main → deploy to staging/prod; tagged releases for prod.
+## 7) Deployment Plan (AWS-first)
+- Public (fluxorae.com): Deploy Next.js app to AWS Amplify (simplest) or to S3+CloudFront with Lambda@Edge for SSR. DNS via Route53 already connected.
+- Ops (fluxorae.in): Deploy Next.js ops app to Amplify (if SSR support suffices) or ECS/Fargate; backend NestJS API on ECS/Fargate behind ALB. RDS Postgres, Elasticache Redis, S3 for files.
+- CI: GitHub Actions: lint + typecheck + test + build; on main → deploy to staging/prod in AWS (Amplify CLI or AWS CDK pipelines). Tagged releases for prod.
 - Secrets: .env per env, stored in SSM/Secrets Manager; never in repo.
 
 ## 8) Immediate Next Steps (to start implementation)
@@ -75,4 +75,3 @@ Scope: Implement the PRD for Fluxorae’s unified business operating system acro
 2. Add base NestJS API with Prisma schema (tables above), health checks, auth skeleton, CI pipeline.
 3. Add ops Next.js shell with protected routes and role-based nav; wire to API.
 4. Provision staging RDS/Redis/S3 (or use Docker locally) and plug env vars.
-
