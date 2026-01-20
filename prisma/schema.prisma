@@ -27,21 +27,24 @@ enum Status {
 }
 
 model User {
-  id            String   @id @default(cuid())
-  email         String   @unique
+  id            String     @id @default(cuid())
+  email         String     @unique
   passwordHash  String
-  role          Role     @default(CLIENT)
-  status        Status   @default(ACTIVE)
+  role          Role       @default(CLIENT)
+  status        Status     @default(ACTIVE)
   firstName     String?
   lastName      String?
   phone         String?
-  mfaEnabled    Boolean  @default(false)
+  mfaEnabled    Boolean    @default(false)
   sessions      Session[]
   auditLogs     AuditLog[]
-  clients       Client[] @relation("ClientOwner")
+  clients       Client[]   @relation("ClientOwner")
   employees     Employee?
-  createdAt     DateTime @default(now())
-  updatedAt     DateTime @updatedAt
+  projectsOwned Project[]  @relation("ProjectOwner")
+  tasksAssigned Task[]     @relation("TaskAssignee")
+  tickets       Ticket[]   @relation("TicketUser")
+  createdAt     DateTime   @default(now())
+  updatedAt     DateTime   @updatedAt
 }
 
 model Session {
@@ -54,16 +57,16 @@ model Session {
 }
 
 model Client {
-  id         String    @id @default(cuid())
-  name       String
-  owner      User      @relation("ClientOwner", fields: [ownerId], references: [id])
-  ownerId    String
-  contacts   Json?
-  projects   Project[]
-  invoices   Invoice[]
-  tickets    Ticket[]
-  createdAt  DateTime  @default(now())
-  updatedAt  DateTime  @updatedAt
+  id        String    @id @default(cuid())
+  name      String
+  owner     User      @relation("ClientOwner", fields: [ownerId], references: [id])
+  ownerId   String
+  contacts  Json?
+  projects  Project[]
+  invoices  Invoice[]
+  tickets   Ticket[]
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
 }
 
 model Employee {
@@ -83,7 +86,7 @@ model Project {
   status      String      @default("ACTIVE")
   client      Client      @relation(fields: [clientId], references: [id])
   clientId    String
-  owner       User?       @relation(fields: [ownerId], references: [id])
+  owner       User?       @relation("ProjectOwner", fields: [ownerId], references: [id])
   ownerId     String?
   milestones  Milestone[]
   tasks       Task[]
@@ -94,28 +97,28 @@ model Project {
 }
 
 model Milestone {
-  id        String   @id @default(cuid())
+  id        String    @id @default(cuid())
   title     String
-  status    String   @default("PLANNED")
+  status    String    @default("PLANNED")
   dueDate   DateTime?
-  project   Project  @relation(fields: [projectId], references: [id], onDelete: Cascade)
+  project   Project   @relation(fields: [projectId], references: [id], onDelete: Cascade)
   projectId String
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
 }
 
 model Task {
-  id         String    @id @default(cuid())
+  id         String   @id @default(cuid())
   title      String
-  status     String    @default("TODO")
-  orderIndex Int       @default(0)
-  project    Project   @relation(fields: [projectId], references: [id], onDelete: Cascade)
+  status     String   @default("TODO")
+  orderIndex Int      @default(0)
+  project    Project  @relation(fields: [projectId], references: [id], onDelete: Cascade)
   projectId  String
-  assignee   User?     @relation(fields: [assigneeId], references: [id])
+  assignee   User?    @relation("TaskAssignee", fields: [assigneeId], references: [id])
   assigneeId String?
   metadata   Json?
-  createdAt  DateTime  @default(now())
-  updatedAt  DateTime  @updatedAt
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
 }
 
 model Ticket {
@@ -127,7 +130,7 @@ model Ticket {
   projectId String?
   client    Client?  @relation(fields: [clientId], references: [id])
   clientId  String?
-  user      User?    @relation(fields: [userId], references: [id])
+  user      User?    @relation("TicketUser", fields: [userId], references: [id])
   userId    String?
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
@@ -136,9 +139,9 @@ model Ticket {
 model Invoice {
   id         String    @id @default(cuid())
   number     String    @unique
-  amount     Decimal   @db.Numeric(14, 2)
+  amount     Decimal   @db.Decimal(14, 2)
   currency   String    @default("INR")
-  gstPercent Decimal   @db.Numeric(5, 2) @default(0)
+  gstPercent Decimal   @db.Decimal(5, 2) @default(0.0)
   status     String    @default("DRAFT")
   project    Project?  @relation(fields: [projectId], references: [id])
   projectId  String?
@@ -152,7 +155,7 @@ model Invoice {
 model Payment {
   id          String   @id @default(cuid())
   provider    String
-  amount      Decimal  @db.Numeric(14, 2)
+  amount      Decimal  @db.Decimal(14, 2)
   currency    String   @default("INR")
   status      String   @default("PENDING")
   invoice     Invoice  @relation(fields: [invoiceId], references: [id], onDelete: Cascade)
