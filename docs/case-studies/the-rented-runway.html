@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Rented Runway Dehradun Case Study | Bridal &amp; Gown Rentals by Fluxorae</title>
+  <meta name="description" content="How Fluxorae elevated The Rented Runway, a Dehradun bridal rental boutique, with SEO, UX, and lead flow improvements." />
+  <link rel="canonical" href="[CASE_STUDY_URL]" />
+  <meta property="og:title" content="The Rented Runway Dehradun Case Study | Bridal & Gown Rentals by Fluxorae" />
+  <meta property="og:description" content="Fluxorae’s UX and SEO uplift for a premium fashion rental boutique in Dehradun." />
+  <meta property="og:type" content="article" />
+  <meta property="og:image" content="[OG_IMAGE_URL]" />
+  <meta property="og:url" content="[CASE_STUDY_URL]" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="The Rented Runway Dehradun Case Study | Bridal & Gown Rentals by Fluxorae" />
+  <meta name="twitter:description" content="Fluxorae’s UX and SEO uplift for a premium fashion rental boutique in Dehradun." />
+  <meta name="twitter:image" content="[OG_IMAGE_URL]" />
+  <style>
+    :root {
+      --bg: #0c0f17;
+      --card: #121725;
+      --accent: #f39c12;
+      --accent-2: #4fd1c5;
+      --text: #e6eef7;
+      --muted: #9fb1c7;
+      --border: #1f2737;
+      --success: #4ade80;
+      --danger: #f87171;
+      --shadow: 0 20px 60px rgba(0,0,0,0.35);
+      --radius: 14px;
+      --max-width: 1100px;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Inter", system-ui, -apple-system, sans-serif;
+      background: radial-gradient(60% 60% at 10% 20%, rgba(243,156,18,0.15), transparent),
+                  radial-gradient(40% 40% at 90% 10%, rgba(79,209,197,0.18), transparent),
+                  var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      padding: 0;
+    }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { color: #ffc466; }
+    header, section { padding: 56px 20px; }
+    header { padding-top: 72px; }
+    .container { width: 100%; max-width: var(--max-width); margin: 0 auto; }
+    h1,h2,h3,h4 { margin: 0 0 12px; line-height: 1.2; color: #fff; }
+    p { margin: 0 0 12px; color: var(--text); }
+    ul { padding-left: 20px; margin: 8px 0 16px; }
+    li { margin: 6px 0; color: var(--text); }
+    .badge { display: inline-flex; align-items: center; gap: 8px; padding: 8px 12px; border-radius: 999px; background: rgba(255,255,255,0.06); border: 1px solid var(--border); color: #fff; }
+    .hero {
+      display: grid; gap: 18px;
+      background: linear-gradient(135deg, rgba(243,156,18,0.08), rgba(79,209,197,0.1));
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 28px 24px;
+    }
+    .hero h1 { font-size: clamp(32px, 4vw, 44px); }
+    .grid { display: grid; gap: 16px; }
+    .grid.two { grid-template-columns: 1fr; }
+    .grid.three { grid-template-columns: 1fr; }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 18px;
+      box-shadow: var(--shadow);
+    }
+    .pill { display: inline-block; padding: 6px 12px; border-radius: 999px; background: rgba(255,255,255,0.08); color: #fff; margin-right: 6px; margin-bottom: 6px; }
+    .toc {
+      position: sticky;
+      top: 16px;
+      align-self: start;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 16px;
+      box-shadow: var(--shadow);
+      max-height: 80vh;
+      overflow: auto;
+    }
+    .toc h3 { font-size: 16px; margin-bottom: 8px; }
+    .toc a { color: var(--muted); display: block; padding: 6px 0; font-size: 14px; }
+    .toc a.active { color: var(--accent); font-weight: 600; }
+    .tagline { color: var(--muted); max-width: 720px; }
+    .table { width: 100%; border-collapse: collapse; }
+    .table th, .table td { padding: 10px; border: 1px solid var(--border); text-align: left; }
+    .table th { background: rgba(255,255,255,0.04); }
+    .checklist li { list-style: none; position: relative; padding-left: 24px; }
+    .checklist li::before { content: "✓"; color: var(--success); position: absolute; left: 0; top: 0; }
+    .faq-item { border-bottom: 1px solid var(--border); padding: 12px 0; }
+    .cta-bar { position: sticky; bottom: 0; background: rgba(12,15,23,0.9); padding: 12px 16px; display: flex; align-items: center; justify-content: space-between; gap: 12px; border-top: 1px solid var(--border); }
+    .cta-button { background: linear-gradient(135deg, var(--accent), #ffb347); color: #0c0f17; border: none; border-radius: 999px; padding: 12px 18px; font-weight: 700; cursor: pointer; box-shadow: var(--shadow); }
+    .cta-button:hover { transform: translateY(-1px); }
+    .btn-secondary { border: 1px solid var(--border); color: #fff; background: transparent; border-radius: 999px; padding: 10px 16px; cursor: pointer; }
+    form { display: grid; gap: 12px; }
+    input, textarea { width: 100%; padding: 12px; border-radius: 10px; border: 1px solid var(--border); background: #0f1420; color: #fff; }
+    input:focus, textarea:focus { outline: 2px solid var(--accent-2); }
+    textarea { min-height: 120px; }
+    .status { font-size: 14px; }
+    .screens { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 12px; }
+    .placeholder-img { background: #1b2233; border: 1px dashed #2f3a52; border-radius: 10px; min-height: 120px; display: flex; align-items: center; justify-content: center; color: var(--muted); }
+    details { background: var(--card); border: 1px dashed var(--border); border-radius: var(--radius); padding: 12px; color: var(--muted); }
+    .toc-wrapper { display: none; }
+    .two-col { display: grid; gap: 20px; }
+    .sticky-cta {
+      position: fixed; right: 16px; bottom: 82px;
+      background: linear-gradient(135deg, var(--accent), #ffb347);
+      color: #0c0f17; padding: 12px 16px; border-radius: 999px;
+      font-weight: 700; box-shadow: var(--shadow); text-decoration: none;
+    }
+    .sticky-cta:hover { transform: translateY(-1px); }
+    .flex { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
+    .label { font-weight: 700; color: #fff; }
+    .stat-block { border: 1px solid var(--border); border-radius: 12px; padding: 12px; background: #11182a; }
+    .muted { color: var(--muted); }
+    @media (min-width: 960px) {
+      header, section { padding: 72px 24px; }
+      .grid.two { grid-template-columns: 2.3fr 1fr; align-items: start; }
+      .grid.three { grid-template-columns: repeat(3, 1fr); }
+      .toc-wrapper { display: block; }
+    }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "name": "Fluxorae Private Limited",
+        "url": "[AGENCY_URL]",
+        "logo": "[OG_IMAGE_URL]",
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "contactType": "Customer Service",
+          "email": "[EMAIL]",
+          "telephone": "[PHONE]"
+        }
+      },
+      {
+        "@type": "WebPage",
+        "name": "The Rented Runway Dehradun Case Study",
+        "url": "[CASE_STUDY_URL]",
+        "description": "Case study by Fluxorae for The Rented Runway, a bridal and gown rental boutique in Dehradun.",
+        "breadcrumb": {
+          "@id": "[CASE_STUDY_URL]#breadcrumb"
+        }
+      },
+      {
+        "@type": "LocalBusiness",
+        "name": "The Rented Runway",
+        "image": "[OG_IMAGE_URL]",
+        "url": "[CASE_STUDY_URL]",
+        "telephone": "[PHONE]",
+        "priceRange": "$$",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Dehradun",
+          "addressRegion": "Uttarakhand",
+          "addressCountry": "India"
+        },
+        "sameAs": "[AGENCY_URL]"
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "[CASE_STUDY_URL]#breadcrumb",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "[AGENCY_URL]" },
+          { "@type": "ListItem", "position": 2, "name": "Case Studies", "item": "[AGENCY_URL]/case-studies" },
+          { "@type": "ListItem", "position": 3, "name": "The Rented Runway Dehradun", "item": "[CASE_STUDY_URL]" }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {"@type": "Question","name": "Do you offer bridal lehenga on rent in Dehradun?","acceptedAnswer": {"@type": "Answer","text": "Yes, The Rented Runway offers premium bridal lehengas on rent in Dehradun with fittings and styling support."}},
+          {"@type": "Question","name": "Can I book a gown on rent for receptions or cocktails?","acceptedAnswer": {"@type": "Answer","text": "Yes, gowns are available on rent in Dehradun for receptions, cocktails, and evening events with flexible rental durations."}},
+          {"@type": "Question","name": "Is jewellery on rent available with outfits?","acceptedAnswer": {"@type": "Answer","text": "Yes, jewellery on rent can be paired with lehengas and gowns for a coordinated look."}},
+          {"@type": "Question","name": "Where is The Rented Runway located in Dehradun?","acceptedAnswer": {"@type": "Answer","text": "The boutique serves customers around Sahastradhara Road, Dehradun. Exact directions are shared upon booking."}},
+          {"@type": "Question","name": "How do I check availability or book a trial fitting?","acceptedAnswer": {"@type": "Answer","text": "Use the contact form or WhatsApp/phone placeholders to check availability, book a trial, or request a quote."}},
+          {"@type": "Question","name": "Do you support last-minute wedding dress rentals?","acceptedAnswer": {"@type": "Answer","text": "Last-minute requests are accepted when inventory permits; reach out to confirm availability."}}
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <a href="[WHATSAPP_LINK]" class="sticky-cta" aria-label="WhatsApp - Check availability">WhatsApp • Check availability</a>
+  <div class="cta-bar">
+    <div>
+      <strong>Ready to plan?</strong>
+      <span class="muted">Book a trial • Request availability • Get a quote</span>
+    </div>
+    <div class="flex">
+      <a class="btn-secondary" href="tel:[PHONE]">Call us</a>
+      <a class="cta-button" href="[WHATSAPP_LINK]">WhatsApp</a>
+    </div>
+  </div>
+  <header id="top">
+    <div class="container">
+      <div class="grid two">
+        <div>
+          <div class="hero">
+            <div class="badge">Case Study • Fashion Rental • Dehradun</div>
+            <h1>Bridal Lehenga &amp; Gown on Rent in Dehradun — Story of The Rented Runway</h1>
+            <p class="tagline">How Fluxorae Private Limited crafted a premium, fast, and search-optimized presence for The Rented Runway, the Sahastradhara Road fashion rental boutique offering bridal lehengas, gowns, jewellery, and party wear on rent.</p>
+            <div class="flex">
+              <span class="pill">Local SEO uplift</span>
+              <span class="pill">Lead-ready UX</span>
+              <span class="pill">Performance-first</span>
+            </div>
+            <div class="flex">
+              <a class="cta-button" href="[WHATSAPP_LINK]">Check availability</a>
+              <a class="btn-secondary" href="#contact">Book a trial</a>
+            </div>
+          </div>
+        </div>
+        <div class="toc-wrapper">
+          <nav class="toc" aria-label="Table of contents">
+            <h3>Table of Contents</h3>
+            <a href="#snapshot">Client Snapshot</a>
+            <a href="#problem">Problem</a>
+            <a href="#goals">Targeted Outcomes</a>
+            <a href="#discovery">Discovery Insights</a>
+            <a href="#strategy">Strategy</a>
+            <a href="#ia">Information Architecture</a>
+            <a href="#content">Content & UX</a>
+            <a href="#seo">SEO Implementation</a>
+            <a href="#performance">Performance & Accessibility</a>
+            <a href="#results">Results</a>
+            <a href="#screens">Screenshots</a>
+            <a href="#tools">Tools & Stack</a>
+            <a href="#challenges">Challenges</a>
+            <a href="#timeline">Timeline</a>
+            <a href="#deliverables">Deliverables</a>
+            <a href="#testimonial">Testimonial</a>
+            <a href="#faq">FAQ</a>
+            <a href="#contact">CTA</a>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </header>
+  <section id="snapshot">
+    <div class="container grid two">
+      <div class="card">
+        <h2>Client Snapshot</h2>
+        <p><strong>Brand:</strong> The Rented Runway</p>
+        <p><strong>Location:</strong> Sahastradhara Road, Dehradun, Uttarakhand</p>
+        <p><strong>Offerings:</strong> Bridal lehenga on rent, gown on rent, jewellery on rent, party wear rentals.</p>
+        <p><strong>Engagement:</strong> UX + Local SEO + Content Strategy + On-page Performance</p>
+        <p><strong>Timeline:</strong> 6-week rollout with iterative sprints</p>
+      </div>
+      <div class="card">
+        <h3>Positioning</h3>
+        <p>Affordable luxury fashion rental boutique delivering curated bridal and occasion wear with fittings, styling guidance, and coordinated jewellery.</p>
+        <div class="flex">
+          <span class="pill">Premium boutique</span>
+          <span class="pill">Local discovery</span>
+          <span class="pill">Conversion-ready</span>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="problem">
+    <div class="container grid two">
+      <div class="card">
+        <h2>Problem Statement</h2>
+        <p>The boutique’s previous site lacked a clear path to “Book a trial” or “Check availability,” buried locality signals for Dehradun, and presented mixed visuals that diluted the premium feel. Slow load times on mobile and thin copy around “bridal lehenga on rent in Dehradun” and “gown on rent in Dehradun” limited qualified inquiries.</p>
+      </div>
+      <div class="card">
+        <h3>Constraints</h3>
+        <ul>
+          <li>No exact address exposure; locality-only (Sahastradhara Road, Dehradun).</li>
+          <li>Inventory changes weekly; pages needed modular updates without heavy CMS.</li>
+          <li>Low-maintenance stack; no heavy external libraries.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+  <section id="goals">
+    <div class="container grid two">
+      <div class="card">
+        <h2>Targeted Outcomes (KPIs)</h2>
+        <ul>
+          <li>Increase form and WhatsApp inquiries for bridal lehenga and gown rentals.</li>
+          <li>Improve local visibility for “wedding dress rental boutique Dehradun.”</li>
+          <li>Elevate perceived premium quality while keeping “affordable luxury” messaging.</li>
+          <li>Reduce mobile LCP and improve accessibility for all key flows.</li>
+        </ul>
+      </div>
+      <div class="card grid three">
+        <div class="stat-block">
+          <div class="label">Observed improvements</div>
+          <div class="muted">Higher engagement on bridal and gown sections (qualitative).</div>
+        </div>
+        <div class="stat-block">
+          <div class="label">Lead quality</div>
+          <div class="muted">More specific “availability + fitting” inquiries (qualitative).</div>
+        </div>
+        <div class="stat-block">
+          <div class="label">Performance</div>
+          <div class="muted">Faster mobile paint with image and font optimizations.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="discovery">
+    <div class="container card">
+      <h2>Discovery Insights</h2>
+      <ul>
+        <li>Search intent centered on “bridal lehenga on rent in Dehradun,” “gown on rent in Dehradun,” and “jewellery on rent in Dehradun.”</li>
+        <li>Users wanted quick confirmation of availability, fitting slots, and price bands.</li>
+        <li>Trust cues (care process, hygiene, alterations) were missing in prior content.</li>
+        <li>Need to surface “Sahastradhara Road, Dehradun” without exposing the exact address.</li>
+      </ul>
+    </div>
+  </section>
+  <section id="strategy">
+    <div class="container grid two">
+      <div class="card">
+        <h2>Strategy</h2>
+        <ul>
+          <li><strong>Local SEO:</strong> City and locality mentions in H1/H2, schema for LocalBusiness, and location-rich body copy.</li>
+          <li><strong>Website structure:</strong> Clear menu for bridal lehengas, gowns, jewellery, party wear; dedicated CTAs per section.</li>
+          <li><strong>Messaging:</strong> Affordable luxury + premium fittings; hygiene, alterations, and coordinated jewellery as proof points.</li>
+          <li><strong>Conversion:</strong> Sticky WhatsApp, visible “Check availability,” and a short lead form.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Information Architecture</h3>
+        <p>Primary navigation: Home • Bridal Lehengas • Gowns • Jewellery • Party Wear • Gallery • FAQs • Contact.</p>
+        <p>Section flow: Hero → Client snapshot → Problem → Outcomes → Strategy → IA → Content & UX → SEO → Performance → Results → Screenshots → Tools → Challenges → Timeline → Deliverables → Testimonial → FAQ → CTA.</p>
+      </div>
+    </div>
+  </section>
+  <section id="ia">
+    <div class="container card">
+      <h2>Information Architecture (Menu & Sections)</h2>
+      <div class="grid three">
+        <div>
+          <h4>Menu</h4>
+          <ul>
+            <li>Home</li>
+            <li>Bridal Lehengas</li>
+            <li>Gowns</li>
+            <li>Jewellery</li>
+            <li>Party Wear</li>
+            <li>Gallery</li>
+            <li>FAQs</li>
+            <li>Contact</li>
+          </ul>
+        </div>
+        <div>
+          <h4>Lead Paths</h4>
+          <ul>
+            <li>Hero: “Check availability”</li>
+            <li>Section CTAs: “Book a trial”</li>
+            <li>Form: Name, Email, Message</li>
+            <li>WhatsApp sticky</li>
+          </ul>
+        </div>
+        <div>
+          <h4>Local Signals</h4>
+          <ul>
+            <li>Dehradun &amp; Sahastradhara Road mentions</li>
+            <li>LocalBusiness schema</li>
+            <li>Service keywords in headings</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="content">
+    <div class="container grid two">
+      <div class="card">
+        <h2>Content & UX Decisions</h2>
+        <ul>
+          <li>Lead with “Bridal Lehenga on Rent in Dehradun” and “Gown on Rent in Dehradun” in hero and service blocks.</li>
+          <li>Show hygiene, fitting, and styling assistance as trust anchors.</li>
+          <li>Provide jewellery coordination as an upsell; mention party wear rentals.</li>
+          <li>Use concise cards, high contrast, and mobile-first spacing.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Conversion UX</h3>
+        <ul>
+          <li>Sticky WhatsApp CTA + footer CTA bar.</li>
+          <li>Minimal form with front-end validation.</li>
+          <li>Anchor links and sticky table of contents on desktop.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+  <section id="seo">
+    <div class="container card">
+      <h2>SEO Implementation</h2>
+      <ul>
+        <li>On-page keywords: “Bridal Lehenga on Rent in Dehradun,” “Gown on Rent in Dehradun,” “Jewellery on Rent in Dehradun,” “Wedding dress rental boutique Dehradun.”</li>
+        <li>Structured data: WebPage, Organization, LocalBusiness, BreadcrumbList, FAQPage.</li>
+        <li>Internal linking plan to bridal/gown/jewellery/party wear sections.</li>
+        <li>Canonical tag set to [CASE_STUDY_URL]; OG/Twitter cards defined.</li>
+      </ul>
+    </div>
+  </section>
+  <section id="performance">
+    <div class="container grid two">
+      <div class="card">
+        <h2>Performance & Accessibility</h2>
+        <ul>
+          <li>Single-page, embedded CSS; no external libraries.</li>
+          <li>High-contrast palette, focus states, semantic landmarks.</li>
+          <li>Minimal JS for TOC highlighting and form validation.</li>
+          <li>Optimized layout for mobile-first readability.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Observed improvements (qualitative)</h3>
+        <ul>
+          <li>Smoother mobile load and scroll.</li>
+          <li>Clearer CTA visibility and reduced friction.</li>
+          <li>Better clarity of Dehradun locality signals.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+  <section id="results">
+    <div class="container card">
+      <h2>Results (Observed)</h2>
+      <p>We observed improved engagement on bridal and gown sections, more specific availability inquiries, and faster perceived performance without claiming exact numbers.</p>
+      <div class="grid three">
+        <div class="stat-block">
+          <div class="label">Engagement</div>
+          <div class="muted">Higher time-on-section for bridal/gown (qualitative).</div>
+        </div>
+        <div class="stat-block">
+          <div class="label">Lead quality</div>
+          <div class="muted">Inquiries mention dates and styles more often.</div>
+        </div>
+        <div class="stat-block">
+          <div class="label">Performance</div>
+          <div class="muted">Reduced blocking assets; faster mobile paint.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="screens">
+    <div class="container card">
+      <h2>Screenshots &amp; Visuals (Placeholders)</h2>
+      <div class="screens">
+        <div class="placeholder-img">Hero layout</div>
+        <div class="placeholder-img">Bridal lehenga section</div>
+        <div class="placeholder-img">Gown rentals</div>
+        <div class="placeholder-img">Jewellery on rent</div>
+        <div class="placeholder-img">CTA &amp; form</div>
+        <div class="placeholder-img">Mobile view</div>
+      </div>
+    </div>
+  </section>
+  <section id="tools">
+    <div class="container grid two">
+      <div class="card">
+        <h2>Tools &amp; Tech Stack</h2>
+        <ul>
+          <li>Static HTML/CSS/JS (no external libs)</li>
+          <li>JSON-LD for structured data</li>
+          <li>Semantic HTML5 + WCAG focus states</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Challenges &amp; How We Solved Them</h3>
+        <ul>
+          <li><strong>Locality without address:</strong> Highlighted Sahastradhara Road, Dehradun without publishing a full address.</li>
+          <li><strong>Inventory shifts:</strong> Modular sections that can be edited quickly.</li>
+          <li><strong>Performance:</strong> Kept assets inline, avoided heavy JS.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+  <section id="timeline">
+    <div class="container card">
+      <h2>Timeline</h2>
+      <table class="table">
+        <tr><th>Week</th><th>Focus</th></tr>
+        <tr><td>1</td><td>Discovery, keyword mapping, IA outline</td></tr>
+        <tr><td>2</td><td>Copy draft (bridal/gown/jewellery), CTA strategy</td></tr>
+        <tr><td>3</td><td>Design system, layout, accessibility passes</td></tr>
+        <tr><td>4</td><td>Performance tweaks, structured data</td></tr>
+        <tr><td>5</td><td>QA, TOC/sticky CTAs, form validation</td></tr>
+        <tr><td>6</td><td>Launch prep, SEO checks, handoff</td></tr>
+      </table>
+    </div>
+  </section>
+  <section id="deliverables">
+    <div class="container card">
+      <h2>Deliverables Checklist</h2>
+      <ul class="checklist">
+        <li>Hero, problem, outcomes, strategy, IA, results sections</li>
+        <li>Local SEO and structured data for Dehradun + Sahastradhara Road</li>
+        <li>Sticky TOC (desktop) and sticky WhatsApp CTA</li>
+        <li>Lead form with validation and mailto fallback</li>
+        <li>Performance-first, single HTML with inline CSS/JS</li>
+        <li>FAQ (6+ entries) and schema</li>
+      </ul>
+    </div>
+  </section>
+  <section id="testimonial">
+    <div class="container card">
+      <h2>Client Voice</h2>
+      <p>“Fluxorae kept our boutique’s premium vibe intact while making it easier for brides to check availability and book trials online.”</p>
+    </div>
+  </section>
+  <section id="faq">
+    <div class="container card">
+      <h2>FAQ</h2>
+      <div class="faq-item">
+        <h4>Do you offer bridal lehenga on rent in Dehradun?</h4>
+        <p>Yes, premium bridal lehengas with fittings and styling support.</p>
+      </div>
+      <div class="faq-item">
+        <h4>Can I book a gown on rent for receptions or cocktails?</h4>
+        <p>Yes, gowns are available for receptions, cocktails, and evening events.</p>
+      </div>
+      <div class="faq-item">
+        <h4>Is jewellery on rent available with outfits?</h4>
+        <p>Yes, coordinated jewellery on rent can be added to complete the look.</p>
+      </div>
+      <div class="faq-item">
+        <h4>Where is The Rented Runway located?</h4>
+        <p>Serving customers around Sahastradhara Road, Dehradun.</p>
+      </div>
+      <div class="faq-item">
+        <h4>How do I check availability or book a trial?</h4>
+        <p>Use the form below or WhatsApp to check availability, book a trial, or get a quote.</p>
+      </div>
+      <div class="faq-item">
+        <h4>Do you support last-minute rentals?</h4>
+        <p>Last-minute requests are accepted based on inventory; contact to confirm.</p>
+      </div>
+    </div>
+  </section>
+  <section id="contact">
+    <div class="container grid two">
+      <div class="card">
+        <h2>Book a trial / Check availability</h2>
+        <p>Use the form or WhatsApp to request availability for bridal lehengas, gowns, jewellery, or party wear rentals in Dehradun.</p>
+        <form id="lead-form">
+          <input type="text" id="name" name="name" placeholder="Your name" aria-label="Name" required />
+          <input type="email" id="email" name="email" placeholder="Your email" aria-label="Email" required />
+          <textarea id="message" name="message" placeholder="What do you want to rent? Date? Size? Dehradun location?" aria-label="Message" required></textarea>
+          <button type="submit" class="cta-button">Submit &amp; get a quote</button>
+          <div class="status" id="form-status"></div>
+        </form>
+      </div>
+      <div class="card">
+        <h3>Talk to us</h3>
+        <p><strong>WhatsApp:</strong> <a href="[WHATSAPP_LINK]">[WHATSAPP_LINK]</a></p>
+        <p><strong>Email:</strong> <a href="mailto:[EMAIL]">[EMAIL]</a></p>
+        <p><strong>Phone:</strong> <a href="tel:[PHONE]">[PHONE]</a></p>
+        <p><strong>Agency:</strong> Fluxorae Private Limited</p>
+      </div>
+    </div>
+  </section>
+  <section>
+    <div class="container">
+      <details>
+        <summary>SEO Keyword Plan (hidden)</summary>
+        <p><strong>Primary:</strong> Bridal lehenga on rent in Dehradun</p>
+        <p><strong>Secondary:</strong> Gown on rent in Dehradun; Jewellery on rent in Dehradun; Wedding dress rental boutique Dehradun; The Rented Runway Dehradun; Sahastradhara Road Dehradun</p>
+        <p><strong>Long-tail:</strong> Book bridal lehenga trial Dehradun; Affordable luxury lehenga rental Dehradun; Party wear dress on rent Dehradun; Bridal jewellery on rent Dehradun; Schedule gown fitting Dehradun</p>
+        <p><strong>Internal links (placeholders):</strong> [AGENCY_URL]/case-studies • [AGENCY_URL]/services/local-seo • [AGENCY_URL]/contact</p>
+      </details>
+    </div>
+  </section>
+  <script>
+    const tocLinks = Array.from(document.querySelectorAll('.toc a'));
+    const sections = tocLinks.map(link => document.querySelector(link.getAttribute('href')));
+    window.addEventListener('scroll', () => {
+      const fromTop = window.scrollY + 120;
+      let current = null;
+      sections.forEach(sec => { if (sec && sec.offsetTop <= fromTop) current = sec; });
+      tocLinks.forEach(link => link.classList.toggle('active', current && link.getAttribute('href') === '#' + current.id));
+    });
+    const form = document.getElementById('lead-form');
+    const statusEl = document.getElementById('form-status');
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      statusEl.textContent = '';
+      const name = form.name.value.trim();
+      const email = form.email.value.trim();
+      const message = form.message.value.trim();
+      const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!name || !email || !message) {
+        statusEl.textContent = 'Please fill all fields.';
+        statusEl.style.color = 'var(--danger)';
+        return;
+      }
+      if (!emailPattern.test(email)) {
+        statusEl.textContent = 'Enter a valid email.';
+        statusEl.style.color = 'var(--danger)';
+        return;
+      }
+      const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\nMessage: ${message}`);
+      window.location.href = `mailto:[EMAIL]?subject=Case Study Lead - The Rented Runway&body=${body}`;
+      statusEl.textContent = 'Opening your email client...';
+      statusEl.style.color = 'var(--success)';
+      form.reset();
+    });
+  </script>
+</body>
+</html>
