@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import { Metadata } from 'next'
 import TocClient from './toc-client'
 import LeadFormClient from './lead-form-client'
@@ -6,19 +7,19 @@ export const metadata: Metadata = {
   title: 'The Rented Runway Dehradun Case Study | Bridal & Gown Rentals by Fluxorae',
   description:
     'How Fluxorae elevated The Rented Runway, a Dehradun bridal rental boutique, with SEO, UX, and lead flow improvements.',
-  alternates: { canonical: '[CASE_STUDY_URL]' },
+  alternates: { canonical: 'https://www.fluxorae.com/case-studies/the-rented-runway' },
   openGraph: {
     title: 'The Rented Runway Dehradun Case Study | Bridal & Gown Rentals by Fluxorae',
     description: 'Fluxorae’s UX and SEO uplift for a premium fashion rental boutique in Dehradun.',
-    url: '[CASE_STUDY_URL]',
+    url: 'https://www.fluxorae.com/case-studies/the-rented-runway',
     type: 'article',
-    images: [{ url: '[OG_IMAGE_URL]' }],
+    images: [{ url: '/og-image-rented-runway.png' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'The Rented Runway Dehradun Case Study | Bridal & Gown Rentals by Fluxorae',
     description: 'Fluxorae’s UX and SEO uplift for a premium fashion rental boutique in Dehradun.',
-    images: ['[OG_IMAGE_URL]'],
+    images: ['/og-image-rented-runway.png'],
   },
 }
 
@@ -44,31 +45,31 @@ const jsonLd = {
     {
       '@type': 'Organization',
       name: 'Fluxorae Private Limited',
-      url: '[AGENCY_URL]',
-      logo: '[OG_IMAGE_URL]',
+      url: 'https://www.fluxorae.com',
+      logo: '/og-image-rented-runway.png',
       contactPoint: {
         '@type': 'ContactPoint',
         contactType: 'Customer Service',
-        email: '[EMAIL]',
-        telephone: '[PHONE]',
+        email: 'contact@fluxorae.com',
+        telephone: '+91XXXXXXX',
       },
     },
     {
       '@type': 'WebPage',
       name: 'The Rented Runway Dehradun Case Study',
-      url: '[CASE_STUDY_URL]',
+      url: 'https://www.fluxorae.com/case-studies/the-rented-runway',
       description:
         'Case study by Fluxorae for The Rented Runway, a bridal and gown rental boutique in Dehradun.',
       breadcrumb: {
-        '@id': '[CASE_STUDY_URL]#breadcrumb',
+        '@id': 'https://www.fluxorae.com/case-studies/the-rented-runway#breadcrumb',
       },
     },
     {
       '@type': 'LocalBusiness',
       name: 'The Rented Runway',
-      image: '[OG_IMAGE_URL]',
-      url: '[CASE_STUDY_URL]',
-      telephone: '[PHONE]',
+      image: '/og-image-rented-runway.png',
+      url: 'https://www.fluxorae.com/case-studies/the-rented-runway',
+      telephone: '+91XXXXXXX',
       priceRange: '$$',
       address: {
         '@type': 'PostalAddress',
@@ -76,15 +77,15 @@ const jsonLd = {
         addressRegion: 'Uttarakhand',
         addressCountry: 'India',
       },
-      sameAs: '[AGENCY_URL]',
+      sameAs: 'https://www.fluxorae.com',
     },
     {
       '@type': 'BreadcrumbList',
-      '@id': '[CASE_STUDY_URL]#breadcrumb',
+      '@id': 'https://www.fluxorae.com/case-studies/the-rented-runway#breadcrumb',
       itemListElement: [
-        { '@type': 'ListItem', position: 1, name: 'Home', item: '[AGENCY_URL]' },
-        { '@type': 'ListItem', position: 2, name: 'Case Studies', item: '[AGENCY_URL]/case-studies' },
-        { '@type': 'ListItem', position: 3, name: 'The Rented Runway Dehradun', item: '[CASE_STUDY_URL]' },
+        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.fluxorae.com' },
+        { '@type': 'ListItem', position: 2, name: 'Case Studies', item: 'https://www.fluxorae.com/case-studies' },
+        { '@type': 'ListItem', position: 3, name: 'The Rented Runway Dehradun', item: 'https://www.fluxorae.com/case-studies/the-rented-runway' },
       ],
     },
     {
@@ -178,7 +179,7 @@ const cards = {
     'On-page keywords: Bridal/Gown/Jewellery on Rent in Dehradun; Wedding dress rental boutique Dehradun.',
     'Structured data: WebPage, Organization, LocalBusiness, BreadcrumbList, FAQPage.',
     'Internal linking plan to bridal/gown/jewellery/party wear sections.',
-    'Canonical: [CASE_STUDY_URL]; OG/Twitter cards defined.',
+    'Canonical: https://www.fluxorae.com/case-studies/the-rented-runway; OG/Twitter cards defined.',
   ],
   performance: [
     'Single-page layout; no external libraries.',
@@ -212,7 +213,7 @@ export default function CaseStudyPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
 
       <a
-        href="[WHATSAPP_LINK]"
+        href="https://wa.me/91XXXXXXX"
         className="fixed right-4 bottom-24 z-30 bg-gradient-to-r from-accent to-amber-300 text-primary font-bold px-4 py-3 rounded-full shadow-[0_15px_40px_rgba(0,0,0,0.35)] hover:-translate-y-0.5 transition"
       >
         WhatsApp • Check availability
@@ -224,12 +225,12 @@ export default function CaseStudyPage() {
           <div className="text-sm text-secondary/80">Book a trial • Request availability • Get a quote</div>
         </div>
         <div className="flex gap-2 flex-wrap">
-          <a className="border border-white/20 text-white px-4 py-2 rounded-full hover:bg-white/10 transition" href="tel:[PHONE]">
+          <a className="border border-white/20 text-white px-4 py-2 rounded-full hover:bg-white/10 transition" href="tel:+91XXXXXXX">
             Call us
           </a>
           <a
             className="bg-gradient-to-r from-accent to-amber-300 text-primary font-semibold px-4 py-2 rounded-full shadow-[0_10px_30px_rgba(0,0,0,0.3)] hover:-translate-y-0.5 transition"
-            href="[WHATSAPP_LINK]"
+            href="https://wa.me/91XXXXXXX"
           >
             WhatsApp
           </a>
@@ -255,7 +256,7 @@ export default function CaseStudyPage() {
             </div>
             <div className="mt-5 flex flex-wrap gap-3">
               <a
-                href="[WHATSAPP_LINK]"
+                href="https://wa.me/91XXXXXXX"
                 className="bg-gradient-to-r from-accent to-amber-300 text-primary font-semibold px-5 py-3 rounded-full shadow-[0_15px_40px_rgba(0,0,0,0.35)] hover:-translate-y-0.5 transition"
               >
                 Check availability
@@ -496,6 +497,23 @@ export default function CaseStudyPage() {
           </div>
         </Section>
 
+        <Section id="links" title="Related Links">
+          <div className={card + ' flex flex-wrap gap-3'}>
+            <Link className="text-accent hover:underline" href="/services">
+              View services
+            </Link>
+            <Link className="text-accent hover:underline" href="/insights">
+              Read insights
+            </Link>
+            <Link className="text-accent hover:underline" href="/contact">
+              Contact us
+            </Link>
+            <Link className="text-accent hover:underline" href="/case-study-rk-petals">
+              RK Petals and Decor (Kanpur) case study
+            </Link>
+          </div>
+        </Section>
+
         <Section id="faq" title="FAQ">
           <div className={card}>
             {cards.faq.map(([q, a]) => (
@@ -518,15 +536,21 @@ export default function CaseStudyPage() {
             <div className={card}>
               <h3 className="text-white text-lg font-semibold mb-2">Talk to us</h3>
               <p>
-                <strong>WhatsApp:</strong> <a className="text-accent hover:underline" href="[WHATSAPP_LINK]">[WHATSAPP_LINK]</a>
+                <strong>WhatsApp:</strong> <a className="text-accent hover:underline" href="https://wa.me/91XXXXXXX">https://wa.me/91XXXXXXX</a>
               </p>
               <p>
-                <strong>Email:</strong> <a className="text-accent hover:underline" href="mailto:[EMAIL]">[EMAIL]</a>
+                <strong>Email:</strong> <a className="text-accent hover:underline" href="mailto:contact@fluxorae.com">contact@fluxorae.com</a>
               </p>
               <p>
-                <strong>Phone:</strong> <a className="text-accent hover:underline" href="tel:[PHONE]">[PHONE]</a>
+                <strong>Phone:</strong> <a className="text-accent hover:underline" href="tel:+91XXXXXXX">+91XXXXXXX</a>
               </p>
               <p><strong>Agency:</strong> Fluxorae Private Limited</p>
+              <div className="mt-3 flex flex-wrap gap-2 text-sm">
+                <Link className="text-accent hover:underline" href="/services">Services</Link>
+                <Link className="text-accent hover:underline" href="/insights">Insights</Link>
+                <Link className="text-accent hover:underline" href="/contact">Contact</Link>
+                <Link className="text-accent hover:underline" href="/case-study-rk-petals">RK Petals (Kanpur)</Link>
+              </div>
             </div>
           </div>
         </Section>
@@ -544,7 +568,7 @@ export default function CaseStudyPage() {
               <strong>Long-tail:</strong> Book bridal lehenga trial Dehradun; Affordable luxury lehenga rental Dehradun; Party wear dress on rent Dehradun; Bridal jewellery on rent Dehradun; Schedule gown fitting Dehradun
             </p>
             <p>
-              <strong>Internal links (placeholders):</strong> [AGENCY_URL]/case-studies • [AGENCY_URL]/services/local-seo • [AGENCY_URL]/contact
+              <strong>Internal links (placeholders):</strong> https://www.fluxorae.com/case-studies • https://www.fluxorae.com/services/local-seo • https://www.fluxorae.com/contact
             </p>
           </details>
         </Section>
