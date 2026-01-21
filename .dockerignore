@@ -1,0 +1,11 @@
+.git
+.next
+/apps/*/.next
+node_modules
+/apps/*/node_modules
+npm-debug.log*
+yarn-error.log*
+.vscode
+.vercel
+dist
+coverage

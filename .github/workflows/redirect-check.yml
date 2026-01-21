@@ -1,0 +1,52 @@
+name: Check .in Redirects
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "30 2 * * *" # daily sanity
+  push:
+    branches: [main]
+    paths:
+      - "apps/public/next.config.js"
+      - ".github/workflows/redirect-check.yml"
+  workflow_call:
+
+jobs:
+  verify-redirects:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Verify fluxorae.in and www.fluxorae.in redirect to fluxorae.com
+        run: |
+          set -euo pipefail
+
+          check_redirect() {
+            host="$1"
+            expected="$2"
+            echo "Checking https://${host} -> ${expected}"
+
+            headers="$(mktemp)"
+            status="$(curl -I -sS --max-time 10 --retry 2 --retry-delay 1 --retry-connrefused -o "${headers}" -w '%{http_code}' "https://${host}/")"
+
+            if [ "${status}" != "301" ] && [ "${status}" != "308" ]; then
+              echo "Expected 301/308, got ${status}"
+              cat "${headers}"
+              exit 1
+            fi
+
+            location="$(grep -i '^location:' "${headers}" | head -1 | awk '{print $2}' | tr -d '\r')"
+            if [ -z "${location}" ]; then
+              echo "Missing Location header"
+              cat "${headers}"
+              exit 1
+            fi
+
+            case "${location}" in
+              ${expected}*) echo "OK: ${location}" ;;
+              *) echo "Unexpected Location: ${location} (wanted prefix ${expected})"; exit 1 ;;
+            esac
+
+            rm -f "${headers}"
+          }
+
+          check_redirect "fluxorae.in" "https://fluxorae.com/"
+          check_redirect "www.fluxorae.in" "https://fluxorae.com/"

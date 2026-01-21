@@ -4,12 +4,12 @@ on:
   push:
     branches: [main]
     paths:
-      - 'app/**'
-      - 'components/**'
-      - 'styles/**'
-      - 'lib/**'
-      - 'prisma/**'
-      - 'Dockerfile.web'
+      - 'apps/public/app/**'
+      - 'apps/public/components/**'
+      - 'apps/public/styles/**'
+      - 'apps/public/lib/**'
+      - 'apps/public/prisma/**'
+      - 'apps/public/Dockerfile.web'
       - '.github/workflows/deploy-ops.yml'
 
 concurrency:
@@ -36,7 +36,7 @@ jobs:
       - name: Install dependencies
         run: npm ci
       - name: Lint
-        run: npm run lint
+        run: npm run lint:public
 
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v4
@@ -61,7 +61,7 @@ jobs:
           LATEST_TAG: latest
         run: |
           IMAGE="$ECR_REGISTRY/${{ env.ECR_REPO }}"
-          docker build -f Dockerfile.web -t "$IMAGE:${LATEST_TAG}" .
+          docker build -f apps/public/Dockerfile.web -t "$IMAGE:${LATEST_TAG}" .
           docker tag "$IMAGE:${LATEST_TAG}" "$IMAGE:${SHA_TAG}"
           docker push "$IMAGE:${LATEST_TAG}"
           docker push "$IMAGE:${SHA_TAG}"

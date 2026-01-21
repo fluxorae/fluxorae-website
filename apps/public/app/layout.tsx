@@ -4,6 +4,7 @@ import './globals.css'
 import Header from '@/components/layout/Header'
 import Footer from '@/components/layout/Footer'
 import WhatsAppButton from '@/components/common/WhatsAppButton'
+import { SpeedInsights } from '@vercel/speed-insights/next'
 
 const inter = Inter({
   subsets: ['latin'],
@@ -18,6 +19,16 @@ const spaceGrotesk = Space_Grotesk({
   display: 'swap',
 })
 
+const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://fluxorae.com'
+const alternates = {
+  canonical: '/',
+  languages: {
+    'en-US': 'https://fluxorae.com',
+    'en-IN': 'https://fluxorae.in',
+    'x-default': 'https://fluxorae.com',
+  },
+}
+
 export const metadata: Metadata = {
   title: {
     default: 'Fluxorae Private Limited - Global Technology Solutions',
@@ -28,14 +39,12 @@ export const metadata: Metadata = {
   authors: [{ name: 'Fluxorae' }],
   creator: 'Fluxorae',
   publisher: 'Fluxorae',
-  metadataBase: new URL('https://fluxorae.com'),
-  alternates: {
-    canonical: '/',
-  },
+  metadataBase: new URL(baseUrl),
+  alternates,
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://fluxorae.com',
+    url: baseUrl,
     siteName: 'Fluxorae',
     title: 'Fluxorae - Global Technology Solutions & Innovation',
     description: 'Fluxorae - A global leader in technology solutions, innovation, and digital transformation.',
@@ -89,8 +98,8 @@ export default function RootLayout({
               '@context': 'https://schema.org',
               '@type': 'Organization',
               name: 'Fluxorae Private Limited',
-              url: 'https://fluxorae.com',
-              logo: 'https://fluxorae.com/logo.png',
+              url: baseUrl,
+              logo: `${baseUrl}/logo.png`,
               description: 'Global leader in Software Installation & Technology Services',
               address: {
                 '@type': 'PostalAddress',
@@ -121,6 +130,7 @@ export default function RootLayout({
         </main>
         <Footer />
         <WhatsAppButton />
+        <SpeedInsights />
       </body>
     </html>
   )
