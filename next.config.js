@@ -13,6 +13,21 @@ const nextConfig = {
   },
   async redirects() {
     return [
+      // Keep ops dashboard and health endpoint on .in (no-op redirects)
+      {
+        source: '/ops',
+        has: [{ type: 'host', value: 'fluxorae.in' }],
+        destination: '/ops',
+        permanent: false,
+      },
+      {
+        source: '/api/health',
+        has: [{ type: 'host', value: 'fluxorae.in' }],
+        destination: '/api/health',
+        permanent: false,
+      },
+
+      // Redirect everything else from fluxorae.in to fluxorae.com
       {
         source: '/:path*',
         has: [
@@ -22,17 +37,6 @@ const nextConfig = {
           },
         ],
         destination: 'https://fluxorae.com/:path*',
-        permanent: true,
-      },
-      {
-        source: '/:path*',
-        has: [
-          {
-            type: 'host',
-            value: 'www.fluxorae.in',
-          },
-        ],
-        destination: 'https://www.fluxorae.com/:path*',
         permanent: true,
       },
     ];
