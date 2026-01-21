@@ -6,7 +6,7 @@ import { Globe2, Layers, ShieldCheck, Zap, Timer, LineChart } from 'lucide-react
 const reasons = [
   {
     icon: Layers,
-    title: 'Strategy → Build → Scale',
+    title: 'Strategy + Build + Scale',
     description: 'One team across discovery, product, AI, and growth—no handoff friction.',
   },
   {
@@ -17,7 +17,7 @@ const reasons = [
   {
     icon: ShieldCheck,
     title: 'Secure & Compliant',
-    description: 'Security, governance, and privacy-first patterns aligned with enterprise standards.',
+    description: 'Security, governance, and privacy-first patterns aligned to enterprise standards.',
   },
   {
     icon: Timer,

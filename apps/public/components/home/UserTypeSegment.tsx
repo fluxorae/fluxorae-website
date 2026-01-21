@@ -1,4 +1,4 @@
- 'use client'
+'use client'
 
 import { Building2, BadgeCheck, ArrowRight } from 'lucide-react'
 import Link from 'next/link'

@@ -35,8 +35,8 @@ export const metadata: Metadata = {
     default: 'Fluxorae Private Limited - Global Technology Solutions',
     template: '%s | Fluxorae',
   },
-  description: 'Fluxorae Private Limited - Global leader in Software Installation & Technology Services. Empowering businesses worldwide with cutting-edge technology.',
-  keywords: ['Fluxorae', 'Technology Solutions', 'Digital Transformation', 'Innovation', 'Enterprise Solutions', 'Global Technology'],
+  description: 'Fluxorae is an AI-native digital engineering partner delivering product builds, automation, data platforms, and growth that converts—securely and fast.',
+  keywords: ['Fluxorae', 'AI automation', 'digital engineering', 'product development', 'SEO', 'enterprise technology'],
   authors: [{ name: 'Fluxorae' }],
   creator: 'Fluxorae',
   publisher: 'Fluxorae',
@@ -47,8 +47,8 @@ export const metadata: Metadata = {
     locale: 'en_US',
     url: baseUrl,
     siteName: 'Fluxorae',
-    title: 'Fluxorae - Global Technology Solutions & Innovation',
-    description: 'Fluxorae - A global leader in technology solutions, innovation, and digital transformation.',
+    title: 'Fluxorae - AI-Native Digital Engineering & Growth',
+    description: 'Product engineering, AI automation, data, and growth teams shipping outcomes in weeks.',
     images: [
       {
         url: '/og-image.jpg',
@@ -60,8 +60,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Fluxorae - Global Technology Solutions & Innovation',
-    description: 'Fluxorae - A global leader in technology solutions, innovation, and digital transformation.',
+    title: 'Fluxorae - AI-Native Digital Engineering & Growth',
+    description: 'Product engineering, AI automation, data, and growth teams shipping outcomes in weeks.',
     images: ['/og-image.jpg'],
   },
   robots: {

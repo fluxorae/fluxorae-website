@@ -8,7 +8,7 @@
   }
   
   body {
-    @apply text-secondary antialiased bg-primary;
+    @apply text-secondary antialiased bg-primary font-sans;
     background:
       radial-gradient(120% 120% at 18% 12%, rgba(245, 158, 11, 0.16), transparent 45%),
       radial-gradient(100% 100% at 85% 0%, rgba(103, 232, 249, 0.18), transparent 40%),

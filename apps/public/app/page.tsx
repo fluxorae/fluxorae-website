@@ -10,7 +10,7 @@ import UserTypeSegment from '@/components/home/UserTypeSegment'
 
 export const metadata: Metadata = {
   title: 'Home',
-  description: 'Fluxorae - Empowering businesses worldwide with cutting-edge technology solutions, innovation, and digital transformation.',
+  description: 'Fluxorae is an AI-native digital engineering partner delivering product, automation, data, and growth outcomes—fast, secure, and SEO-first.',
 }
 
 export default function Home() {
