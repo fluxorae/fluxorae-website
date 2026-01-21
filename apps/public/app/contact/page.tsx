@@ -13,13 +13,13 @@ export default function ContactPage() {
   return (
     <>
       <ContactHero />
-      <div className="section-padding bg-secondary-light">
+      <div className="section-padding bg-primary-dark/30 border-t border-white/10">
         <div className="container-custom">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
-            <div className="lg:col-span-1">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12">
+            <div className="lg:col-span-1 panel h-full">
               <ContactInfo />
             </div>
-            <div className="lg:col-span-2">
+            <div className="lg:col-span-2 panel">
               <Suspense fallback={<div className="glass-panel p-6 rounded-2xl text-secondary">Loading form...</div>}>
                 <ContactForm />
               </Suspense>
