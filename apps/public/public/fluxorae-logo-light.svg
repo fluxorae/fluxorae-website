@@ -1,0 +1,17 @@
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Fluxorae logo light">
+  <defs>
+    <linearGradient id="warm" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ff5a3c"/>
+      <stop offset="100%" stop-color="#d6322d"/>
+    </linearGradient>
+    <linearGradient id="cool" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#28c4ff"/>
+      <stop offset="100%" stop-color="#0a77d5"/>
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" rx="64" fill="#ffffff"/>
+  <path d="M256 44 L464 440 H48 Z" stroke="#0a77d5" stroke-width="28" stroke-linejoin="round" fill="none"/>
+  <path d="M228 208 L142 170 L168 230 L94 286 L186 262 L162 332 L238 274 Z" fill="url(#warm)"/>
+  <path d="M252 94 C276 80 320 78 344 98 L332 140 L360 140 C374 150 374 172 350 182 L312 182 L296 220 L330 220 C352 228 360 246 348 260 L312 260 L294 324 L258 360 L228 348 L248 302 L214 282 L236 252 L206 230 L228 208 L210 188 L252 198 Z" fill="url(#warm)"/>
+  <path d="M276 130 L356 130 C366 130 372 134 366 148 L346 192 L306 192 L292 228 L334 228 C346 228 350 236 344 248 L324 288 L282 288 L260 356 L220 344 L276 130 Z" fill="url(#cool)"/>
+</svg>

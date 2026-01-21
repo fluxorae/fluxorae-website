@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import { Facebook, Twitter, Linkedin, Instagram, Mail, Phone, MapPin } from 'lucide-react'
 
 const footerLinks = {
@@ -37,11 +38,20 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 lg:gap-8">
           {/* Company Info */}
           <div className="lg:col-span-2">
-            <Link href="/" className="flex items-center space-x-2 mb-6 group">
-              <span className="text-3xl font-bold tracking-tight">
-                <span className="text-accent">Flux</span>orae
+            <Link href="/" className="flex items-center gap-3 mb-6 group">
+              <div className="relative w-11 h-11">
+                <Image
+                  src="/fluxorae-logo.svg"
+                  alt="Fluxorae logo"
+                  fill
+                  className="object-contain drop-shadow"
+                  sizes="44px"
+                  loading="lazy"
+                />
+              </div>
+              <span className="text-3xl font-bold tracking-tight text-white group-hover:text-accent transition-colors">
+                Fluxorae
               </span>
-              <span className="text-xs text-accent font-medium">®</span>
             </Link>
             <div className="space-y-6 mb-8">
               <p className="text-gray-300 text-sm leading-relaxed max-w-sm">

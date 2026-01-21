@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Menu, X, PhoneCall } from 'lucide-react'
@@ -37,10 +38,24 @@ export default function Header() {
       <nav className="container-custom">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <Link href="/" className="flex items-center space-x-2 group">
+          <Link href="/" className="flex items-center gap-3 group">
+            <div className="relative w-10 h-10">
+              <Image
+                src="/fluxorae-logo.svg"
+                alt="Fluxorae"
+                fill
+                className="object-contain drop-shadow"
+                sizes="40px"
+                priority
+              />
+            </div>
             <div className="flex items-center">
-              <span className="text-2xl font-bold text-white tracking-tight group-hover:text-accent transition-colors">Fluxorae</span>
-              <span className="ml-1 text-xs text-accent font-medium bg-white/5 rounded-full px-1.5 py-0.5">AI</span>
+              <span className="text-2xl font-bold text-white tracking-tight group-hover:text-accent transition-colors">
+                Fluxorae
+              </span>
+              <span className="ml-1 text-xs text-accent font-medium bg-white/5 rounded-full px-1.5 py-0.5">
+                AI
+              </span>
             </div>
           </Link>
 
