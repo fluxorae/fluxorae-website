@@ -3,12 +3,12 @@ import { ServiceDetailPage } from '@/components/services/ServiceDetailPage'
 
 export const metadata: Metadata = {
   title: 'AI & Automation',
-  description: 'Copilots, workflow automation, and data agents tuned to your stack—human-in-loop, secure, and shipped in weeks.',
+  description: 'Copilots, workflow automation, and data agents tuned to your stack - human-in-loop, secure, and shipped in weeks.',
 }
 
 const data = {
   title: 'AI & Automation',
-  subtitle: 'Copilots • Agents • Workflow automation',
+  subtitle: 'Copilots - Agents - Workflow automation',
   description: 'Design and deploy AI copilots, workflow automations, and data agents that blend into your tools. Human-in-loop guardrails, observability, and cost controls baked in.',
   primaryCTA: { text: 'Book a Free Consultation', href: '/contact' },
   secondaryCTA: { text: 'View Case Studies', href: '/solutions' },
@@ -25,7 +25,7 @@ const data = {
     'Dashboards for latency, quality, and human override routes.',
   ],
   outcomes: [
-    '-30–50% ops time in 6–8 weeks',
+    '-30-50% ops time in 6-8 weeks',
     'Human-in-loop approvals with auditability',
     'Better SLA adherence and faster turnaround',
     'Predictable cost controls on model usage',

@@ -32,7 +32,7 @@ export default async function OpsPage() {
           <div className="space-y-4">
             <div className="inline-flex items-center gap-2 rounded-full bg-bharat-saffron/15 px-4 py-2 text-sm text-bharat-saffron">
               <Sparkles size={16} />
-              Bharat-ready • AI Ops Online
+              Bharat-ready - AI Ops Online
             </div>
             <h1 className="text-4xl md:text-5xl font-display text-white leading-tight">
               Fluxorae Mission Control
@@ -139,11 +139,11 @@ export default async function OpsPage() {
             <Cpu size={18} /> Automation
           </div>
           <p className="text-sm text-gray-300">Recent automations executed within budget and SLAs.</p>
-          <ul className="space-y-2 text-sm text-gray-200">
-            <li>• AI Ops triage: running</li>
-            <li>• Lead nurture sequences: active</li>
-            <li>• Report generation: scheduled</li>
-          </ul>
+            <ul className="space-y-2 text-sm text-gray-200">
+              <li>- AI Ops triage: running</li>
+              <li>- Lead nurture sequences: active</li>
+              <li>- Report generation: scheduled</li>
+            </ul>
         </div>
         <div className="rounded-3xl border border-white/10 bg-white/5 p-7 backdrop-blur-xl space-y-4">
           <div className="flex items-center gap-2 text-white font-semibold text-lg">

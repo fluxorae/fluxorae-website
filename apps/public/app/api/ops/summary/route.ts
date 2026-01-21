@@ -11,7 +11,7 @@ const fallback: SummaryPayload = {
   metrics: [
     { label: 'Active Projects', value: 18, trend: '+3 this week' },
     { label: 'Tickets Open', value: 12, trend: '-5 since Monday' },
-    { label: 'Invoices Due', value: 6, trend: '₹4.8L pending' },
+    { label: 'Invoices Due', value: 6, trend: 'INR 4.8L pending' },
     { label: 'Uptime', value: '99.9%', trend: 'Green' },
   ],
   timeline: [

@@ -46,7 +46,7 @@ export default function StatsSection() {
           </div>
           <h2 className="heading-2 mb-4 text-white">Outcomes that keep compounding</h2>
           <p className="text-lg text-gray-300 max-w-3xl mx-auto">
-            We track every engagement to the numbers that matter—pipeline, conversion, uptime, and satisfaction.
+            We track every engagement to the numbers that matter - pipeline, conversion, uptime, and satisfaction.
           </p>
         </motion.div>
 

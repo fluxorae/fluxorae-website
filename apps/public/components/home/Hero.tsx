@@ -36,7 +36,7 @@ export default function Hero() {
               transition={{ duration: 0.6 }}
               className="heading-1 text-balance"
             >
-              Design, ship, and scale experiences that feel premium—and perform.
+              Design, ship, and scale experiences that feel premium - and perform.
             </motion.h1>
 
             <motion.p
@@ -45,7 +45,7 @@ export default function Hero() {
               transition={{ delay: 0.1, duration: 0.6 }}
               className="text-lg md:text-xl text-gray-200 max-w-3xl text-balance"
             >
-              Fluxorae blends AI automation, product engineering, data, and growth to launch high-converting digital products faster—with reliability, governance, and SEO baked in.
+              Fluxorae blends AI automation, product engineering, data, and growth to launch high-converting digital products faster - with reliability, governance, and SEO baked in.
             </motion.p>
 
             <motion.div
@@ -128,3 +128,4 @@ export default function Hero() {
     </section>
   )
 }
+

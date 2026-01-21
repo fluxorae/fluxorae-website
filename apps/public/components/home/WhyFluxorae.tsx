@@ -7,7 +7,7 @@ const reasons = [
   {
     icon: Layers,
     title: 'Strategy + Build + Scale',
-    description: 'One team across discovery, product, AI, and growth—no handoff friction.',
+    description: 'One team across discovery, product, AI, and growth - no handoff friction.',
   },
   {
     icon: Zap,

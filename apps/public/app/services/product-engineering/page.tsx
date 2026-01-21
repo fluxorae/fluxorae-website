@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 
 const data = {
   title: 'Product & Web Development',
-  subtitle: 'Next.js • Design systems • APIs',
+  subtitle: 'Next.js - Design systems - APIs',
   description: 'Build fast, resilient web and product experiences with a design system backbone, CI/CD, and observability. Performance, accessibility, and SEO are baked in.',
   primaryCTA: { text: 'Book a Free Consultation', href: '/contact' },
   secondaryCTA: { text: 'View Work', href: '/solutions' },

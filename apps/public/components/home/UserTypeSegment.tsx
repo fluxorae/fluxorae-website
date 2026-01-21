@@ -15,7 +15,7 @@ const cards = [
   {
     type: 'Employee',
     icon: BadgeCheck,
-    description: 'Need support, access, or HR help? We’ll route you fast.',
+    description: 'Need support, access, or HR help? We will route you fast.',
     highlights: ['Access / tooling', 'HR & updates', 'Support tickets', 'Policy guidance'],
     cta: { label: 'Open an internal request', href: '/contact?type=employee' },
   },
@@ -30,7 +30,7 @@ export default function UserTypeSegment() {
           <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-3">
             <h2 className="heading-2">Who are you?</h2>
             <p className="text-gray-300 max-w-xl">
-              Pick your path so we can tailor the conversation, whether you’re exploring services or need an internal update.
+              Pick your path so we can tailor the conversation, whether you are exploring services or need an internal update.
             </p>
           </div>
         </div>

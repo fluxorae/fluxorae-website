@@ -27,7 +27,7 @@ export default function AboutHero() {
             Building AI-era products, experiences, and growth engines
           </h1>
           <p className="text-xl md:text-2xl text-gray-200 max-w-4xl mx-auto text-balance">
-            Fluxorae is a tech-native team delivering strategy, product engineering, automation, and performance marketing—aligned to your OKRs, governed for security, and shipped with weekly demos.
+            Fluxorae is a tech-native team delivering strategy, product engineering, automation, and performance marketing - aligned to your OKRs, governed for security, and shipped with weekly demos.
           </p>
           <div className="flex flex-wrap justify-center gap-3">
             {['AI & Automation', 'Product Engineering', 'SEO & Growth', 'Design Systems', 'Data & Analytics', 'Cloud & DevOps'].map((item) => (

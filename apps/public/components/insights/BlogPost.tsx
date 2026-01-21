@@ -28,7 +28,7 @@ export default function BlogPost({ post }: BlogPostProps) {
           href="/insights"
           className="inline-flex items-center text-accent hover:underline mb-8"
         >
-          ← Back to Insights
+          <- Back to Insights
         </Link>
 
         <motion.div

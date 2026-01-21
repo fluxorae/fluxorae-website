@@ -152,7 +152,7 @@ export function ServiceDetailPage({
         <div className="glass-panel rounded-3xl border border-white/10 p-8 md:p-10 text-center space-y-4">
           <h3 className="heading-2 text-3xl">Ready to move fast?</h3>
           <p className="text-gray-300 text-lg max-w-2xl mx-auto">
-            Book a 30-minute consult to map your goals to a 6–8 week roadmap, with clear milestones and accountability.
+            Book a 30-minute consult to map your goals to a 6-8 week roadmap, with clear milestones and accountability.
           </p>
           <div className="flex flex-wrap gap-4 justify-center">
             <Link href="/contact" className="btn-primary">Book a Free Consultation</Link>

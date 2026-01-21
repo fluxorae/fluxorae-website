@@ -87,7 +87,7 @@ export default function ContactForm() {
           'Other',
         ],
       },
-      { name: 'budget', label: 'Budget Range', placeholder: 'E.g., ₹5-10L / $10-20k (optional)' },
+      { name: 'budget', label: 'Budget Range', placeholder: 'E.g., INR 5-10L / $10-20k (optional)' },
     ],
     [],
   )

@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 
 const data = {
   title: 'Digital Marketing & SEO',
-  subtitle: 'SEO • CRO • Performance ads',
+  subtitle: 'SEO - CRO - Performance ads',
   description: 'Technical SEO, conversion rate optimization, performance ads, and analytics with experimentation at the core. We tie every move to pipeline and revenue.',
   primaryCTA: { text: 'Book a Growth Call', href: '/contact' },
   secondaryCTA: { text: 'See Case Studies', href: '/solutions' },
@@ -25,7 +25,7 @@ const data = {
     'Analytics pipelines with dashboards for decision-makers.',
   ],
   outcomes: [
-    '+30–50% organic conversions from SEO uplifts',
+    '+30-50% organic conversions from SEO uplifts',
     'Improved CVR on key funnels (demo/contact/pricing)',
     'Channel clarity with standardized attribution models',
     'Faster experiment cadence with measured learnings',

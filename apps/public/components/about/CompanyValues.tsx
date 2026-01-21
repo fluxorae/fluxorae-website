@@ -12,7 +12,7 @@ const values = [
   {
     icon: Beaker,
     title: 'Experiment-Obsessed',
-    description: 'We test, measure, and learn—shipping features, automations, and CRO experiments continuously.',
+    description: 'We test, measure, and learn - shipping features, automations, and CRO experiments continuously.',
   },
   {
     icon: Users,
@@ -22,7 +22,7 @@ const values = [
   {
     icon: ShieldCheck,
     title: 'Secure by Default',
-    description: 'Governance, privacy, and compliance are baked in from day one—not bolted on later.',
+    description: 'Governance, privacy, and compliance are baked in from day one - not bolted on later.',
   },
   {
     icon: Sparkles,

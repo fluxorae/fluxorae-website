@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 
 const data = {
   title: 'Data, Cloud & DevOps',
-  subtitle: 'Cloud • SRE • Data & Analytics',
+  subtitle: 'Cloud - SRE - Data & Analytics',
   description: 'Modernize infrastructure, add SRE-grade reliability, and build governed data/analytics so teams can ship fast and decide faster.',
   primaryCTA: { text: 'Book an Architecture Review', href: '/contact' },
   secondaryCTA: { text: 'See Outcomes', href: '/solutions' },

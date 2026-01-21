@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 
 const data = {
   title: 'UI/UX & Branding',
-  subtitle: 'Design systems • Product UX • Brand',
+  subtitle: 'Design systems - Product UX - Brand',
   description: 'Build a unified brand and product experience with research-driven UX, design systems, and motion. Performance and accessibility are non-negotiable.',
   primaryCTA: { text: 'Book a Design Review', href: '/contact' },
   secondaryCTA: { text: 'View Portfolio', href: '/solutions' },

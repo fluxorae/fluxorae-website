@@ -65,7 +65,7 @@ export default function SolutionsShowcase() {
           </div>
           <h2 className="heading-2 mb-4">Proof of impact</h2>
           <p className="text-lg text-gray-300 max-w-3xl mx-auto">
-            A snapshot of how we deliver results with AI, product, growth, and data—fast.
+            A snapshot of how we deliver results with AI, product, growth, and data - fast.
           </p>
         </motion.div>
 

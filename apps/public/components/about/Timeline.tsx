@@ -17,7 +17,7 @@ const milestones = [
   {
     year: '2026',
     title: 'AI & Automation Sprints',
-    description: 'Delivered AI pilots, workflow automations, and data products for early clients—shipping in 6-8 week cycles.',
+    description: 'Delivered AI pilots, workflow automations, and data products for early clients - shipping in 6-8 week cycles.',
   },
   {
     year: '2026',
