@@ -9,42 +9,42 @@ const services = [
     icon: Bot,
     title: 'AI & Automation',
     description: 'Copilots, workflow automation, data agents, and GenAI accelerators tuned to your stack.',
-    color: 'from-emerald-400/80 via-accent to-purple-600',
+    color: 'from-electric-soft via-accent to-amber-500/90',
     href: '/services/ai-automation',
   },
   {
     icon: Code2,
     title: 'Product Engineering',
     description: 'Modern web & mobile experiences built on Next.js, edge-first architectures, and design systems.',
-    color: 'from-sky-400 to-cyan-500',
+    color: 'from-cyan-400 via-electric to-emerald-400',
     href: '/services/product-engineering',
   },
   {
     icon: Megaphone,
     title: 'Digital Marketing / SEO',
     description: 'Full-funnel growth: technical SEO, CRO, performance ads, analytics, and attribution.',
-    color: 'from-orange-400 to-amber-500',
+    color: 'from-amber-300 via-accent to-orange-500',
     href: '/services/marketing-seo',
   },
   {
     icon: Palette,
     title: 'UI/UX & Branding',
     description: 'Research-backed design, brand identity, and motion systems crafted for conversion.',
-    color: 'from-pink-500 to-rose-500',
+    color: 'from-electric-soft via-emerald-300 to-accent-light',
     href: '/services/ui-ux-branding',
   },
   {
     icon: DatabaseZap,
     title: 'Data & Analytics',
     description: 'Dashboards, customer 360, predictive models, and decision intelligence that ship quickly.',
-    color: 'from-blue-500 to-indigo-500',
+    color: 'from-electric via-electric-soft to-cyan-700',
     href: '/services/data-cloud-devops',
   },
   {
     icon: CloudCog,
     title: 'Cloud & DevOps',
     description: 'Cloud modernization, SRE, FinOps, and secure-by-default infra automation.',
-    color: 'from-teal-400 to-emerald-500',
+    color: 'from-amber-300 via-electric-soft to-emerald-500',
     href: '/services/data-cloud-devops',
   },
 ]
@@ -65,7 +65,7 @@ export default function ServicesOverview() {
           </div>
           <h2 className="heading-2 mb-4">Full-stack services for modern teams</h2>
           <p className="text-lg text-gray-300 max-w-3xl mx-auto">
-            Strategy to scale: AI, product engineering, growth, and brand—shipped as one integrated team.
+            Strategy to scale: AI, product engineering, growth, and brand - shipped as one integrated team.
           </p>
         </motion.div>
 

@@ -12,7 +12,7 @@ const services = [
     solution: 'Design and deploy copilots, workflow automation, and data agents tuned to your stack.',
     outcomes: ['-30% ops time in 8 weeks', 'Human-in-loop safety', 'Secure model routing'],
     stack: ['OpenAI/Anthropic', 'LangChain', 'Vercel AI', 'Airflow'],
-    color: 'from-emerald-400/80 via-accent to-purple-600',
+    color: 'from-electric-soft via-accent to-amber-500/90',
     href: '/services/ai-automation',
   },
   {
@@ -22,7 +22,7 @@ const services = [
     solution: 'Ship Next.js apps, design systems, and APIs with CI/CD and observability baked in.',
     outcomes: ['LCP < 2.5s', 'Design system governance', 'Weekly shipping cadence'],
     stack: ['Next.js', 'TypeScript', 'shadcn/ui', 'Prisma'],
-    color: 'from-sky-400 to-cyan-500',
+    color: 'from-cyan-400 via-electric to-emerald-400',
     href: '/services/product-engineering',
   },
   {
@@ -32,7 +32,7 @@ const services = [
     solution: 'Technical SEO, CRO, performance ads, and analytics with experimentation loops.',
     outcomes: ['+40% organic demos', 'CRO playbooks', 'Attribution clarity'],
     stack: ['GA4', 'Search Console', 'Tag Manager', 'Looker/Data Studio'],
-    color: 'from-orange-400 to-amber-500',
+    color: 'from-amber-300 via-accent to-orange-500',
     href: '/services/marketing-seo',
   },
   {
@@ -42,7 +42,7 @@ const services = [
     solution: 'Research, brand identity, interaction design, and motion built into components.',
     outcomes: ['Higher trust & clarity', 'Consistent design tokens', 'Faster build velocity'],
     stack: ['Figma', 'Lottie', 'Design Tokens', 'Storybook'],
-    color: 'from-pink-500 to-rose-500',
+    color: 'from-electric-soft via-emerald-300 to-accent-light',
     href: '/services/ui-ux-branding',
   },
   {
@@ -52,7 +52,7 @@ const services = [
     solution: 'Customer 360, dashboards, predictive models, and data contracts with governance.',
     outcomes: ['Live metrics dashboards', 'Predictive scoring', 'Data quality SLAs'],
     stack: ['dbt', 'BigQuery/Postgres', 'Metabase', 'Python'],
-    color: 'from-blue-500 to-indigo-500',
+    color: 'from-electric via-electric-soft to-cyan-700',
     href: '/services/data-cloud-devops',
   },
   {
@@ -62,7 +62,7 @@ const services = [
     solution: 'Cloud modernization, SRE, FinOps, and secure pipelines with clear runbooks.',
     outcomes: ['99.9%+ uptime targets', 'Cost visibility', 'Incident-ready playbooks'],
     stack: ['AWS', 'Docker', 'Kubernetes', 'Terraform'],
-    color: 'from-teal-400 to-emerald-500',
+    color: 'from-amber-300 via-electric-soft to-emerald-500',
     href: '/services/data-cloud-devops',
   },
 ]

@@ -10,19 +10,19 @@ const config: Config = {
     extend: {
       colors: {
         primary: {
-          DEFAULT: '#050816',
-          dark: '#02040a',
-          light: '#0f1629',
+          DEFAULT: '#04070f',
+          dark: '#020509',
+          light: '#0c1320',
         },
         secondary: {
-          DEFAULT: '#E2E8F0',
-          light: '#F8FAFC',
-          dark: '#0B1224',
+          DEFAULT: '#E6EEF7',
+          light: '#F5F8FC',
+          dark: '#0E1725',
         },
         accent: {
-          DEFAULT: '#8B5CF6',
-          dark: '#6D28D9',
-          light: '#A78BFA',
+          DEFAULT: '#F59E0B',
+          dark: '#D97706',
+          light: '#FCD34D',
         },
         bharat: {
           saffron: '#FF9933',
@@ -30,13 +30,13 @@ const config: Config = {
           ashoka: '#3A75C4',
         },
         electric: {
-          DEFAULT: '#14F195',
-          soft: '#5AE6C8',
+          DEFAULT: '#22D3EE',
+          soft: '#67E8F9',
         },
       },
       fontFamily: {
-        sans: ['Inter', 'system-ui', 'sans-serif'],
-        display: ['Space Grotesk', 'Inter', 'system-ui', 'sans-serif'],
+        sans: ['var(--font-manrope)', 'system-ui', 'sans-serif'],
+        display: ['var(--font-sora)', 'var(--font-manrope)', 'system-ui', 'sans-serif'],
       },
       animation: {
         'fade-in': 'fadeIn 0.6s ease-in-out',

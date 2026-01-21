@@ -15,7 +15,7 @@ const solutions = [
     title: 'Headless Web for B2B SaaS',
     description: 'Next.js + edge caching + SEO overhaul to capture more inbound and demo requests.',
     results: ['+42% organic demos', 'LCP < 2.5s', '+35% conversion on pricing'],
-    gradient: 'from-purple-500 to-blue-500',
+    gradient: 'from-electric-soft to-cyan-500',
   },
   {
     title: 'D2C Growth Engine',
@@ -41,7 +41,7 @@ export default function SolutionsShowcase() {
           </div>
           <h2 className="heading-2 mb-4">Proof that ships fast</h2>
           <p className="text-lg text-gray-300 max-w-3xl mx-auto">
-            Business impact delivered through AI, engineering, and growth in weeks—not quarters.
+            Business impact delivered through AI, engineering, and growth in weeks - not quarters.
           </p>
         </motion.div>
 

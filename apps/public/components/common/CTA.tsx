@@ -32,7 +32,7 @@ export default function CTA({
           <h2 className="heading-2 mb-6 text-white">{title}</h2>
           <p className="text-xl text-gray-200 mb-10 max-w-2xl mx-auto">{description}</p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Link href={primaryButton.href} className="btn-primary bg-accent hover:bg-accent-dark group">
+            <Link href={primaryButton.href} className="btn-primary group">
               {primaryButton.text}
               <ArrowRight className="inline-block ml-2 group-hover:translate-x-1 transition-transform" size={20} />
             </Link>
