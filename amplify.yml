@@ -5,8 +5,8 @@ applications:
       phases:
         preBuild:
           commands:
-            # Install using the root lockfile (monorepo workspace)
-            - npm ci --cache ../.npm --prefer-offline --prefix ..
+            # Install from repo root (lockfile lives at ../../package-lock.json)
+            - npm ci --cache ../../.npm --prefer-offline --prefix ../..
         build:
           commands:
             - npm run build
@@ -16,6 +16,6 @@ applications:
           - '**/*'
       cache:
         paths:
+          - ../../.npm/**/*
           - .next/cache/**/*
-          - .npm/**/*
           - node_modules/**/*
