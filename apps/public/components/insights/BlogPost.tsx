@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion'
 import Image from 'next/image'
-import { Calendar, Clock, User } from 'lucide-react'
+import { ArrowLeft, Calendar, Clock, User } from 'lucide-react'
 import { format } from 'date-fns'
 import Link from 'next/link'
 // import { PortableText } from '@portabletext/react'
@@ -28,7 +28,8 @@ export default function BlogPost({ post }: BlogPostProps) {
           href="/insights"
           className="inline-flex items-center text-accent hover:underline mb-8"
         >
-          <- Back to Insights
+          <ArrowLeft className="mr-2 h-4 w-4" aria-hidden />
+          Back to Insights
         </Link>
 
         <motion.div

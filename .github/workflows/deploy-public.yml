@@ -1,0 +1,85 @@
+name: Deploy Public (fluxorae.com)
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "apps/public/**"
+      - "package.json"
+      - "package-lock.json"
+      - ".github/workflows/deploy-public.yml"
+  workflow_dispatch:
+    inputs:
+      branch:
+        description: "Branch to deploy"
+        required: false
+        default: "main"
+
+concurrency:
+  group: deploy-public-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  NODE_VERSION: 20
+  AWS_REGION: eu-north-1
+  NEXT_TELEMETRY_DISABLED: 1
+  NEXT_PUBLIC_BASE_URL: https://fluxorae.com
+  NEXT_PUBLIC_SANITY_PROJECT_ID: placeholder
+  NEXT_PUBLIC_SANITY_DATASET: production
+  SMTP_HOST: localhost
+  SMTP_PORT: 1025
+  SMTP_USER: placeholder
+  SMTP_PASS: placeholder
+  SMTP_FROM: noreply@fluxorae.com
+  CONTACT_EMAIL: info@fluxorae.com
+  SKIP_DB: 1
+  DATABASE_URL: postgresql://user:password@localhost:5432/fluxorae
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Validate secrets
+        run: |
+          if [ -z "${{ secrets.AMPLIFY_APP_ID }}" ]; then
+            echo "Missing required secret: AMPLIFY_APP_ID"
+            exit 1
+          fi
+          if [ -z "${{ secrets.AWS_ACCESS_KEY_ID }}" ] || [ -z "${{ secrets.AWS_SECRET_ACCESS_KEY }}" ]; then
+            echo "Missing AWS credentials secrets"
+            exit 1
+          fi
+
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build (public)
+        run: npm run build:public
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ env.AWS_REGION }}
+
+      - name: Trigger Amplify deploy
+        env:
+          AMPLIFY_APP_ID: ${{ secrets.AMPLIFY_APP_ID }}
+          AMPLIFY_BRANCH: ${{ github.event.inputs.branch || 'main' }}
+        run: |
+          echo "Starting Amplify job for app ${AMPLIFY_APP_ID} on branch ${AMPLIFY_BRANCH}"
+          aws amplify start-job \
+            --app-id "${AMPLIFY_APP_ID}" \
+            --branch-name "${AMPLIFY_BRANCH}" \
+            --job-type RELEASE
