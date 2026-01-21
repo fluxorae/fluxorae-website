@@ -124,7 +124,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className={manrope.className}>
+      <body className={`${manrope.className} bg-primary text-secondary antialiased`}>
         <Header />
         <main className="min-h-screen">
           {children}
