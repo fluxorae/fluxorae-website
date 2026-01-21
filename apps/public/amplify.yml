@@ -1,18 +1,12 @@
-version: 1
-frontend:
-  phases:
-    preBuild:
-      commands:
-        - npm ci --cache .npm --prefer-offline
-    build:
-      commands:
-        - npm run build
-  artifacts:
-    baseDirectory: .next
-    files:
-      - '**/*'
-  cache:
-    paths:
-      - .next/cache/**/*
-      - .npm/**/*
-      - node_modules/**/*
+NODE_VERSION=20
+NEXT_PUBLIC_BASE_URL=https://fluxorae.com
+SKIP_DB=1
+SMTP_HOST=…
+SMTP_PORT=…
+SMTP_USER=…
+SMTP_PASSWORD=… (or SMTP_PASS=…)
+SMTP_FROM=…
+CONTACT_EMAIL=…
+NEXTAUTH_SECRET=…
+NEXT_PUBLIC_SANITY_PROJECT_ID=…
+NEXT_PUBLIC_SANITY_DATASET=…
