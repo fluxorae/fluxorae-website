@@ -7,6 +7,7 @@ import CTA from '@/components/common/CTA'
 import { Metadata } from 'next'
 import ServiceProcess from '@/components/services/ServiceProcess'
 import UserTypeSegment from '@/components/home/UserTypeSegment'
+import PricingPreview from '@/components/home/PricingPreview'
 
 export const metadata: Metadata = {
   title: 'Home',
@@ -22,6 +23,7 @@ export default function Home() {
       <SolutionsShowcase />
       <StatsSection />
       <WhyFluxorae />
+      <PricingPreview />
       <ServiceProcess />
       <CTA
         title="Book a 30-minute consult"

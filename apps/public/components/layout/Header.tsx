@@ -5,17 +5,34 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Menu, X, PhoneCall } from 'lucide-react'
+import { Menu, X, PhoneCall, ChevronDown } from 'lucide-react'
 
-const navigation = [
+const primaryLinks = [
   { name: 'Home', href: '/' },
   { name: 'About', href: '/about' },
-  { name: 'Services', href: '/services' },
-  { name: 'Solutions', href: '/solutions' },
-  { name: 'Industries', href: '/industries' },
-  { name: 'Insights', href: '/insights' },
-  { name: 'Careers', href: '/careers' },
-  { name: 'Contact', href: '/contact' },
+  { name: 'Case Studies', href: '/case-studies' },
+  { name: 'Pricing', href: '/pricing' },
+]
+
+const serviceColumns = [
+  {
+    title: 'Core',
+    links: [
+      { name: 'Services', href: '/services' },
+      { name: 'Solutions', href: '/solutions' },
+      { name: 'Industries', href: '/industries' },
+      { name: 'Contact', href: '/contact' },
+    ],
+  },
+  {
+    title: 'Resources',
+    links: [
+      { name: 'Insights', href: '/insights' },
+      { name: 'Case Study: Rented Runway', href: '/case-study-rented-runway' },
+      { name: 'Case Study: RK Petals', href: '/case-study-rk-petals' },
+      { name: 'Careers', href: '/careers' },
+    ],
+  },
 ]
 
 export default function Header() {
@@ -61,7 +78,7 @@ export default function Header() {
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center space-x-8">
-            {navigation.map((item) => {
+            {primaryLinks.map((item) => {
               const isActive = pathname === item.href
               return (
                 <Link
@@ -83,6 +100,31 @@ export default function Header() {
                 </Link>
               )
             })}
+            <div className="relative group">
+              <button className="flex items-center gap-1 text-secondary hover:text-accent font-medium transition">
+                Solutions <ChevronDown size={16} />
+              </button>
+              <div className="invisible opacity-0 group-hover:visible group-hover:opacity-100 transition-all duration-200 absolute left-0 mt-3 w-[540px] bg-primary-dark/95 border border-white/10 rounded-2xl shadow-[0_25px_80px_rgba(0,0,0,0.45)] p-5">
+                <div className="grid grid-cols-2 gap-4">
+                  {serviceColumns.map((col) => (
+                    <div key={col.title}>
+                      <h4 className="text-white font-semibold mb-2 text-sm">{col.title}</h4>
+                      <div className="flex flex-col gap-2">
+                        {col.links.map((link) => (
+                          <Link
+                            key={link.name}
+                            href={link.href}
+                            className="text-secondary/85 hover:text-accent transition text-sm"
+                          >
+                            {link.name}
+                          </Link>
+                        ))}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
           </div>
 
           <div className="hidden lg:flex items-center space-x-3">
@@ -117,7 +159,7 @@ export default function Header() {
             className="lg:hidden bg-primary/90 border-t border-white/10 backdrop-blur"
           >
             <div className="container-custom py-4 space-y-2">
-              {navigation.map((item) => {
+              {primaryLinks.map((item) => {
                 const isActive = pathname === item.href
                 return (
                   <Link
@@ -125,15 +167,30 @@ export default function Header() {
                     href={item.href}
                     onClick={() => setIsMobileMenuOpen(false)}
                     className={`block px-4 py-2 rounded-lg font-medium transition-colors ${
-                      isActive
-                        ? 'bg-accent text-white'
-                        : 'text-secondary hover:bg-primary-light/70'
+                      isActive ? 'bg-accent text-white' : 'text-secondary hover:bg-primary-light/70'
                     }`}
                   >
                     {item.name}
                   </Link>
                 )
               })}
+              <div className="border border-white/10 rounded-lg overflow-hidden">
+                <button className="w-full text-left px-4 py-3 font-semibold text-white bg-white/5">Solutions & Resources</button>
+                <div className="bg-primary/80">
+                  {serviceColumns.flatMap((col) =>
+                    col.links.map((link) => (
+                      <Link
+                        key={link.name}
+                        href={link.href}
+                        onClick={() => setIsMobileMenuOpen(false)}
+                        className="block px-4 py-2 text-secondary hover:text-accent transition"
+                      >
+                        {link.name}
+                      </Link>
+                    )),
+                  )}
+                </div>
+              </div>
               <Link
                 href="/contact"
                 onClick={() => setIsMobileMenuOpen(false)}
