@@ -27,7 +27,8 @@ npx prisma migrate deploy   # or `migrate dev --name init` in dev
 
 ## 4) Public app (fluxorae.com)
 Option A (simplest): **AWS Amplify**
-- Connect repo, select `main`, set env vars (`NEXT_PUBLIC_BASE_URL=https://fluxorae.com`, `SKIP_DB=1` if you don’t want DB on public).
+- Connect repo, select `main`, set env vars (`NEXT_PUBLIC_BASE_URL=https://fluxorae.com`, `SKIP_DB=1` if you don't want DB on public).
+- Monorepo note: the root `amplify.yml` sets `appRoot: apps/public`; if configuring through the Amplify console instead, set `AMPLIFY_MONOREPO_APP_ROOT=apps/public` so the build picks up the Next.js package.
 - Build command: `npm install && npm run build`.
 
 Option B: **S3 + CloudFront**

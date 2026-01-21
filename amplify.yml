@@ -1,0 +1,21 @@
+version: 1
+applications:
+  - appRoot: apps/public
+    frontend:
+      phases:
+        preBuild:
+          commands:
+            # Install using the root lockfile (monorepo workspace)
+            - npm ci --cache ../.npm --prefer-offline --prefix ..
+        build:
+          commands:
+            - npm run build
+      artifacts:
+        baseDirectory: .next
+        files:
+          - '**/*'
+      cache:
+        paths:
+          - .next/cache/**/*
+          - .npm/**/*
+          - node_modules/**/*
