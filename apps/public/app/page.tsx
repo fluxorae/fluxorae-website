@@ -6,6 +6,7 @@ import StatsSection from '@/components/home/StatsSection'
 import CTA from '@/components/common/CTA'
 import { Metadata } from 'next'
 import ServiceProcess from '@/components/services/ServiceProcess'
+import UserTypeSegment from '@/components/home/UserTypeSegment'
 
 export const metadata: Metadata = {
   title: 'Home',
@@ -16,6 +17,7 @@ export default function Home() {
   return (
     <>
       <Hero />
+      <UserTypeSegment />
       <ServicesOverview />
       <SolutionsShowcase />
       <StatsSection />
