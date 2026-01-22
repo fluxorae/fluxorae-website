@@ -1,0 +1,7 @@
+.loader {
+  display: grid;
+  place-items: center;
+  min-height: 50vh;
+  color: var(--color-text-muted);
+  letter-spacing: 0.02em;
+}

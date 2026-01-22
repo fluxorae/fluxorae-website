@@ -1,0 +1,22 @@
+﻿<svg width="1200" height="640" viewBox="0 0 1200 640" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="The Rented Runway case study cover">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a" />
+      <stop offset="100%" stop-color="#111827" />
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#7c86ff" />
+      <stop offset="100%" stop-color="#22d3ee" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="640" fill="url(#bg)" />
+  <circle cx="220" cy="140" r="140" fill="#7c86ff12" />
+  <circle cx="980" cy="520" r="180" fill="#22d3ee14" />
+  <path d="M180 520 C360 420 560 420 820 520" stroke="#7c86ff" stroke-width="3" stroke-dasharray="10 8" fill="none" opacity="0.6" />
+  <rect x="120" y="180" width="960" height="280" rx="28" fill="#131d31" stroke="#ffffff18" />
+  <text x="170" y="260" fill="#7c86ff" font-family="Arial, sans-serif" font-size="26" font-weight="600">Case Study</text>
+  <text x="170" y="320" fill="#f8fafc" font-family="Arial, sans-serif" font-size="44" font-weight="700">The Rented Runway - Bridal &amp; Gown Rentals</text>
+  <text x="170" y="370" fill="#cbd5e1" font-family="Arial, sans-serif" font-size="20">Local SEO, UX, lead flow, and performance uplift for a Dehradun boutique.</text>
+  <rect x="170" y="410" width="260" height="44" rx="14" fill="url(#accent)" />
+  <text x="200" y="439" fill="#0b1020" font-family="Arial, sans-serif" font-size="18" font-weight="700">View case study</text>
+</svg>

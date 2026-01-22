@@ -1,0 +1,21 @@
+﻿<svg width="1200" height="640" viewBox="0 0 1200 640" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="RK Petals and Decor case study cover">
+  <defs>
+    <linearGradient id="bg2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a" />
+      <stop offset="100%" stop-color="#0b1325" />
+    </linearGradient>
+    <linearGradient id="accent2" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#f59e0b" />
+      <stop offset="100%" stop-color="#22d3ee" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="640" fill="url(#bg2)" />
+  <circle cx="220" cy="480" r="140" fill="#f59e0b14" />
+  <circle cx="980" cy="140" r="180" fill="#22d3ee16" />
+  <path d="M160 180 C340 260 560 260 840 180" stroke="#f59e0b" stroke-width="3" stroke-dasharray="12 10" fill="none" opacity="0.65" />
+  <rect x="120" y="200" width="960" height="260" rx="28" fill="#131d31" stroke="#ffffff18" />
+  <text x="170" y="280" fill="#f8fafc" font-family="Arial, sans-serif" font-size="44" font-weight="700">RK Petals &amp; Decor - Kanpur</text>
+  <text x="170" y="330" fill="#cbd5e1" font-family="Arial, sans-serif" font-size="20">Wedding &amp; event decoration UX + Local SEO uplift.</text>
+  <rect x="170" y="370" width="300" height="44" rx="14" fill="url(#accent2)" />
+  <text x="195" y="399" fill="#0b1020" font-family="Arial, sans-serif" font-size="18" font-weight="700">Explore deliverables</text>
+</svg>

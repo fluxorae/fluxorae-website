@@ -1,0 +1,41 @@
+.wrapper {
+  padding: var(--section-gap) 0;
+}
+
+.card {
+  max-width: 640px;
+  margin: 0 auto;
+  background: var(--color-surface-strong);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-5);
+  text-align: center;
+  box-shadow: var(--shadow-soft);
+}
+
+.actions {
+  margin-top: var(--space-4);
+  display: flex;
+  justify-content: center;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+}
+
+.button,
+.secondary {
+  padding: 12px 14px;
+  border-radius: 12px;
+  font-weight: 700;
+}
+
+.button {
+  background: linear-gradient(90deg, var(--color-accent), var(--color-electric));
+  color: #0b1020;
+  border: 1px solid transparent;
+}
+
+.secondary {
+  border: 1px solid var(--color-border);
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--color-text);
+}

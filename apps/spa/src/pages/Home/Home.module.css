@@ -1,0 +1,281 @@
+.hero {
+  padding: var(--section-gap) 0;
+}
+
+.heroGrid {
+  display: grid;
+  gap: var(--space-6);
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  align-items: center;
+}
+
+.heroBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  border-radius: 999px;
+  border: 1px solid var(--color-border);
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--color-accent);
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+.heroTitle {
+  margin-top: var(--space-4);
+  font-size: clamp(2rem, 4vw + 1rem, 3rem);
+  line-height: 1.1;
+}
+
+.heroLead {
+  margin-top: var(--space-3);
+  font-size: 1.05rem;
+  max-width: 680px;
+}
+
+.heroBullets {
+  margin-top: var(--space-4);
+  display: grid;
+  gap: 10px;
+  color: var(--color-text);
+}
+
+.heroBullets li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 600;
+}
+
+.bulletDot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: linear-gradient(90deg, var(--color-accent), var(--color-electric));
+}
+
+.heroCtas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  margin-top: var(--space-5);
+}
+
+.primaryButton {
+  padding: 14px 18px;
+  border-radius: 14px;
+  border: 1px solid transparent;
+  background: linear-gradient(90deg, var(--color-accent), var(--color-electric));
+  color: #0b1020;
+  font-weight: 700;
+  box-shadow: var(--shadow-accent);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.primaryButton:hover {
+  transform: translateY(-2px);
+}
+
+.secondaryButton {
+  padding: 14px 18px;
+  border-radius: 14px;
+  border: 1px solid var(--color-border);
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--color-text);
+  font-weight: 700;
+  transition: border-color 0.2s ease, background 0.2s ease, transform 0.2s ease;
+}
+
+.secondaryButton:hover {
+  border-color: var(--color-border-strong);
+  background: rgba(255, 255, 255, 0.08);
+  transform: translateY(-2px);
+}
+
+.heroPanel {
+  background: var(--color-surface-strong);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  padding: var(--space-5);
+  box-shadow: var(--shadow-soft);
+  display: grid;
+  gap: var(--space-4);
+}
+
+.panelHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--color-text);
+  font-weight: 700;
+}
+
+.metrics {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: var(--space-3);
+}
+
+.metricCard {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-4);
+  background: var(--color-surface);
+}
+
+.metricLabel {
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+}
+
+.metricValue {
+  margin-top: 6px;
+  color: var(--color-text);
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+.sectionHeader {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-3);
+  align-items: center;
+  margin-bottom: var(--space-4);
+}
+
+.sectionTitle {
+  font-size: clamp(1.6rem, 2vw + 1rem, 2.2rem);
+}
+
+.sectionDescription {
+  color: var(--color-text-muted);
+  max-width: 720px;
+}
+
+.services {
+  padding: var(--section-gap) 0;
+}
+
+.serviceGrid {
+  display: grid;
+  gap: var(--space-4);
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+.serviceCard {
+  padding: var(--space-4);
+  border-radius: var(--radius-lg);
+  background: var(--color-surface-strong);
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-soft);
+  display: grid;
+  gap: 10px;
+}
+
+.serviceTag {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 10px;
+  background: rgba(124, 134, 255, 0.1);
+  color: var(--color-accent);
+  font-weight: 700;
+  border-radius: 10px;
+  border: 1px solid var(--color-border);
+  width: fit-content;
+}
+
+.caseStudiesSection {
+  padding: var(--section-gap) 0;
+  background: linear-gradient(120deg, rgba(124, 134, 255, 0.06), rgba(34, 211, 238, 0.04));
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.cardGrid {
+  display: grid;
+  gap: var(--space-4);
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.caseCard {
+  background: var(--color-surface-strong);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--shadow-soft);
+}
+
+.caseImageWrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+.caseImage {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  display: block;
+}
+
+.caseBody {
+  padding: var(--space-4);
+  display: grid;
+  gap: 10px;
+  flex: 1;
+}
+
+.caseTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.caseTag {
+  padding: 6px 10px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--color-border);
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+}
+
+.caseFooter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 var(--space-4) var(--space-4);
+  color: var(--color-accent);
+  font-weight: 700;
+}
+
+.contact {
+  padding: var(--section-gap) 0;
+}
+
+.contactCard {
+  background: var(--color-surface-strong);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  padding: var(--space-6);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: var(--space-4);
+  align-items: center;
+  box-shadow: var(--shadow-strong);
+}
+
+.contactActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
+
+@media (max-width: 640px) {
+  .sectionHeader {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

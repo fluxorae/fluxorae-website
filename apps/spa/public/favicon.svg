@@ -1,0 +1,17 @@
+<svg width="256" height="256" viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Fluxorae favicon">
+  <defs>
+    <linearGradient id="warm" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ff5a3c"/>
+      <stop offset="100%" stop-color="#d6322d"/>
+    </linearGradient>
+    <linearGradient id="cool" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#28c4ff"/>
+      <stop offset="100%" stop-color="#0a77d5"/>
+    </linearGradient>
+  </defs>
+  <rect width="256" height="256" rx="40" fill="#0f1117"/>
+  <path d="M128 26 L230 214 H26 Z" stroke="#1ea8e8" stroke-width="16" stroke-linejoin="round" fill="none"/>
+  <path d="M114 104 L71 85 L84 115 L47 145 L93 131 L81 166 L119 137 Z" fill="url(#warm)"/>
+  <path d="M126 47 C138 40 160 39 172 49 L166 70 L180 70 C187 75 187 86 175 91 L156 91 L148 110 L165 110 C176 114 180 123 174 131 L156 131 L147 162 L129 180 L114 174 L124 151 L107 140 L118 126 L103 115 L114 104 L105 94 L126 99 Z" fill="url(#warm)"/>
+  <path d="M138 65 L178 65 C183 65 186 67 183 74 L173 96 L153 96 L146 114 L167 114 C173 114 175 118 172 124 L162 144 L141 144 L129 178 L110 172 L138 65 Z" fill="url(#cool)"/>
+</svg>

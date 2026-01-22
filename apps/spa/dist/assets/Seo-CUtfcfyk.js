@@ -1,0 +1,1 @@
+import{r as o}from"./index-Bbklw-7I.js";function a({title:t,description:n}){return o.useEffect(()=>{if(t&&(document.title=`${t} | Fluxorae`),n){let e=document.querySelector('meta[name="description"]');e||(e=document.createElement("meta"),e.name="description",document.head.appendChild(e)),e.setAttribute("content",n)}},[t,n]),null}export{a as S};

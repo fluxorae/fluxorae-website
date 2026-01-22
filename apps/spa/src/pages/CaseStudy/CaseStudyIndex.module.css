@@ -1,0 +1,121 @@
+.page {
+  padding: var(--section-gap) 0;
+}
+
+.header {
+  display: grid;
+  gap: var(--space-4);
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  align-items: center;
+}
+
+.title {
+  font-size: clamp(1.8rem, 3vw + 1rem, 2.6rem);
+}
+
+.summary {
+  color: var(--color-text-muted);
+  font-size: 1.05rem;
+}
+
+.tagStrip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.tag {
+  padding: 8px 12px;
+  border-radius: 12px;
+  border: 1px solid var(--color-border);
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--color-text);
+  font-weight: 600;
+}
+
+.grid {
+  margin-top: var(--space-6);
+  display: grid;
+  gap: var(--space-4);
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.card {
+  background: var(--color-surface-strong);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--shadow-soft);
+}
+
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+}
+
+.cardBody {
+  padding: var(--space-4);
+  display: grid;
+  gap: 10px;
+  flex: 1;
+}
+
+.cardMeta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  color: var(--color-text-muted);
+  font-size: 0.95rem;
+}
+
+.sectionPills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.pill {
+  padding: 6px 10px;
+  border-radius: 10px;
+  background: rgba(124, 134, 255, 0.08);
+  border: 1px solid var(--color-border);
+  color: var(--color-accent);
+  font-weight: 600;
+}
+
+.cardFooter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 var(--space-4) var(--space-4);
+}
+
+.linkButton {
+  padding: 12px 14px;
+  border-radius: 12px;
+  background: linear-gradient(90deg, var(--color-accent), var(--color-electric));
+  color: #0b1020;
+  font-weight: 700;
+  border: 1px solid transparent;
+}
+
+.helper {
+  margin-top: var(--space-6);
+  padding: var(--space-4);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border);
+  background: rgba(255, 255, 255, 0.04);
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  align-items: center;
+}
+
+.helper a {
+  color: var(--color-accent);
+  font-weight: 700;
+}
