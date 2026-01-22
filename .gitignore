@@ -42,6 +42,7 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 /apps/*/next-env.d.ts
+/apps/spa/dist/
 
 # legacy deployment files
 *.zip
