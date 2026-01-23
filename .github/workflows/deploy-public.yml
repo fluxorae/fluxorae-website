@@ -20,6 +20,7 @@ concurrency:
   cancel-in-progress: true
 
 env:
+  AMPLIFY_APP_ID: d2xl5a4ri11ava
   NODE_VERSION: 20
   AWS_REGION: eu-north-1
   NEXT_TELEMETRY_DISABLED: 1
@@ -38,19 +39,11 @@ env:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+      contents: read
 
     steps:
-      - name: Validate secrets
-        run: |
-          if [ -z "${{ secrets.AMPLIFY_APP_ID }}" ]; then
-            echo "Missing required secret: AMPLIFY_APP_ID"
-            exit 1
-          fi
-          if [ -z "${{ secrets.AWS_ACCESS_KEY_ID }}" ] || [ -z "${{ secrets.AWS_SECRET_ACCESS_KEY }}" ]; then
-            echo "Missing AWS credentials secrets"
-            exit 1
-          fi
-
       - name: Checkout
         uses: actions/checkout@v4
 
@@ -69,13 +62,12 @@ jobs:
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v4
         with:
-          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          role-to-assume: ${{ secrets.AWS_DEPLOY_ROLE_ARN }}
+          role-session-name: github-amplify-deploy
           aws-region: ${{ env.AWS_REGION }}
 
       - name: Trigger Amplify deploy
         env:
-          AMPLIFY_APP_ID: ${{ secrets.AMPLIFY_APP_ID }}
           AMPLIFY_BRANCH: ${{ github.event.inputs.branch || 'main' }}
         run: |
           echo "Starting Amplify job for app ${AMPLIFY_APP_ID} on branch ${AMPLIFY_BRANCH}"
