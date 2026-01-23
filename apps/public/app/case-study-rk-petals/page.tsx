@@ -1,4 +1,4 @@
-import Link from 'next/link'
+﻿import Link from 'next/link'
 
 export const metadata = {
   title: 'RK Petals and Decor Kanpur Case Study | Fluxorae',
@@ -27,17 +27,17 @@ const cards = {
   ],
   problems: [
     'Low visibility for Kanpur-specific wedding decor searches.',
-    'Scattered service info without clear “check availability” CTAs.',
+    'Scattered service info without clear â€œcheck availabilityâ€ CTAs.',
     'No structured FAQs or gallery cues to build trust pre-sales.',
   ],
   goals: [
-    'Improve discovery for “wedding decoration in Kanpur” and “Haldi/Mehendi decor Kanpur”.',
+    'Improve discovery for â€œwedding decoration in Kanpurâ€ and â€œHaldi/Mehendi decor Kanpurâ€.',
     'Drive WhatsApp/call leads with clear dual CTAs.',
     'Show process, packages, and trust signals (timelines, coordination, hygiene).',
   ],
   strategy: [
     'Local SEO on-page: Kanpur + service keywords in H1/H2; LocalBusiness + FAQ schema.',
-    'IA: Hero → Services → Process → Portfolio placeholders → FAQs → CTA.',
+    'IA: Hero â†’ Services â†’ Process â†’ Portfolio placeholders â†’ FAQs â†’ CTA.',
     'Conversion: sticky WhatsApp, dual CTAs, short form.',
     'Performance: lean components; ready for CDN images.',
   ],
@@ -69,13 +69,13 @@ export default function RkPetalsCaseStudy() {
     <div className="bg-primary text-secondary">
       <header className="container-custom py-14">
         <p className="inline-flex px-3 py-1 rounded-full bg-white/10 border border-white/10 text-sm text-white">
-          Case Study • Wedding & Event Decor • Kanpur
+          Case Study â€¢ Wedding & Event Decor â€¢ Kanpur
         </p>
         <h1 className="mt-4 text-3xl md:text-4xl font-semibold text-white">
-          RK Petals and Decor — Wedding & Event Decoration in Kanpur
+          RK Petals and Decor â€” Wedding & Event Decoration in Kanpur
         </h1>
         <p className="mt-3 text-lg text-secondary/90 max-w-3xl">
-          Fluxorae Private Limited delivered a conversion-first, locally-optimized presence for RK Petals and Decor’s wedding, Haldi, Mehendi, and floral themes in Kanpur.
+          Fluxorae Private Limited delivered a conversion-first, locally-optimized presence for RK Petals and Decorâ€™s wedding, Haldi, Mehendi, and floral themes in Kanpur.
         </p>
         <div className="mt-5 flex flex-wrap gap-3">
           <a className="bg-gradient-to-r from-accent to-amber-300 text-primary font-semibold px-5 py-3 rounded-full shadow-[0_15px_40px_rgba(0,0,0,0.35)] hover:-translate-y-0.5 transition" href="#contact">
@@ -173,3 +173,4 @@ function List({ items, ordered }: { items: string[]; ordered?: boolean }) {
     </Tag>
   )
 }
+

@@ -1,4 +1,4 @@
-import Link from 'next/link'
+﻿import Link from 'next/link'
 import { Metadata } from 'next'
 import TocClient from './toc-client'
 import LeadFormClient from './lead-form-client'
@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   alternates: { canonical: 'https://www.fluxorae.com/case-studies/the-rented-runway' },
   openGraph: {
     title: 'The Rented Runway Dehradun Case Study | Bridal & Gown Rentals by Fluxorae',
-    description: 'Fluxorae’s UX and SEO uplift for a premium fashion rental boutique in Dehradun.',
+    description: 'Fluxoraeâ€™s UX and SEO uplift for a premium fashion rental boutique in Dehradun.',
     url: 'https://www.fluxorae.com/case-studies/the-rented-runway',
     type: 'article',
     images: [{ url: '/og-image-rented-runway.png' }],
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'The Rented Runway Dehradun Case Study | Bridal & Gown Rentals by Fluxorae',
-    description: 'Fluxorae’s UX and SEO uplift for a premium fashion rental boutique in Dehradun.',
+    description: 'Fluxoraeâ€™s UX and SEO uplift for a premium fashion rental boutique in Dehradun.',
     images: ['/og-image-rented-runway.png'],
   },
 }
@@ -159,18 +159,18 @@ const cards = {
   ],
   outcomes: [
     'Increase form and WhatsApp inquiries for bridal lehenga and gown rentals.',
-    'Improve local visibility for “wedding dress rental boutique Dehradun.”',
-    'Elevate premium feel while keeping “affordable luxury” messaging.',
+    'Improve local visibility for â€œwedding dress rental boutique Dehradun.â€',
+    'Elevate premium feel while keeping â€œaffordable luxuryâ€ messaging.',
     'Reduce mobile LCP and improve accessibility for key flows.',
   ],
   strategy: [
     'Local SEO: city/locality mentions in H1/H2, LocalBusiness schema, location-rich body copy.',
     'Structure: clear menu for bridal lehengas, gowns, jewellery, party wear; CTAs per section.',
     'Messaging: affordable luxury, fittings, hygiene, alterations, coordinated jewellery.',
-    'Conversion: sticky WhatsApp, visible “Check availability”, short lead form.',
+    'Conversion: sticky WhatsApp, visible â€œCheck availabilityâ€, short lead form.',
   ],
   content: [
-    'Lead with “Bridal Lehenga on Rent in Dehradun” and “Gown on Rent in Dehradun”.',
+    'Lead with â€œBridal Lehenga on Rent in Dehradunâ€ and â€œGown on Rent in Dehradunâ€.',
     'Show hygiene, fitting, and styling assistance as trust anchors.',
     'Include jewellery coordination and party wear rentals.',
     'Concise cards, high contrast, mobile-first spacing.',
@@ -216,13 +216,13 @@ export default function CaseStudyPage() {
         href="https://wa.me/91XXXXXXX"
         className="fixed right-4 bottom-24 z-30 bg-gradient-to-r from-accent to-amber-300 text-primary font-bold px-4 py-3 rounded-full shadow-[0_15px_40px_rgba(0,0,0,0.35)] hover:-translate-y-0.5 transition"
       >
-        WhatsApp • Check availability
+        WhatsApp â€¢ Check availability
       </a>
 
       <div className="sticky bottom-0 z-20 bg-primary/90 backdrop-blur border-t border-white/10 px-4 py-3 flex items-center justify-between gap-3">
         <div>
           <div className="font-semibold text-white">Ready to plan?</div>
-          <div className="text-sm text-secondary/80">Book a trial • Request availability • Get a quote</div>
+          <div className="text-sm text-secondary/80">Book a trial â€¢ Request availability â€¢ Get a quote</div>
         </div>
         <div className="flex gap-2 flex-wrap">
           <a className="border border-white/20 text-white px-4 py-2 rounded-full hover:bg-white/10 transition" href="tel:+91XXXXXXX">
@@ -241,10 +241,10 @@ export default function CaseStudyPage() {
         <div className="max-w-6xl mx-auto grid md:grid-cols-[2.2fr,1fr] gap-6 items-start">
           <div className="bg-gradient-to-br from-amber-500/10 via-cyan-400/10 to-transparent border border-white/10 rounded-2xl p-6 shadow-[0_25px_80px_rgba(0,0,0,0.35)]">
             <div className="inline-flex items-center gap-2 px-3 py-2 rounded-full bg-white/10 border border-white/10 text-white text-sm">
-              Case Study • Fashion Rental • Dehradun
+              Case Study â€¢ Fashion Rental â€¢ Dehradun
             </div>
             <h1 className="mt-4 text-white text-3xl md:text-4xl lg:text-5xl font-semibold leading-tight">
-              Bridal Lehenga &amp; Gown on Rent in Dehradun — Story of The Rented Runway
+              Bridal Lehenga &amp; Gown on Rent in Dehradun â€” Story of The Rented Runway
             </h1>
             <p className="mt-3 text-secondary/90 text-lg">
               How Fluxorae Private Limited crafted a premium, fast, and search-optimized presence for The Rented Runway, the Sahastradhara Road fashion rental boutique offering bridal lehengas, gowns, jewellery, and party wear on rent.
@@ -303,7 +303,7 @@ export default function CaseStudyPage() {
           <div className="grid md:grid-cols-2 gap-4">
             <div className={card}>
               <p>
-                The site lacked clear “Book a trial” or “Check availability” flows, buried locality signals for Dehradun, and mixed visuals diluted the premium feel. Mobile load was slow and copy around “bridal lehenga on rent in Dehradun” and “gown on rent in Dehradun” was thin, limiting qualified inquiries.
+                The site lacked clear â€œBook a trialâ€ or â€œCheck availabilityâ€ flows, buried locality signals for Dehradun, and mixed visuals diluted the premium feel. Mobile load was slow and copy around â€œbridal lehenga on rent in Dehradunâ€ and â€œgown on rent in Dehradunâ€ was thin, limiting qualified inquiries.
               </p>
             </div>
             <div className={card}>
@@ -329,7 +329,7 @@ export default function CaseStudyPage() {
             <div className={`${card} grid md:grid-cols-3 gap-3`}>
               {[
                 ['Observed improvements', 'Higher engagement on bridal/gown sections (qualitative).'],
-                ['Lead quality', 'More specific “availability + fitting” inquiries (qualitative).'],
+                ['Lead quality', 'More specific â€œavailability + fittingâ€ inquiries (qualitative).'],
                 ['Performance', 'Faster mobile paint with image and font optimizations.'],
               ].map(([labelText, body]) => (
                 <div key={labelText} className="border border-white/10 rounded-xl p-3 bg-primary-dark/60">
@@ -354,7 +354,7 @@ export default function CaseStudyPage() {
               <h3 className="text-white text-lg font-semibold mb-2">Information Architecture</h3>
               <p>Menu: Home, Bridal Lehengas, Gowns, Jewellery, Party Wear, Gallery, FAQs, Contact.</p>
               <p>
-                Flow: Hero → Snapshot → Problem → Outcomes → Strategy → IA → Content → SEO → Performance → Results → Screens → Timeline → Deliverables → FAQ → CTA.
+                Flow: Hero â†’ Snapshot â†’ Problem â†’ Outcomes â†’ Strategy â†’ IA â†’ Content â†’ SEO â†’ Performance â†’ Results â†’ Screens â†’ Timeline â†’ Deliverables â†’ FAQ â†’ CTA.
               </p>
             </div>
           </div>
@@ -489,7 +489,7 @@ export default function CaseStudyPage() {
                 'FAQ (6+ entries) and schema',
               ].map((item) => (
                 <li key={item} className="flex items-start gap-2">
-                  <span className="text-green-400 font-bold mt-0.5">✓</span>
+                  <span className="text-green-400 font-bold mt-0.5">âœ“</span>
                   <span>{item}</span>
                 </li>
               ))}
@@ -568,7 +568,7 @@ export default function CaseStudyPage() {
               <strong>Long-tail:</strong> Book bridal lehenga trial Dehradun; Affordable luxury lehenga rental Dehradun; Party wear dress on rent Dehradun; Bridal jewellery on rent Dehradun; Schedule gown fitting Dehradun
             </p>
             <p>
-              <strong>Internal links (placeholders):</strong> https://www.fluxorae.com/case-studies • https://www.fluxorae.com/services/local-seo • https://www.fluxorae.com/contact
+              <strong>Internal links (placeholders):</strong> https://www.fluxorae.com/case-studies â€¢ https://www.fluxorae.com/services/local-seo â€¢ https://www.fluxorae.com/contact
             </p>
           </details>
         </Section>
@@ -604,3 +604,4 @@ function Section({ id, title, children }: { id: string; title: string; children:
     </section>
   )
 }
+

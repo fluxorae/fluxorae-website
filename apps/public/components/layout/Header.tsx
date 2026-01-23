@@ -16,20 +16,30 @@ const primaryLinks = [
 
 const serviceColumns = [
   {
-    title: 'Core',
+    title: 'Core services',
+    description: 'Delivery pods for product, data, automation, and growth.',
     links: [
       { name: 'Services', href: '/services' },
       { name: 'Solutions', href: '/solutions' },
       { name: 'Industries', href: '/industries' },
-      { name: 'Contact', href: '/contact' },
+      { name: 'Pricing', href: '/pricing' },
+    ],
+  },
+  {
+    title: 'Case studies',
+    description: 'Recent rollouts with local SEO and performance-first builds.',
+    links: [
+      { name: 'The Rented Runway (Dehradun)', href: '/case-study-rented-runway' },
+      { name: 'RK Petals & Decor (Kanpur)', href: '/case-study-rk-petals' },
+      { name: 'Case Studies Index', href: '/case-studies' },
     ],
   },
   {
     title: 'Resources',
+    description: 'Signals, templates, and channels to stay ahead.',
     links: [
       { name: 'Insights', href: '/insights' },
-      { name: 'Case Study: Rented Runway', href: '/case-study-rented-runway' },
-      { name: 'Case Study: RK Petals', href: '/case-study-rk-petals' },
+      { name: 'Contact', href: '/contact' },
       { name: 'Careers', href: '/careers' },
     ],
   },
@@ -104,19 +114,21 @@ export default function Header() {
               <button className="flex items-center gap-1 text-secondary hover:text-accent font-medium transition">
                 Solutions <ChevronDown size={16} />
               </button>
-              <div className="invisible opacity-0 group-hover:visible group-hover:opacity-100 transition-all duration-200 absolute left-0 mt-3 w-[540px] bg-primary-dark/95 border border-white/10 rounded-2xl shadow-[0_25px_80px_rgba(0,0,0,0.45)] p-5">
-                <div className="grid grid-cols-2 gap-4">
+              <div className="invisible opacity-0 group-hover:visible group-hover:opacity-100 transition-all duration-200 absolute left-0 mt-3 w-[760px] bg-primary-dark/95 border border-white/10 rounded-2xl shadow-[0_25px_80px_rgba(0,0,0,0.45)] p-6">
+                <div className="grid grid-cols-3 gap-5">
                   {serviceColumns.map((col) => (
-                    <div key={col.title}>
-                      <h4 className="text-white font-semibold mb-2 text-sm">{col.title}</h4>
+                    <div key={col.title} className="rounded-xl bg-white/5 border border-white/5 p-4">
+                      <h4 className="text-white font-semibold mb-1 text-sm">{col.title}</h4>
+                      <p className="text-secondary/70 text-xs mb-3">{col.description}</p>
                       <div className="flex flex-col gap-2">
                         {col.links.map((link) => (
                           <Link
                             key={link.name}
                             href={link.href}
-                            className="text-secondary/85 hover:text-accent transition text-sm"
+                            className="inline-flex items-center justify-between rounded-lg px-3 py-2 text-sm text-secondary/90 hover:text-accent hover:bg-white/5 transition"
                           >
                             {link.name}
+                            <ChevronDown size={12} className="rotate-[-90deg]" />
                           </Link>
                         ))}
                       </div>
