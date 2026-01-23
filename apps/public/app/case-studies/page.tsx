@@ -1,16 +1,16 @@
-import Link from 'next/link'
+ï»¿import Link from 'next/link'
 
 const caseStudies = [
   {
     slug: '/case-study-rented-runway',
-    title: 'The Rented Runway — Bridal & Gown Rentals (Dehradun)',
+    title: 'The Rented Runway â€” Bridal & Gown Rentals (Dehradun)',
     summary:
       'Local SEO, UX uplift, and conversion-first layout for a fashion rental boutique with sticky CTAs and structured data.',
     tags: ['Local SEO', 'Lead gen', 'Performance'],
   },
   {
     slug: '/case-study-rk-petals',
-    title: 'RK Petals & Decor — Wedding & Event Decoration (Kanpur)',
+    title: 'RK Petals & Decor â€” Wedding & Event Decoration (Kanpur)',
     summary: 'Lean, mobile-first presence with localized intent coverage and sticky WhatsApp/Call CTAs.',
     tags: ['Local SEO', 'UX', 'Services IA'],
   },
@@ -68,3 +68,4 @@ export default function CaseStudiesPage() {
     </main>
   )
 }
+
