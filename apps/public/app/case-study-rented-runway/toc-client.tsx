@@ -26,7 +26,10 @@ export default function TocClient({ tocItems }: Props) {
   }, [tocItems])
 
   return (
-    <nav className="bg-primary-dark/60 border border-white/10 rounded-2xl p-4 shadow-[0_15px_50px_rgba(0,0,0,0.35)]">
+    <nav
+      className="bg-primary-dark/60 border border-white/10 rounded-2xl p-4 shadow-[0_15px_50px_rgba(0,0,0,0.35)]"
+      aria-label="Table of contents"
+    >
       <h3 className="text-white font-semibold mb-2">Table of Contents</h3>
       <div className="flex flex-col gap-1 text-sm">
         {tocItems.map((id) => (

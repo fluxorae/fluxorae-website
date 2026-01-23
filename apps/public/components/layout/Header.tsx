@@ -15,6 +15,7 @@ const primaryLinks = [
   { name: 'Insights', href: '/insights' },
   { name: 'Case Studies', href: '/case-studies' },
   { name: 'Pricing', href: '/pricing' },
+  { name: 'About', href: '/about' },
   { name: 'Contact', href: '/contact' },
 ]
 
@@ -33,7 +34,7 @@ const serviceColumns = [
     title: 'Case studies',
     description: 'Recent rollouts with local SEO and performance-first builds.',
     links: [
-      { name: 'Index', href: '/case-studies' },
+      { name: 'Case Studies', href: '/case-studies' },
       { name: 'The Rented Runway', href: '/case-study-rented-runway' },
       { name: 'RK Petals & Decor', href: '/case-study-rk-petals' },
     ],

@@ -138,13 +138,13 @@ export default function RkPetalsCaseStudy() {
         <Card id="contact" title="Contact Fluxorae Private Limited">
           <p className="text-secondary/90">Plan your wedding or event decor in Kanpur. Share dates, venue, and theme ideas.</p>
           <div className="flex flex-wrap gap-3 mt-3">
-            <a className="bg-gradient-to-r from-accent to-amber-300 text-primary font-semibold px-5 py-3 rounded-full shadow-[0_15px_40px_rgba(0,0,0,0.35)] hover:-translate-y-0.5 transition" href="https://wa.me/91XXXXXXX">
+            <a className="bg-gradient-to-r from-accent to-amber-300 text-primary font-semibold px-5 py-3 rounded-full shadow-[0_15px_40px_rgba(0,0,0,0.35)] hover:-translate-y-0.5 transition" href="https://wa.me/919115377791">
               WhatsApp
             </a>
             <a className="border border-white/20 text-white px-5 py-3 rounded-full hover:bg-white/10 transition" href="mailto:contact@fluxorae.com">
               Email
             </a>
-            <a className="border border-white/20 text-white px-5 py-3 rounded-full hover:bg-white/10 transition" href="tel:+91XXXXXXX">
+            <a className="border border-white/20 text-white px-5 py-3 rounded-full hover:bg-white/10 transition" href="tel:+919115377791">
               Call
             </a>
           </div>
@@ -173,4 +173,5 @@ function List({ items, ordered }: { items: string[]; ordered?: boolean }) {
     </Tag>
   )
 }
+
 

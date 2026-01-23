@@ -51,7 +51,7 @@ const jsonLd = {
         '@type': 'ContactPoint',
         contactType: 'Customer Service',
         email: 'contact@fluxorae.com',
-        telephone: '+91XXXXXXX',
+        telephone: '+919115377791',
       },
     },
     {
@@ -69,7 +69,7 @@ const jsonLd = {
       name: 'The Rented Runway',
       image: '/og-image-rented-runway.png',
       url: 'https://www.fluxorae.com/case-studies/the-rented-runway',
-      telephone: '+91XXXXXXX',
+      telephone: '+919115377791',
       priceRange: '$$',
       address: {
         '@type': 'PostalAddress',
@@ -213,7 +213,7 @@ export default function CaseStudyPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
 
       <a
-        href="https://wa.me/91XXXXXXX"
+        href="https://wa.me/919115377791"
         className="fixed right-4 bottom-24 z-30 bg-gradient-to-r from-accent to-amber-300 text-primary font-bold px-4 py-3 rounded-full shadow-[0_15px_40px_rgba(0,0,0,0.35)] hover:-translate-y-0.5 transition"
       >
         WhatsApp â€¢ Check availability
@@ -225,12 +225,12 @@ export default function CaseStudyPage() {
           <div className="text-sm text-secondary/80">Book a trial â€¢ Request availability â€¢ Get a quote</div>
         </div>
         <div className="flex gap-2 flex-wrap">
-          <a className="border border-white/20 text-white px-4 py-2 rounded-full hover:bg-white/10 transition" href="tel:+91XXXXXXX">
+          <a className="border border-white/20 text-white px-4 py-2 rounded-full hover:bg-white/10 transition" href="tel:+919115377791">
             Call us
           </a>
           <a
             className="bg-gradient-to-r from-accent to-amber-300 text-primary font-semibold px-4 py-2 rounded-full shadow-[0_10px_30px_rgba(0,0,0,0.3)] hover:-translate-y-0.5 transition"
-            href="https://wa.me/91XXXXXXX"
+            href="https://wa.me/919115377791"
           >
             WhatsApp
           </a>
@@ -256,7 +256,7 @@ export default function CaseStudyPage() {
             </div>
             <div className="mt-5 flex flex-wrap gap-3">
               <a
-                href="https://wa.me/91XXXXXXX"
+                href="https://wa.me/919115377791"
                 className="bg-gradient-to-r from-accent to-amber-300 text-primary font-semibold px-5 py-3 rounded-full shadow-[0_15px_40px_rgba(0,0,0,0.35)] hover:-translate-y-0.5 transition"
               >
                 Check availability
@@ -536,13 +536,13 @@ export default function CaseStudyPage() {
             <div className={card}>
               <h3 className="text-white text-lg font-semibold mb-2">Talk to us</h3>
               <p>
-                <strong>WhatsApp:</strong> <a className="text-accent hover:underline" href="https://wa.me/91XXXXXXX">https://wa.me/91XXXXXXX</a>
+                <strong>WhatsApp:</strong> <a className="text-accent hover:underline" href="https://wa.me/919115377791">https://wa.me/919115377791</a>
               </p>
               <p>
                 <strong>Email:</strong> <a className="text-accent hover:underline" href="mailto:contact@fluxorae.com">contact@fluxorae.com</a>
               </p>
               <p>
-                <strong>Phone:</strong> <a className="text-accent hover:underline" href="tel:+91XXXXXXX">+91XXXXXXX</a>
+                <strong>Phone:</strong> <a className="text-accent hover:underline" href="tel:+919115377791">+919115377791</a>
               </p>
               <p><strong>Agency:</strong> Fluxorae Private Limited</p>
               <div className="mt-3 flex flex-wrap gap-2 text-sm">
@@ -604,4 +604,5 @@ function Section({ id, title, children }: { id: string; title: string; children:
     </section>
   )
 }
+
 

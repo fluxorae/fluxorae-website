@@ -1,16 +1,22 @@
-﻿import Link from 'next/link'
+﻿import Link from "next/link"
+import { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: "Case Studies | Fluxorae",
+  description: "Browse Fluxorae case studies with outcomes across local SEO, performance, and conversion.",
+}
 
 const caseStudies = [
   {
     slug: '/case-study-rented-runway',
-    title: 'The Rented Runway — Bridal & Gown Rentals (Dehradun)',
+    title: 'The Rented Runway - Bridal & Gown Rentals (Dehradun)',
     summary:
       'Local SEO, UX uplift, and conversion-first layout for a fashion rental boutique with sticky CTAs and structured data.',
     tags: ['Local SEO', 'Lead gen', 'Performance'],
   },
   {
     slug: '/case-study-rk-petals',
-    title: 'RK Petals & Decor — Wedding & Event Decoration (Kanpur)',
+    title: 'RK Petals & Decor - Wedding & Event Decoration (Kanpur)',
     summary: 'Lean, mobile-first presence with localized intent coverage and sticky WhatsApp/Call CTAs.',
     tags: ['Local SEO', 'UX', 'Services IA'],
   },
@@ -48,16 +54,10 @@ export default function CaseStudiesPage() {
                 </div>
               </div>
               <div className="flex flex-wrap gap-3 mt-auto">
-                <Link
-                  href={study.slug}
-                  className="btn-secondary inline-flex items-center gap-2"
-                >
+                <Link href={study.slug} className="btn-secondary inline-flex items-center gap-2">
                   View full case
                 </Link>
-                <Link
-                  href={`${study.slug}#contact`}
-                  className="btn-primary inline-flex items-center gap-2"
-                >
+                <Link href={`${study.slug}#contact`} className="btn-primary inline-flex items-center gap-2">
                   Jump to CTA
                 </Link>
               </div>
@@ -68,4 +68,3 @@ export default function CaseStudiesPage() {
     </main>
   )
 }
-
