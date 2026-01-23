@@ -5,6 +5,9 @@ import CompanyValues from '@/components/about/CompanyValues'
 import Leadership from '@/components/about/Leadership'
 import Timeline from '@/components/about/Timeline'
 import CTA from '@/components/common/CTA'
+import CultureHighlights from '@/components/about/CultureHighlights'
+import CareersOverview from '@/components/about/CareersOverview'
+import TrustSection from '@/components/about/TrustSection'
 
 export const metadata: Metadata = {
   title: 'About Us',
@@ -19,6 +22,9 @@ export default function AboutPage() {
       <CompanyValues />
       <Timeline />
       <Leadership />
+      <CultureHighlights />
+      <CareersOverview />
+      <TrustSection />
       <CTA />
     </>
   )

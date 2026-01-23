@@ -15,7 +15,13 @@ export default function ServicesPage() {
       <ServicesHero />
       <ServicesGrid />
       <ServiceProcess />
-      <CTA />
+      <CTA
+        title="Map your AI roadmap with Fluxorae"
+        description="Book a call to align your business objectives with a service bucket, KPIs, and success milestones."
+        primaryButton={{ text: 'Book a Call', href: '/book-call' }}
+        secondaryButton={{ text: 'View Pricing', href: '/pricing' }}
+        showContactDetails
+      />
     </>
   )
 }

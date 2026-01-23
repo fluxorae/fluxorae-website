@@ -1,65 +1,104 @@
 'use client'
 
-import { motion } from 'framer-motion'
-import { Building2, Heart, ShoppingBag, Factory, GraduationCap, Plane, Car, Briefcase } from 'lucide-react'
 import Link from 'next/link'
+import { motion } from 'framer-motion'
 
-const industries = [
+const industryDetail = [
   {
-    icon: Building2,
-    title: 'Financial Services',
-    description: 'Secure, compliant solutions for banks, insurance, and fintech companies.',
-    solutions: ['Risk Management', 'Compliance Solutions', 'Digital Banking', 'Payment Systems'],
-    color: 'from-electric-soft to-cyan-600',
-  },
-  {
-    icon: Heart,
+    id: 'healthcare',
     title: 'Healthcare',
-    description: 'HIPAA-compliant solutions improving patient care and operational efficiency.',
-    solutions: ['EHR Systems', 'Telemedicine', 'Medical Analytics', 'Patient Portal'],
-    color: 'from-rose-500 to-amber-400',
+    description: 'AI diagnostics, patient analytics, and medical imaging assisted decisioning.',
+    solutions: ['AI diagnostics', 'Patient analytics', 'Medical imaging'],
+    metrics: ['Accuracy uplift +12%', 'Patient throughput +18%', 'HIPAA-ready by default'],
+    compliance: 'HIPAA + FDA guardrails',
+    links: [
+      { label: 'View healthcare playbooks', href: '/insights#how-to' },
+      { label: 'Case studies', href: '/case-studies' },
+    ],
   },
   {
-    icon: ShoppingBag,
-    title: 'Retail & E-commerce',
-    description: 'Omnichannel solutions enhancing customer experience and driving sales.',
-    solutions: ['E-commerce Platforms', 'Inventory Management', 'Customer Analytics', 'Supply Chain'],
-    color: 'from-amber-400 to-orange-500',
+    id: 'finance',
+    title: 'Banking & Finance',
+    description: 'Fraud detection, credit scoring, and risk/compliance automation.',
+    solutions: ['Fraud detectors', 'Credit scoring', 'Risk dashboards'],
+    metrics: ['Fraud wins +48%', 'Risk review time -32%'],
+    compliance: 'SOC 2 + RBI/SEC-ready',
+    links: [
+      { label: 'Regulatory-ready insights', href: '/insights#trust' },
+      { label: 'Case studies', href: '/case-studies' },
+    ],
   },
   {
-    icon: Factory,
+    id: 'retail',
+    title: 'E-Commerce & Retail',
+    description: 'Personalization, demand forecasting, and inventory intelligence for omnichannel brands.',
+    solutions: ['Demand forecasting', 'Inventory optimization', 'Personalization engines'],
+    metrics: ['Personalization lift +15%', 'Inventory days-on-hand -22%'],
+    compliance: 'PCI + data residency controls',
+    links: [
+      { label: 'Growth insights', href: '/insights#how-to' },
+      { label: 'Case studies', href: '/case-studies' },
+    ],
+  },
+  {
+    id: 'manufacturing',
     title: 'Manufacturing',
-    description: 'IoT and automation solutions optimizing production and supply chains.',
-    solutions: ['Industry 4.0', 'IoT Integration', 'Supply Chain', 'Quality Control'],
-    color: 'from-orange-500 to-amber-600',
+    description: 'Predictive maintenance, quality control, and ML-driven supply chains.',
+    solutions: ['Predictive maintenance', 'Quality AI', 'Supply chain automation'],
+    metrics: ['Uptime +14%', 'Quality defects -27%'],
+    compliance: 'Industry 4.0 + safety standards',
+    links: [
+      { label: 'Operational intelligence', href: '/insights#ai-dashboards' },
+      { label: 'Case studies', href: '/case-studies' },
+    ],
   },
   {
-    icon: GraduationCap,
+    id: 'logistics',
+    title: 'Logistics & Supply Chain',
+    description: 'Route optimization, warehouse automation, and fulfillment intelligence.',
+    solutions: ['Routing', 'Warehouse automation', 'Fulfillment analytics'],
+    metrics: ['Route efficiency +21%', 'Warehouse throughput +12%'],
+    compliance: 'FTZ + customs-ready documentation',
+    links: [
+      { label: 'Logistics playbooks', href: '/insights#how-to' },
+      { label: 'Case studies', href: '/case-studies' },
+    ],
+  },
+  {
+    id: 'education',
     title: 'Education',
-    description: 'Digital learning platforms and administrative solutions for educational institutions.',
-    solutions: ['Learning Management', 'Student Information', 'Virtual Classrooms', 'Administrative Tools'],
-    color: 'from-emerald-400 to-electric-soft',
+    description: 'Adaptive learning, student performance analytics, and support automation.',
+    solutions: ['Adaptive learning', 'Performance analytics', 'Conversational agents'],
+    metrics: ['Completion +19%', 'Student support automation 24/7'],
+    compliance: 'FERPA + accessibility-first',
+    links: [
+      { label: 'Learning analytics brief', href: '/insights#research' },
+      { label: 'Case studies', href: '/case-studies' },
+    ],
   },
   {
-    icon: Plane,
-    title: 'Travel & Hospitality',
-    description: 'Customer-centric solutions enhancing guest experiences and operations.',
-    solutions: ['Booking Systems', 'CRM Solutions', 'Revenue Management', 'Mobile Apps'],
-    color: 'from-electric to-teal-500',
+    id: 'real-estate',
+    title: 'Real Estate',
+    description: 'Price prediction, smart CRM, and AI-assisted deal desks.',
+    solutions: ['Price prediction', 'Smart CRM automation', 'Deal analytics'],
+    metrics: ['Pricing accuracy +13%', 'CRM response time -35%'],
+    compliance: 'REIT regulations + data security',
+    links: [
+      { label: 'Real estate AI guide', href: '/insights#how-to' },
+      { label: 'Case studies', href: '/case-studies' },
+    ],
   },
   {
-    icon: Car,
-    title: 'Automotive',
-    description: 'Connected vehicle solutions and manufacturing optimization.',
-    solutions: ['Connected Vehicles', 'Manufacturing Systems', 'Dealer Management', 'Fleet Management'],
-    color: 'from-slate-700 to-gray-500',
-  },
-  {
-    icon: Briefcase,
-    title: 'Professional Services',
-    description: 'Practice management and client engagement solutions.',
-    solutions: ['CRM Systems', 'Project Management', 'Billing Solutions', 'Client Portal'],
-    color: 'from-amber-300 to-electric-soft',
+    id: 'saas',
+    title: 'SaaS & Startups',
+    description: 'AI feature integration, growth analytics, and specialized MVP accelerators.',
+    solutions: ['AI copilots', 'Growth analytics', 'MVP prototyping'],
+    metrics: ['Feature release velocity +33%', 'Growth telemetry +24%'],
+    compliance: 'VC-ready SLAs + security posture',
+    links: [
+      { label: 'Startup playbooks', href: '/insights#resources' },
+      { label: 'Case studies', href: '/case-studies' },
+    ],
   },
 ]
 
@@ -67,42 +106,47 @@ export default function IndustriesGrid() {
   return (
     <section className="section-padding bg-secondary-light">
       <div className="container-custom">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {industries.map((industry, index) => {
-            const Icon = industry.icon
-            return (
-              <motion.div
-                key={industry.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden group"
-              >
-                <div className={`h-32 bg-gradient-to-br ${industry.color} flex items-center justify-center`}>
-                  <Icon className="text-white" size={48} />
-                </div>
-                <div className="p-8">
-                  <h3 className="heading-3 text-xl mb-3">{industry.title}</h3>
-                  <p className="text-gray-600 mb-6">{industry.description}</p>
-                  <ul className="space-y-2 mb-6">
-                    {industry.solutions.map((solution) => (
-                      <li key={solution} className="flex items-center text-sm text-gray-600">
-                        <span className="w-1.5 h-1.5 bg-accent rounded-full mr-2" />
-                        {solution}
-                      </li>
-                    ))}
-                  </ul>
-                  <Link
-                    href="/contact"
-                    className="text-accent font-semibold hover:underline inline-flex items-center group-hover:translate-x-2 transition-transform duration-300"
-                  >
-                    Learn More
+        <div className="grid gap-6 md:grid-cols-2">
+          {industryDetail.map((industry, index) => (
+            <motion.article
+              key={industry.id}
+              id={industry.id}
+              initial={{ opacity: 0, y: 12 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: index * 0.05 }}
+              className="glass-panel rounded-3xl border border-white/10 p-6 flex flex-col h-full"
+            >
+              <div className="flex items-center justify-between mb-3">
+                <h3 className="text-2xl font-semibold text-white">{industry.title}</h3>
+                <span className="text-xs uppercase tracking-[0.4em] text-accent">Industry</span>
+              </div>
+              <p className="text-gray-300 mb-3">{industry.description}</p>
+              <div className="text-xs uppercase tracking-[0.4em] text-gray-400 mb-3">Focus</div>
+              <div className="flex flex-wrap gap-2 mb-3">
+                {industry.solutions.map((solution) => (
+                  <span key={`${industry.id}-${solution}`} className="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs text-gray-300">
+                    {solution}
+                  </span>
+                ))}
+              </div>
+              <div className="text-sm text-gray-300 space-y-1 mb-3">
+                <p>
+                  <span className="text-white font-semibold">Metrics:</span> {industry.metrics.join(' · ')}
+                </p>
+                <p>
+                  <span className="text-white font-semibold">Compliance:</span> {industry.compliance}
+                </p>
+              </div>
+              <div className="mt-auto flex flex-wrap gap-3">
+                {industry.links.map((link) => (
+                  <Link key={`${industry.id}-${link.label}`} href={link.href} className="text-accent text-sm font-semibold hover:underline">
+                    {link.label}
                   </Link>
-                </div>
-              </motion.div>
-            )
-          })}
+                ))}
+              </div>
+            </motion.article>
+          ))}
         </div>
       </div>
     </section>

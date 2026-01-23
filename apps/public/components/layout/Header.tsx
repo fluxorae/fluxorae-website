@@ -19,34 +19,47 @@ const primaryLinks = [
   { name: 'Contact', href: '/contact' },
 ]
 
-const serviceColumns = [
+const megaMenuSections = [
   {
-    title: 'Core services',
-    description: 'Delivery pods for product, data, automation, and growth.',
+    title: 'Services',
+    description: 'AI consulting, development, automation, and long-term support buckets.',
     links: [
-      { name: 'Services', href: '/services' },
-      { name: 'Solutions', href: '/solutions' },
-      { name: 'Industries', href: '/industries' },
-      { name: 'Pricing', href: '/pricing' },
+      { name: 'AI Consulting', href: '/services#ai-consulting' },
+      { name: 'Custom AI Development', href: '/services#custom-ai-development' },
+      { name: 'Machine Learning Services', href: '/services#machine-learning-services' },
+      { name: 'Data & Analytics', href: '/services#data-analytics' },
+      { name: 'Automation & AI Agents', href: '/services#automation-agents' },
+      { name: 'Cloud & MLOps', href: '/services#cloud-mlops' },
+      { name: 'MVP & PoC', href: '/services#mvp-poc' },
+      { name: 'Support & Maintenance', href: '/services#support-maintenance' },
     ],
   },
   {
-    title: 'Case studies',
-    description: 'Recent rollouts with local SEO and performance-first builds.',
+    title: 'Solutions',
+    description: 'Outcome-driven families spanning enterprise AI, generative, analytics, and automation.',
     links: [
+      { name: 'Enterprise AI', href: '/solutions#enterprise-ai' },
+      { name: 'AI-Powered Dashboards', href: '/solutions#ai-dashboards' },
+      { name: 'Legacy Modernization', href: '/solutions#legacy-modernization' },
+      { name: 'Generative AI', href: '/solutions#generative-ai' },
+      { name: 'Knowledge Assistants', href: '/solutions#knowledge-assistants' },
+      { name: 'Predictive & Prescriptive', href: '/solutions#predictive-analytics' },
+      { name: 'Computer Vision', href: '/solutions#computer-vision' },
+      { name: 'Workflow Automation', href: '/solutions#workflow-automation' },
+    ],
+  },
+  {
+    title: 'Insights & Trust',
+    description: 'Playbooks, proof, pricing, and partner confidence.',
+    links: [
+      { name: 'Insights Hub', href: '/insights' },
       { name: 'Case Studies', href: '/case-studies' },
-      { name: 'The Rented Runway', href: '/case-study-rented-runway' },
-      { name: 'RK Petals & Decor', href: '/case-study-rk-petals' },
-    ],
-  },
-  {
-    title: 'Resources',
-    description: 'Signals, templates, and ways to reach us.',
-    links: [
-      { name: 'Insights', href: '/insights' },
-      { name: 'About', href: '/about' },
+      { name: 'Pricing & Engagement Models', href: '/pricing' },
+      { name: 'Book a Call', href: '/book-call' },
       { name: 'Careers', href: '/careers' },
       { name: 'Contact', href: '/contact' },
+      { name: 'About', href: '/about' },
+      { name: 'Security & Compliance', href: '/about#trust' },
     ],
   },
 ]
@@ -125,7 +138,7 @@ export default function Header() {
           <DesktopNav navItems={navItems} pathname={pathname} />
 
           <div className="hidden lg:flex items-center space-x-3">
-            <Link href="/contact" className="btn-secondary flex items-center gap-2">
+            <Link href="/book-call" className="btn-secondary flex items-center gap-2">
               <PhoneCall size={18} />
               Book a Call
             </Link>
@@ -178,14 +191,14 @@ function DesktopNav({ navItems, pathname }: { navItems: typeof primaryLinks; pat
         <button className="flex items-center gap-1 text-secondary hover:text-accent font-medium transition" aria-haspopup="true">
           Solutions <ChevronDown size={16} />
         </button>
-        <div className="invisible opacity-0 group-hover:visible group-hover:opacity-100 transition-all duration-200 absolute left-0 mt-3 w-[760px] bg-primary-dark/95 border border-white/10 rounded-2xl shadow-[0_25px_80px_rgba(0,0,0,0.45)] p-6">
-          <div className="grid grid-cols-3 gap-5">
-            {serviceColumns.map((col) => (
-              <div key={col.title} className="rounded-xl bg-white/5 border border-white/5 p-4">
-                <h4 className="text-white font-semibold mb-1 text-sm">{col.title}</h4>
-                <p className="text-secondary/70 text-xs mb-3">{col.description}</p>
+        <div className="invisible opacity-0 group-hover:visible group-hover:opacity-100 transition-all duration-200 absolute left-0 mt-3 w-[820px] bg-primary-dark/95 border border-white/10 rounded-2xl shadow-[0_25px_80px_rgba(0,0,0,0.45)] p-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+            {megaMenuSections.map((section) => (
+              <div key={section.title} className="rounded-xl bg-white/5 border border-white/5 p-4">
+                <h4 className="text-white font-semibold mb-1 text-sm">{section.title}</h4>
+                <p className="text-secondary/70 text-xs mb-3">{section.description}</p>
                 <div className="flex flex-col gap-2">
-                  {col.links.map((link) => (
+                  {section.links.map((link) => (
                     <Link
                       key={link.name}
                       href={link.href}
@@ -266,10 +279,10 @@ function MobileDrawer({
               <div className="border border-white/10 rounded-lg overflow-hidden">
                 <div className="w-full text-left px-4 py-3 font-semibold text-white bg-white/5">Solutions & Resources</div>
                 <div className="bg-primary/80 divide-y divide-white/5">
-                  {serviceColumns.flatMap((col) =>
-                    col.links.map((link) => (
+                  {megaMenuSections.flatMap((section) =>
+                    section.links.map((link) => (
                       <Link
-                        key={link.name}
+                        key={`${section.title}-${link.name}`}
                         href={link.href}
                         onClick={onClose}
                         className="block px-4 py-2 text-secondary hover:text-accent transition"
@@ -283,7 +296,7 @@ function MobileDrawer({
             </div>
             <div className="p-4 border-t border-white/10 space-y-2">
               <Link
-                href="/contact"
+                href="/book-call"
                 onClick={onClose}
                 className="block w-full text-center px-4 py-3 rounded-lg font-semibold bg-accent text-white hover:opacity-90 transition"
               >

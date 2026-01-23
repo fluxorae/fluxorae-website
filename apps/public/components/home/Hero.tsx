@@ -6,15 +6,15 @@ import { ArrowRight, Sparkles, ShieldCheck, GaugeCircle, Rocket, CheckCircle2 } 
 import NeonGrid from '../common/NeonGrid'
 
 const heroHighlights = [
-  { label: 'AI pilots live', value: '6-8 weeks' },
-  { label: 'Core Web Vitals pass', value: '95%' },
-  { label: 'Conversion lift', value: '+40%' },
+  { label: 'Avg ROI uplift', value: '2.3x' },
+  { label: 'Model + product accuracy', value: '98%' },
+  { label: 'Ops cost reduction', value: '-28%' },
 ]
 
 const heroBullets = [
-  'AI-native product, data, and growth squads',
-  'Security, governance, and observability built-in',
-  'Weekly demos with measurable OKRs and dashboards',
+  'AI-native pods owning strategy, build, and automation',
+  'Security, governance, and observability baked into every sprint',
+  'Weekly demos with KPIs for ROI, accuracy, and cost reduction',
 ]
 
 export default function Hero() {
@@ -45,7 +45,7 @@ export default function Hero() {
               transition={{ delay: 0.1, duration: 0.6 }}
               className="text-lg md:text-xl text-gray-200 max-w-3xl text-balance"
             >
-              Fluxorae blends AI automation, product engineering, data, and growth to launch high-converting digital products faster - with reliability, governance, and SEO baked in.
+              Fluxorae blends AI automation, product engineering, data, and growth to deliver measurable ROI, accuracy, and cost reduction faster—while keeping governance and reliability front of mind.
             </motion.p>
 
             <motion.div
@@ -54,14 +54,14 @@ export default function Hero() {
               transition={{ delay: 0.2, duration: 0.6 }}
               className="flex flex-col sm:flex-row items-center gap-4"
             >
-              <Link href="/contact" className="btn-primary group">
-                Book a roadmap call
-                <ArrowRight className="inline-block ml-2 group-hover:translate-x-1 transition-transform" size={20} />
-              </Link>
-              <Link href="/solutions" className="btn-secondary flex items-center gap-2">
-                View solutions
-                <GaugeCircle size={18} />
-              </Link>
+              <Link href="/book-call" className="btn-primary group">
+                Book a Call
+              <ArrowRight className="inline-block ml-2 group-hover:translate-x-1 transition-transform" size={20} />
+            </Link>
+            <Link href="/solutions" className="btn-secondary flex items-center gap-2">
+              Explore solutions
+              <GaugeCircle size={18} />
+            </Link>
             </motion.div>
 
             <motion.div

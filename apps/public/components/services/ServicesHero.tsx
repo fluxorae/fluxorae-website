@@ -27,10 +27,10 @@ export default function ServicesHero() {
             Services built for velocity
           </motion.span>
           <h1 className="heading-1 text-white mb-6 text-balance">
-            Strategy, build, automation, and growth under one roof
+            AI consulting, engineering, and Ops coverage in one integrated team
           </h1>
           <p className="text-xl md:text-2xl text-gray-200 max-w-3xl mx-auto text-balance">
-            From AI copilots to marketing engines, Fluxorae ships measurable outcomes with modern stacks and weekly demos.
+            From readiness assessments to SLA-backed support, Fluxorae delivers measurable products and automation with security, governance, and ROI dashboards.
           </p>
         </motion.div>
       </div>

@@ -13,7 +13,13 @@ export default function SolutionsPage() {
     <>
       <SolutionsHero />
       <SolutionsShowcase />
-      <CTA />
+      <CTA
+        primaryButton={{ text: 'Book a Call', href: '/book-call' }}
+        secondaryButton={{ text: 'View Case Studies', href: '/case-studies' }}
+        title="Need the right solution family?"
+        description="Share your challenge and we will align you to the right AI systems, workflows, and accelerators."
+        showContactDetails
+      />
     </>
   )
 }

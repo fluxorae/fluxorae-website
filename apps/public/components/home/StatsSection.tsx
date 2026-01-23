@@ -5,12 +5,12 @@ import { useInView } from 'framer-motion'
 import { useRef } from 'react'
 
 const stats = [
-  { number: '2.3x', label: 'Avg pipeline lift on growth engagements' },
-  { number: '6-8', label: 'Week launch for AI pilot or MVP' },
+  { number: '2.3x', label: 'Average pipeline & ROI uplift' },
+  { number: '98%', label: 'Model + product accuracy in production' },
+  { number: '-28%', label: 'Ops cost reduction from automation' },
+  { number: '6-8 weeks', label: 'Pilot or MVP launch with measurable wins' },
   { number: '95%', label: 'Core Web Vitals pass rate after rebuilds' },
-  { number: '24/7', label: 'Ops coverage with AI + human-in-loop' },
-  { number: 'NPS 9+', label: 'Client satisfaction on delivery' },
-  { number: 'Global', label: 'Delivery across timezones' },
+  { number: '24/7', label: 'AI + human-in-loop coverage for critical flows' },
 ]
 
 function AnimatedNumber({ value, delay = 0 }: { value: string; delay?: number }) {

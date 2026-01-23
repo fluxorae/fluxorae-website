@@ -16,12 +16,14 @@ const contactSchema = z
     company: z.string().optional(),
     phone: z.string().optional(),
     subject: z.string().min(5, 'Subject must be at least 5 characters'),
+    inquiryType: z.enum(['sales', 'support', 'partnership', 'general']).default('sales'),
     message: z.string().min(10, 'Message must be at least 10 characters'),
     service: z.string().optional(),
     budget: z.string().optional(),
     role: z.string().optional(),
     reason: z.string().optional(),
     employeeId: z.string().optional(),
+    ndaRequested: z.boolean().optional(),
   })
   .superRefine((data, ctx) => {
     if (data.userType === 'employee') {
@@ -58,7 +60,7 @@ export default function ContactForm() {
     setValue,
   } = useForm<ContactFormData>({
     resolver: zodResolver(contactSchema),
-    defaultValues: { userType: 'client' },
+    defaultValues: { userType: 'client', inquiryType: 'sales' },
   })
 
   const searchParams = useSearchParams()
@@ -294,6 +296,22 @@ export default function ContactForm() {
           )}
         </div>
 
+        <div>
+          <label htmlFor="inquiryType" className="block text-sm font-semibold text-secondary mb-2">
+            Inquiry Type *
+          </label>
+          <select
+            id="inquiryType"
+            {...register('inquiryType')}
+            className="w-full px-4 py-3 border border-white/10 bg-white/5 rounded-lg focus:ring-2 focus:ring-accent focus:border-transparent transition-all text-white"
+          >
+            <option value="sales">Sales Inquiry</option>
+            <option value="support">Technical Support</option>
+            <option value="partnership">Partnership Request</option>
+            <option value="general">General Inquiry</option>
+          </select>
+        </div>
+
         {userType === 'client' && (
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {clientFields.map((field) => (
@@ -383,6 +401,18 @@ export default function ContactForm() {
           {errors.message && (
             <p className="mt-1 text-sm text-red-600">{errors.message.message}</p>
           )}
+        </div>
+
+        <div className="flex items-center gap-3">
+          <input
+            type="checkbox"
+            id="ndaRequested"
+            {...register('ndaRequested')}
+            className="h-4 w-4 rounded border border-white/30 bg-primary focus:ring-2 focus:ring-accent"
+          />
+          <label htmlFor="ndaRequested" className="text-sm text-white">
+            I&apos;d like to sign an NDA before we chat
+          </label>
         </div>
 
         <button

@@ -1,38 +1,38 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Globe2, Layers, ShieldCheck, Zap, Timer, LineChart } from 'lucide-react'
+import { Globe2, Layers, ShieldCheck, Zap, LineChart, Lightbulb } from 'lucide-react'
 
 const reasons = [
   {
     icon: Layers,
-    title: 'Strategy + Build + Scale',
-    description: 'One team across discovery, product, AI, and growth - no handoff friction.',
+    title: 'Hybrid strategy + engineering pods',
+    description: 'Consultants, product managers, and engineers co-own discovery, roadmap, and delivery for every sprint.',
   },
   {
     icon: Zap,
-    title: 'AI-Native Delivery',
-    description: 'Automation, copilots, and data loops baked into every engagement from week one.',
+    title: 'Rapid prototyping & PoCs',
+    description: 'Clickable experiments and AI pilots in 6-8 weeks to prove value before scale.',
   },
   {
     icon: ShieldCheck,
-    title: 'Secure & Compliant',
-    description: 'Security, governance, and privacy-first patterns aligned to enterprise standards.',
+    title: 'Security & compliance-first',
+    description: 'ISO 27001, SOC 2, GDPR, and HIPAA guardrails baked into architecture and data flows.',
   },
   {
-    icon: Timer,
-    title: 'Momentum by Design',
-    description: 'Weekly demos, OKR-tracked outcomes, and clear SLAs to keep decisions fast.',
+    icon: Lightbulb,
+    title: 'AI-native delivery',
+    description: 'Automation, copilots, and data loops stitched into every release from day one.',
   },
   {
     icon: LineChart,
-    title: 'Performance Obsessed',
-    description: 'Core Web Vitals, SEO, and analytics instrumentation shipped by default.',
+    title: 'Performance obsessed',
+    description: 'Core Web Vitals, SEO, and experimentation instrumentation shipped by default.',
   },
   {
     icon: Globe2,
-    title: 'Global Delivery',
-    description: 'Teams across timezones with local context for India, US, and EU go-to-market.',
+    title: 'Global delivery with local context',
+    description: 'Cross-border pods covering North America, Europe, and India with matched cultural fluency.',
   },
 ]
 

@@ -29,6 +29,17 @@ const socialLinks = [
   { name: 'Instagram', icon: Instagram, href: 'https://instagram.com/fluxorae' },
 ]
 
+const sitemapSummary = [
+  { name: 'Services', href: '/services' },
+  { name: 'Solutions', href: '/solutions' },
+  { name: 'Industries', href: '/industries' },
+  { name: 'Case Studies', href: '/case-studies' },
+  { name: 'Insights', href: '/insights' },
+  { name: 'Pricing', href: '/pricing' },
+]
+
+const trustBadges = ['GDPR Compliant', 'ISO 27001', 'SOC 2 Type II', 'Cloud Security', 'Audit Ready', 'NDA Friendly']
+
 export default function Footer() {
   const currentYear = new Date().getFullYear()
 
@@ -138,6 +149,55 @@ export default function Footer() {
               ))}
             </ul>
           </div>
+        </div>
+
+        <div className="mt-10 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+          <div className="rounded-2xl bg-gradient-to-r from-accent to-electric-soft px-6 py-6 text-white shadow-[0_20px_60px_rgba(0,0,0,0.35)]">
+            <p className="text-xs uppercase tracking-[0.4em] text-white/80 mb-3">Need a roadmap?</p>
+            <h3 className="text-2xl font-semibold mb-2">Book a Call</h3>
+            <p className="text-sm text-white/80 mb-4">
+              Free AI consultation, project brief intake, and rapid alignment on KPIs, budget, and timeline.
+            </p>
+            <Link
+              href="/book-call"
+              className="inline-flex items-center gap-2 rounded-full bg-white/90 px-5 py-2 text-sm font-semibold text-primary shadow-lg shadow-black/30"
+            >
+              Book a Call
+            </Link>
+          </div>
+          <div className="glass-panel rounded-2xl p-6 border border-white/10">
+            <h4 className="font-semibold text-white mb-3">Sitemap</h4>
+            <div className="flex flex-wrap gap-3 text-sm text-gray-300">
+              {sitemapSummary.map((item) => (
+                <Link
+                  key={item.name}
+                  href={item.href}
+                  className="px-3 py-1 rounded-full border border-white/10 bg-white/5 hover:border-accent hover:text-accent transition"
+                >
+                  {item.name}
+                </Link>
+              ))}
+            </div>
+          </div>
+          <div className="glass-panel rounded-2xl p-6 border border-white/10">
+            <h4 className="font-semibold text-white mb-3">Trust & certifications</h4>
+            <p className="text-sm text-gray-400 mb-4">
+              Security, compliance, and governance are built into every engagement—global teams, transparent reporting, and audit-ready SLA commitments.
+            </p>
+            <div className="flex flex-wrap gap-2 text-xs text-gray-300">
+              {trustBadges.map((badge) => (
+                <span key={badge} className="px-3 py-1 rounded-full bg-white/5 border border-white/10">
+                  {badge}
+                </span>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        <div className="mt-6 flex flex-wrap gap-3 text-[10px] uppercase tracking-[0.4em] text-gray-400">
+          {trustBadges.slice(0, 4).map((badge) => (
+            <span key={badge}>{badge}</span>
+          ))}
         </div>
 
         {/* Bottom Bar */}

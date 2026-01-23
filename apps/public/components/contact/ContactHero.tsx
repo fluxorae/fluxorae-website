@@ -24,13 +24,13 @@ export default function ContactHero() {
             transition={{ delay: 0.2, duration: 0.6 }}
             className="inline-block px-4 py-2 mb-6 bg-accent/20 text-accent rounded-full text-sm font-semibold"
           >
-            Get in Touch
+            Contact center
           </motion.span>
           <h1 className="heading-1 text-white mb-6 text-balance">
-            Let&apos;s Transform Your Business Together
+            Let&apos;s transform your AI, automation, or growth agenda
           </h1>
           <p className="text-xl md:text-2xl text-gray-200 max-w-3xl mx-auto text-balance">
-            Have a project in mind? Want to learn more about our services? We&apos;re here to help.
+            Sales inquiries, technical support, or strategic partnerships—we respond with clarity, calendars, and repeatable brief templates.
           </p>
         </motion.div>
       </div>

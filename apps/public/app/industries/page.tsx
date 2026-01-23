@@ -13,7 +13,13 @@ export default function IndustriesPage() {
     <>
       <IndustriesHero />
       <IndustriesGrid />
-      <CTA />
+      <CTA
+        title="Need an industry-ready AI partner?"
+        description="Book a call to discuss your vertical challenges, reference architectures, and compliance needs."
+        primaryButton={{ text: 'Book a Call', href: '/book-call' }}
+        secondaryButton={{ text: 'View Case Studies', href: '/case-studies' }}
+        showContactDetails
+      />
     </>
   )
 }

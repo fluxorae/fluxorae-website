@@ -27,10 +27,10 @@ export default function IndustriesHero() {
             Industries We Serve
           </motion.span>
           <h1 className="heading-1 text-white mb-6 text-balance">
-            Industry-Specific Solutions
+            Industry-specific AI & automation that moves your KPI needle
           </h1>
           <p className="text-xl md:text-2xl text-gray-200 max-w-3xl mx-auto text-balance">
-            Tailored technology solutions designed to meet the unique challenges of your industry
+            Healthcare, Finance, Retail, Manufacturing, Logistics, Education, Real Estate, and SaaS teams lean on Fluxorae for measurable automation and compliant delivery.
           </p>
         </motion.div>
       </div>

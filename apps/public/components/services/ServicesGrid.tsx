@@ -1,130 +1,153 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Bot, Code2, Megaphone, Palette, DatabaseZap, CloudCog, ArrowUpRight } from 'lucide-react'
 import Link from 'next/link'
 
-const services = [
+const serviceBuckets = [
   {
-    icon: Bot,
-    title: 'AI & Automation',
-    problem: 'Manual processes slow teams and create inconsistent customer experiences.',
-    solution: 'Design and deploy copilots, workflow automation, and data agents tuned to your stack.',
-    outcomes: ['-30% ops time in 8 weeks', 'Human-in-loop safety', 'Secure model routing'],
-    stack: ['OpenAI/Anthropic', 'LangChain', 'Vercel AI', 'Airflow'],
-    color: 'from-electric-soft via-accent to-amber-500/90',
-    href: '/services/ai-automation',
+    id: 'ai-consulting',
+    title: 'AI Consulting',
+    summary: 'Assess readiness, craft roadmaps, and prove feasibility with measurable pilots.',
+    outcomes: ['Readiness scorecard + change readiness plan', 'Pilot prioritization with ROI and risk trade-offs', 'Data strategy + governance blueprint'],
+    deliverables: ['AI strategy & roadmap', 'Feasibility analysis studies', 'Data maturity assessment', 'Governance playbooks'],
+    links: [
+      { label: 'AI readiness playbook', href: '/insights#how-to' },
+      { label: 'Readiness case studies', href: '/case-studies' },
+    ],
   },
   {
-    icon: Code2,
-    title: 'Product Engineering',
-    problem: 'Legacy web/mobile experiences miss performance and conversion targets.',
-    solution: 'Ship Next.js apps, design systems, and APIs with CI/CD and observability baked in.',
-    outcomes: ['LCP < 2.5s', 'Design system governance', 'Weekly shipping cadence'],
-    stack: ['Next.js', 'TypeScript', 'shadcn/ui', 'Prisma'],
-    color: 'from-cyan-400 via-electric to-emerald-400',
-    href: '/services/product-engineering',
+    id: 'custom-ai-development',
+    title: 'Custom AI Development',
+    summary: 'Design, train, and ship enterprise-grade AI products with observability and reliability.',
+    outcomes: ['End-to-end product definition', 'Explainability and performance tuning', 'Secure APIs and system integrations'],
+    deliverables: ['End-to-end AI products', 'Model training & optimization', 'Multi-cloud deployment', 'API + system integration'],
+    links: [
+      { label: 'Generative AI insights', href: '/insights#generative-ai' },
+      { label: 'AI Ops desk case study', href: '/case-studies' },
+    ],
   },
   {
-    icon: Megaphone,
-    title: 'Digital Marketing / SEO',
-    problem: 'Underperforming acquisition and unclear attribution across channels.',
-    solution: 'Technical SEO, CRO, performance ads, and analytics with experimentation loops.',
-    outcomes: ['+40% organic demos', 'CRO playbooks', 'Attribution clarity'],
-    stack: ['GA4', 'Search Console', 'Tag Manager', 'Looker/Data Studio'],
-    color: 'from-amber-300 via-accent to-orange-500',
-    href: '/services/marketing-seo',
+    id: 'machine-learning-services',
+    title: 'Machine Learning Services',
+    summary: 'Build supervised, unsupervised, and deep-learning systems with proactive monitoring.',
+    outcomes: ['Custom model catalogs', 'Drift detection + retraining plans', 'Deep learning for vision and language'],
+    deliverables: ['Supervised & unsupervised models', 'Deep learning pipelines', 'Retraining/playback loops'],
+    links: [
+      { label: 'Predictive analytics brief', href: '/insights#predictive-analytics' },
+      { label: 'Model ops checklist', href: '/insights#technical' },
+    ],
   },
   {
-    icon: Palette,
-    title: 'UI/UX & Branding',
-    problem: 'Disjointed visuals and UX create drop-offs and weak brand recall.',
-    solution: 'Research, brand identity, interaction design, and motion built into components.',
-    outcomes: ['Higher trust & clarity', 'Consistent design tokens', 'Faster build velocity'],
-    stack: ['Figma', 'Lottie', 'Design Tokens', 'Storybook'],
-    color: 'from-electric-soft via-emerald-300 to-accent-light',
-    href: '/services/ui-ux-branding',
-  },
-  {
-    icon: DatabaseZap,
+    id: 'data-analytics',
     title: 'Data & Analytics',
-    problem: 'Fragmented data and slow insight cycles block decisions.',
-    solution: 'Customer 360, dashboards, predictive models, and data contracts with governance.',
-    outcomes: ['Live metrics dashboards', 'Predictive scoring', 'Data quality SLAs'],
-    stack: ['dbt', 'BigQuery/Postgres', 'Metabase', 'Python'],
-    color: 'from-electric via-electric-soft to-cyan-700',
-    href: '/services/data-cloud-devops',
+    summary: 'Data engineering, BI dashboards, warehouses, and real-time analytics that fuel decisions.',
+    outcomes: ['Governed data stores', 'Storytelling dashboards', 'Live operational analytics'],
+    deliverables: ['Data engineering + lakes', 'BI dashboards', 'Data warehousing', 'Realtime analytics & alerts'],
+    links: [
+      { label: 'BI dashboard playbook', href: '/insights#ai-dashboards' },
+      { label: 'Data strategy case study', href: '/case-studies' },
+    ],
   },
   {
-    icon: CloudCog,
-    title: 'Cloud & DevOps',
-    problem: 'Unreliable infra, rising costs, and slow releases.',
-    solution: 'Cloud modernization, SRE, FinOps, and secure pipelines with clear runbooks.',
-    outcomes: ['99.9%+ uptime targets', 'Cost visibility', 'Incident-ready playbooks'],
-    stack: ['AWS', 'Docker', 'Kubernetes', 'Terraform'],
-    color: 'from-amber-300 via-electric-soft to-emerald-500',
-    href: '/services/data-cloud-devops',
+    id: 'automation-agents',
+    title: 'Automation & AI Agents',
+    summary: 'Business process automation, RPA, and AI agents for sales, support, and ops.',
+    outcomes: ['Process automation with human-in-loop guardrails', 'AI agents for sales, support, and ops', 'RPA + AI orchestration'],
+    deliverables: ['Business process automation', 'Sales & support AI agents', 'RPA + AI orchestration'],
+    links: [
+      { label: 'Automation in action', href: '/case-studies' },
+      { label: 'AI agent guide', href: '/insights#how-to' },
+    ],
+  },
+  {
+    id: 'cloud-mlops',
+    title: 'Cloud & MLOps',
+    summary: 'Shared infrastructure design, reproducible pipelines, and compliance-first governance.',
+    outcomes: ['Secure cloud architecture', 'CI/CD for models', 'Auditable security posture'],
+    deliverables: ['Cloud architecture', 'MLOps pipelines', 'Security & compliance controls'],
+    links: [
+      { label: 'MLOps best practices', href: '/insights#technical' },
+      { label: 'Infrastructure stories', href: '/case-studies' },
+    ],
+  },
+  {
+    id: 'mvp-poc',
+    title: 'MVP & PoC Development',
+    summary: 'Rapid prototyping, startup MVPs, and pilot projects with success criteria.',
+    outcomes: ['Clickable prototypes', 'Startup-ready MVPs', 'Pilot tracking with ROI'],
+    deliverables: ['Rapid prototyping', 'Startup MVPs', 'Pilot projects with measurable checkpoints'],
+    links: [
+      { label: 'Pilot project template', href: '/insights#how-to' },
+      { label: 'Startup MVP checklist', href: '/insights#resources' },
+    ],
+  },
+  {
+    id: 'support-maintenance',
+    title: 'Support & Maintenance',
+    summary: 'Monitoring, continuous improvement, and SLA-based support for peace-of-mind.',
+    outcomes: ['Performance monitoring with SLIs/SLOs', 'Continuous improvement backlog', 'Dedicated escalation paths'],
+    deliverables: ['Model performance monitoring', 'Continuous improvements', 'SLA-based support'],
+    links: [
+      { label: 'Support & SLA guide', href: '/insights#trust' },
+      { label: 'Book a call for support', href: '/book-call' },
+    ],
   },
 ]
 
 export default function ServicesGrid() {
   return (
-    <section className="section-padding">
-      <div className="container-custom">
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
-          {services.map((service, index) => {
-            const Icon = service.icon
-            return (
-              <motion.div
-                key={service.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="glass-panel border border-white/10 rounded-2xl p-6 hover:border-white/20 transition-all duration-300 h-full flex flex-col gap-4"
-              >
-                <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${service.color} flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}>
-                  <Icon className="text-white" size={22} />
-                </div>
-                <h3 className="heading-3 text-xl">{service.title}</h3>
-                <div className="space-y-3 text-sm text-gray-200">
-                  <p className="flex gap-2">
-                    <span className="text-white font-semibold">Problem:</span> {service.problem}
+    <section className="section-padding bg-secondary-light">
+      <div className="container-custom space-y-8">
+        <div className="text-center">
+          <p className="text-xs uppercase tracking-[0.5em] text-gray-500 mb-2">Services</p>
+          <h2 className="heading-2 text-white">Consulting, build, and support with measurable outcomes</h2>
+          <p className="text-gray-400 max-w-3xl mx-auto">
+            Each bucket delivers focused deliverables, outcomes, and references so you can trace the impact from strategy to scale.
+          </p>
+        </div>
+        <div className="grid gap-6 md:grid-cols-2">
+          {serviceBuckets.map((bucket, index) => (
+            <motion.article
+              key={bucket.title}
+              id={bucket.id}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: index * 0.08 }}
+              className="glass-panel rounded-3xl border border-white/10 p-6 flex flex-col h-full"
+            >
+              <div className="flex items-center justify-between mb-3">
+                <h3 className="text-xl font-semibold text-white">{bucket.title}</h3>
+                <span className="text-xs uppercase tracking-[0.4em] text-accent">Service</span>
+              </div>
+              <p className="text-gray-300 mb-4">{bucket.summary}</p>
+              <div className="flex flex-col gap-2 text-sm text-gray-200 mb-4">
+                {bucket.outcomes.map((item) => (
+                  <p key={`outcome-${item}`} className="flex items-center gap-2">
+                    <span className="w-2 h-2 rounded-full bg-accent inline-flex" />
+                    {item}
                   </p>
-                  <p className="flex gap-2">
-                    <span className="text-white font-semibold">Solution:</span> {service.solution}
-                  </p>
-                </div>
-                <div className="space-y-2">
-                  <p className="text-gray-400 text-xs uppercase tracking-[0.2em]">Expected outcomes</p>
-                  <ul className="space-y-2">
-                    {service.outcomes.map((outcome) => (
-                      <li key={outcome} className="flex items-center text-sm text-white">
-                        <span className="w-1.5 h-1.5 bg-accent rounded-full mr-2" />
-                        {outcome}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-                <div className="flex flex-wrap gap-2 pt-2">
-                  {service.stack.map((item) => (
-                    <span key={item} className="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs text-gray-200">
-                      {item}
-                    </span>
-                  ))}
-                </div>
-                <div className="pt-2">
+                ))}
+              </div>
+              <div className="text-xs uppercase tracking-[0.3em] text-gray-400 mb-3">Deliverables</div>
+              <ul className="list-disc list-inside space-y-1 text-sm text-gray-300 mb-4">
+                {bucket.deliverables.map((deliverable) => (
+                  <li key={`deliverable-${deliverable}`}>{deliverable}</li>
+                ))}
+              </ul>
+              <div className="mt-auto flex flex-wrap gap-2">
+                {bucket.links.map((link) => (
                   <Link
-                    href={service.href}
-                    className="text-accent font-semibold hover:underline inline-flex items-center gap-2"
+                    key={`${bucket.id}-${link.label}`}
+                    href={link.href}
+                    className="text-accent text-sm font-semibold hover:underline"
                   >
-                    View service
-                    <ArrowUpRight size={16} />
+                    {link.label}
                   </Link>
-                </div>
-              </motion.div>
-            )
-          })}
+                ))}
+              </div>
+            </motion.article>
+          ))}
         </div>
       </div>
     </section>

@@ -24,13 +24,13 @@ export default function InsightsHero() {
             transition={{ delay: 0.2, duration: 0.6 }}
             className="inline-block px-4 py-2 mb-6 bg-accent/20 text-accent rounded-full text-sm font-semibold"
           >
-            Our Insights
+            Knowledge HQ
           </motion.span>
           <h1 className="heading-1 text-white mb-6 text-balance">
-            Latest Insights & Thought Leadership
+            Insights, research, and playbooks for AI-forward teams
           </h1>
           <p className="text-xl md:text-2xl text-gray-200 max-w-3xl mx-auto text-balance">
-            Stay updated with the latest trends, insights, and expertise from our team
+            Filter by format—blogs, how-to guides, research, case reports, news, and more—so your team can grab the right signal fast.
           </p>
         </motion.div>
       </div>
