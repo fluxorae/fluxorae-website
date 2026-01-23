@@ -1,0 +1,52 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Description: GitHub OIDC role to deploy Amplify app fluxorae.com from repo fluxorae/Fluxorae (branch main).
+
+Parameters:
+  RoleName:
+    Type: String
+    Default: GitHubActions-AmplifyDeploy
+  RepoFullName:
+    Type: String
+    Default: fluxorae/Fluxorae
+  BranchRef:
+    Type: String
+    Default: refs/heads/main
+  AmplifyAppId:
+    Type: String
+    Default: d2xl5a4ri11ava
+  AwsAccountId:
+    Type: String
+    Default: 113058466246
+  Region:
+    Type: String
+    Default: eu-north-1
+
+Resources:
+  GitHubOidcAmplifyRole:
+    Type: AWS::IAM::Role
+    Properties:
+      RoleName: !Ref RoleName
+      AssumeRolePolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+          - Effect: Allow
+            Principal:
+              Federated: arn:aws:iam::${AWS::AccountId}:oidc-provider/token.actions.githubusercontent.com
+            Action: sts:AssumeRoleWithWebIdentity
+            Condition:
+              StringEquals:
+                token.actions.githubusercontent.com:aud: sts.amazonaws.com
+                token.actions.githubusercontent.com:sub: !Sub repo:${RepoFullName}:ref:${BranchRef}
+      Policies:
+        - PolicyName: AmplifyStartJob
+          PolicyDocument:
+            Version: '2012-10-17'
+            Statement:
+              - Effect: Allow
+                Action:
+                  - amplify:StartJob
+                Resource: !Sub arn:aws:amplify:${Region}:${AwsAccountId}:apps/${AmplifyAppId}/branches/main/jobs/*
+Outputs:
+  RoleArn:
+    Value: !GetAtt GitHubOidcAmplifyRole.Arn
+    Description: IAM Role ARN to put in GitHub secret AWS_DEPLOY_ROLE_ARN
