@@ -1,0 +1,87 @@
+﻿  Γû▓ Next.js 14.2.35
+  - Environments: .env.local
+
+   Creating an optimized production build ...
+node.exe : Failed to 
+compile.
+At line:1 char:1
++ & "C:\Program Files
+\nodejs/node.exe" 
+"C:\Program 
+Files\nodejs/node_mo 
+...
++ ~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~
+    + CategoryInfo   
+           : NotSpe  
+  cified: (Failed    
+ to compile.:Stri    
+ng) [], RemoteEx    
+ception
+    + FullyQualified 
+   ErrorId : Native  
+  CommandError
+ 
+
+./app/case-studies/pa
+ge.tsx
+Error: 
+  [31mx[0m You are 
+attempting to export 
+"metadata" from a 
+component marked 
+with "use client", 
+which is disallowed. 
+Either remove the 
+export, or the "use 
+client" directive. 
+Read more: 
+https://nextjs.org/
+  [31m|[0m docs/get
+ting-started/react-es
+sentials#the-use-clie
+nt-directive
+  [31m|[0m 
+  [31m|[0m 
+    ,-[[36;1;4mD:\Fl
+uxorae\apps\public\ap
+p\case-studies\page.t
+sx[0m:5:1]
+ [2m 5[0m | import 
+{ Metadata } from 
+'next'
+ [2m 6[0m | import 
+CTA from '@/component
+s/common/CTA'
+ [2m 7[0m | 
+ [2m 8[0m | export 
+const metadata: 
+Metadata = {
+    : [31;1m        
+     ^^^^^^^^[0m
+ [2m 9[0m |   
+title: 'Case Studies 
+| Fluxorae',
+ [2m10[0m |   
+description: 'Browse 
+Fluxorae case 
+studies with 
+outcomes across 
+industries, 
+solutions, and ROI 
+metrics.',
+ [2m11[0m | }
+    `----
+
+Import trace for 
+requested module:
+./app/case-studies/pa
+ge.tsx
+
+
+> Build failed 
+because of webpack 
+errors
+

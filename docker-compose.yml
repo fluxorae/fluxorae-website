@@ -1,0 +1,42 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:15
+    environment:
+      POSTGRES_DB: fluxorae
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+
+  backend_api:
+    build:
+      context: .
+      dockerfile: apps/api/Dockerfile
+    depends_on:
+      - db
+
+  frontend_in:
+    build:
+      context: .
+      dockerfile: apps/in/Dockerfile
+
+  frontend_com:
+    build:
+      context: .
+      dockerfile: apps/com/Dockerfile
+
+  admin_panel:
+    build:
+      context: .
+      dockerfile: apps/admin/Dockerfile
+
+  nginx:
+    image: nginx:alpine
+    ports:
+      - "80:80"
+    volumes:
+      - ./infra/nginx.conf:/etc/nginx/conf.d/default.conf
+    depends_on:
+      - frontend_in
+      - frontend_com
+      - admin_panel

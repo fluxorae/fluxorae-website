@@ -2,12 +2,20 @@
   "name": "fluxorae-monorepo",
   "private": true,
   "workspaces": [
-    "apps/public"
+    "apps/*",
+    "packages/*"
   ],
   "scripts": {
+    "dev:api": "npm run dev --workspace apps/api",
+    "dev:in": "npm run dev --workspace apps/in",
+    "dev:com": "npm run dev --workspace apps/com",
+    "dev:admin": "npm run dev --workspace apps/admin",
     "dev:public": "npm run dev --workspace apps/public",
-    "build:public": "npm run build --workspace apps/public",
-    "lint:public": "npm run lint --workspace apps/public"
+    "build:api": "npm run build --workspace apps/api",
+    "build:in": "npm run build --workspace apps/in",
+    "build:com": "npm run build --workspace apps/com",
+    "build:admin": "npm run build --workspace apps/admin",
+    "build:public": "npm run build --workspace apps/public"
   },
   "dependencies": {
     "next": "^14.1.0",

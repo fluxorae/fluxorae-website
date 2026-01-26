@@ -1,0 +1,13 @@
+{
+    "name": "@fluxorae/ui",
+    "version": "1.0.0",
+    "private": true,
+    "main": "index.ts",
+    "dependencies": {
+        "react": "^18.2.0",
+        "framer-motion": "latest",
+        "lucide-react": "latest",
+        "clsx": "latest",
+        "tailwind-merge": "latest"
+    }
+}

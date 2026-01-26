@@ -1,0 +1,11 @@
+{
+    "name": "@fluxorae/db",
+    "version": "1.0.0",
+    "main": "index.ts",
+    "dependencies": {
+        "@prisma/client": "^5.10.2"
+    },
+    "devDependencies": {
+        "prisma": "^5.10.2"
+    }
+}
