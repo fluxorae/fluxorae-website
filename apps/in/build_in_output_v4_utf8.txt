@@ -1,0 +1,56 @@
+﻿Γû▓ Next.js 16.1.4 (Turbopack)
+
+  Creating an optimized production build ...
+Γ£ô Compiled successfully in 5.3s
+  Running TypeScript ...
+  Collecting page data using 15 workers ...
+  Generating static pages using 15 workers (0/4) ...
+node.exe : Error 
+occurred 
+prerendering page 
+"/". Read more: https
+://nextjs.org/docs/me
+ssages/prerender-erro
+r
+At line:1 char:1
++ & "C:\Program Files
+\nodejs/node.exe" 
+"C:\Program 
+Files\nodejs/node_mo 
+...
++ ~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~
+    + CategoryInfo   
+           : NotSpe  
+  cified: (Error o   
+ ccurred ...prere    
+nder-error:Strin    
+g) [], RemoteExc    
+eption
+    + FullyQualified 
+   ErrorId : Native  
+  CommandError
+ 
+Error: Element type 
+is invalid: expected 
+a string (for 
+built-in components) 
+or a class/function 
+(for composite 
+components) but got: 
+undefined.
+    at ignore-listed 
+frames {
+  digest: 
+'1639081837'
+}
+Export encountered 
+an error on /page: 
+/, exiting the build.
+Γ¿» Next.js build 
+worker exited with 
+code: 1 and signal: 
+null
+

@@ -1,0 +1,54 @@
+﻿  Γû▓ Next.js 14.2.35
+
+   Creating an optimized production build ...
+node.exe : Failed to 
+compile.
+At line:1 char:1
++ & "C:\Program Files
+\nodejs/node.exe" 
+"C:\Program 
+Files\nodejs/node_mo 
+...
++ ~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~
+    + CategoryInfo   
+           : NotSpe  
+  cified: (Failed    
+ to compile.:Stri    
+ng) [], RemoteEx    
+ception
+    + FullyQualified 
+   ErrorId : Native  
+  CommandError
+ 
+
+src\app\layout.tsx
+`next/font` error:
+Unknown font `Geist`
+
+src\app\layout.tsx
+`next/font` error:
+Unknown font `Geist 
+Mono`
+
+../../packages/ui/ind
+ex.ts
+Module not found: 
+Can't resolve 
+'./components/Hero'
+
+https://nextjs.org/do
+cs/messages/module-no
+t-found
+
+Import trace for 
+requested module:
+./src/app/page.tsx
+
+
+> Build failed 
+because of webpack 
+errors
+

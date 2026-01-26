@@ -1,0 +1,108 @@
+﻿  Γû▓ Next.js 14.2.35
+
+   Creating an optimized production build ...
+node.exe : Failed to 
+compile.
+At line:1 char:1
++ & "C:\Program Files
+\nodejs/node.exe" 
+"C:\Program 
+Files\nodejs/node_mo 
+...
++ ~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~
+    + CategoryInfo   
+           : NotSpe  
+  cified: (Failed    
+ to compile.:Stri    
+ng) [], RemoteEx    
+ception
+    + FullyQualified 
+   ErrorId : Native  
+  CommandError
+ 
+
+src\app\layout.tsx
+An error occurred in 
+`next/font`.
+
+Error: Cannot find 
+module '@tailwindcss/
+postcss'
+Require stack:
+- D:\Fluxorae\node_mo
+dules\next\dist\build
+\webpack\config\block
+s\css\plugins.js
+- D:\Fluxorae\node_mo
+dules\next\dist\build
+\webpack\config\block
+s\css\index.js
+- D:\Fluxorae\node_mo
+dules\next\dist\build
+\webpack\config\index
+.js
+- D:\Fluxorae\node_mo
+dules\next\dist\build
+\webpack-config.js
+- D:\Fluxorae\node_mo
+dules\next\dist\build
+\webpack-build\impl.j
+s
+- D:\Fluxorae\node_mo
+dules\next\dist\compi
+led\jest-worker\proce
+ssChild.js
+    at 
+Module.<anonymous> (n
+ode:internal/modules/
+cjs/loader:1421:15)
+    at D:\Fluxorae\no
+de_modules\next\dist\
+server\require-hook.j
+s:55:36
+    at 
+require.resolve (node
+:internal/modules/hel
+pers:163:19)
+    at loadPlugin (D:
+\Fluxorae\node_module
+s\next\dist\build\web
+pack\config\blocks\cs
+s\plugins.js:49:32)
+    at D:\Fluxorae\no
+de_modules\next\dist\
+build\webpack\config\
+blocks\css\plugins.js
+:157:56
+    at Array.map 
+(<anonymous>)
+    at 
+getPostCssPlugins (D:
+\Fluxorae\node_module
+s\next\dist\build\web
+pack\config\blocks\cs
+s\plugins.js:157:47)
+    at async D:\Fluxo
+rae\node_modules\next
+\dist\build\webpack\c
+onfig\blocks\css\inde
+x.js:124:36
+    at async D:\Fluxo
+rae\node_modules\next
+\dist\build\webpack\l
+oaders\next-font-load
+er\index.js:86:33
+    at async 
+Span.traceAsyncFn (D:
+\Fluxorae\node_module
+s\next\dist\trace\tra
+ce.js:154:20)
+
+
+> Build failed 
+because of webpack 
+errors
+
