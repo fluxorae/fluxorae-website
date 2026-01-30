@@ -1,30 +1,51 @@
-'use client'
+﻿'use client'
 
 import { motion } from 'framer-motion'
 import Link from 'next/link'
+import { ServiceDto } from '@/types/api'
 
-const serviceBuckets = [
+interface DisplayService {
+  id: string
+  title: string
+  summary: string
+  outcomes: string[]
+  deliverables: string[]
+  links: { label: string; href: string }[]
+  metaLabel: string
+}
+
+const fallbackServices: DisplayService[] = [
   {
     id: 'ai-consulting',
     title: 'AI Consulting',
     summary: 'Assess readiness, craft roadmaps, and prove feasibility with measurable pilots.',
-    outcomes: ['Readiness scorecard + change readiness plan', 'Pilot prioritization with ROI and risk trade-offs', 'Data strategy + governance blueprint'],
+    outcomes: [
+      'Readiness scorecard + change readiness plan',
+      'Pilot prioritization with ROI and risk trade-offs',
+      'Data strategy + governance blueprint',
+    ],
     deliverables: ['AI strategy & roadmap', 'Feasibility analysis studies', 'Data maturity assessment', 'Governance playbooks'],
     links: [
       { label: 'AI readiness playbook', href: '/insights#how-to' },
       { label: 'Readiness case studies', href: '/case-studies' },
     ],
+    metaLabel: 'Consulting',
   },
   {
     id: 'custom-ai-development',
     title: 'Custom AI Development',
     summary: 'Design, train, and ship enterprise-grade AI products with observability and reliability.',
-    outcomes: ['End-to-end product definition', 'Explainability and performance tuning', 'Secure APIs and system integrations'],
+    outcomes: [
+      'End-to-end product definition',
+      'Explainability and performance tuning',
+      'Secure APIs and system integrations',
+    ],
     deliverables: ['End-to-end AI products', 'Model training & optimization', 'Multi-cloud deployment', 'API + system integration'],
     links: [
       { label: 'Generative AI insights', href: '/insights#generative-ai' },
       { label: 'AI Ops desk case study', href: '/case-studies' },
     ],
+    metaLabel: 'Development',
   },
   {
     id: 'machine-learning-services',
@@ -36,6 +57,7 @@ const serviceBuckets = [
       { label: 'Predictive analytics brief', href: '/insights#predictive-analytics' },
       { label: 'Model ops checklist', href: '/insights#technical' },
     ],
+    metaLabel: 'ML',
   },
   {
     id: 'data-analytics',
@@ -47,6 +69,7 @@ const serviceBuckets = [
       { label: 'BI dashboard playbook', href: '/insights#ai-dashboards' },
       { label: 'Data strategy case study', href: '/case-studies' },
     ],
+    metaLabel: 'Analytics',
   },
   {
     id: 'automation-agents',
@@ -58,6 +81,7 @@ const serviceBuckets = [
       { label: 'Automation in action', href: '/case-studies' },
       { label: 'AI agent guide', href: '/insights#how-to' },
     ],
+    metaLabel: 'Automation',
   },
   {
     id: 'cloud-mlops',
@@ -69,6 +93,7 @@ const serviceBuckets = [
       { label: 'MLOps best practices', href: '/insights#technical' },
       { label: 'Infrastructure stories', href: '/case-studies' },
     ],
+    metaLabel: 'MLOps',
   },
   {
     id: 'mvp-poc',
@@ -80,6 +105,7 @@ const serviceBuckets = [
       { label: 'Pilot project template', href: '/insights#how-to' },
       { label: 'Startup MVP checklist', href: '/insights#resources' },
     ],
+    metaLabel: 'MVP',
   },
   {
     id: 'support-maintenance',
@@ -91,10 +117,39 @@ const serviceBuckets = [
       { label: 'Support & SLA guide', href: '/insights#trust' },
       { label: 'Book a call for support', href: '/book-call' },
     ],
+    metaLabel: 'Support',
   },
 ]
 
-export default function ServicesGrid() {
+const priceFormatter = new Intl.NumberFormat('en-US', {
+  style: 'currency',
+  currency: 'USD',
+  maximumFractionDigits: 0,
+})
+
+function normalizeService(service: ServiceDto): DisplayService {
+  const outcomes =
+    service.aiTags.length > 0
+      ? service.aiTags.map((tag) => `AI + Human ${tag}`)
+      : ['Measurable sprint roadmap', 'Consulting + build squad', 'Ops-grade guardrails']
+  const metaLabel = service.customQuote ? 'Custom' : `Starts at ${priceFormatter.format(service.priceCents / 100)}`
+
+  return {
+    id: service.slug,
+    title: service.title,
+    summary: service.description ?? `Category: ${service.category ?? 'Managed service'}`,
+    outcomes,
+    deliverables: service.deliverables,
+    links: [
+      { label: 'Request Proposal', href: '/book-call' },
+      { label: 'View Case Studies', href: '/case-studies' },
+    ],
+    metaLabel,
+  }
+}
+
+export default function ServicesGrid({ services }: { services?: ServiceDto[] }) {
+  const highlightedServices = services && services.length > 0 ? services.slice(0, 6).map(normalizeService) : fallbackServices
   return (
     <section className="section-padding bg-secondary-light">
       <div className="container-custom space-y-8">
@@ -106,7 +161,7 @@ export default function ServicesGrid() {
           </p>
         </div>
         <div className="grid gap-6 md:grid-cols-2">
-          {serviceBuckets.map((bucket, index) => (
+          {highlightedServices.map((bucket, index) => (
             <motion.article
               key={bucket.title}
               id={bucket.id}
@@ -118,7 +173,7 @@ export default function ServicesGrid() {
             >
               <div className="flex items-center justify-between mb-3">
                 <h3 className="text-xl font-semibold text-white">{bucket.title}</h3>
-                <span className="text-xs uppercase tracking-[0.4em] text-accent">Service</span>
+                <span className="text-xs uppercase tracking-[0.4em] text-accent">{bucket.metaLabel}</span>
               </div>
               <p className="text-gray-300 mb-4">{bucket.summary}</p>
               <div className="flex flex-col gap-2 text-sm text-gray-200 mb-4">

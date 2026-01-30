@@ -27,24 +27,27 @@ enum Status {
 }
 
 model User {
-  id            String     @id @default(cuid())
-  email         String     @unique
-  passwordHash  String
-  role          Role       @default(CLIENT)
-  status        Status     @default(ACTIVE)
-  firstName     String?
-  lastName      String?
-  phone         String?
-  mfaEnabled    Boolean    @default(false)
-  sessions      Session[]
-  auditLogs     AuditLog[]
-  clients       Client[]   @relation("ClientOwner")
-  employees     Employee?
-  projectsOwned Project[]  @relation("ProjectOwner")
-  tasksAssigned Task[]     @relation("TaskAssignee")
-  tickets       Ticket[]   @relation("TicketUser")
-  createdAt     DateTime   @default(now())
-  updatedAt     DateTime   @updatedAt
+  id                String             @id @default(cuid())
+  email             String             @unique
+  passwordHash      String
+  role              Role               @default(CLIENT)
+  status            Status             @default(ACTIVE)
+  firstName         String?
+  lastName          String?
+  phone             String?
+  mfaEnabled        Boolean            @default(false)
+  sessions          Session[]
+  auditLogs         AuditLog[]
+  clients           Client[]           @relation("ClientOwner")
+  employees         Employee?
+  projectsOwned     Project[]          @relation("ProjectOwner")
+  tasksAssigned     Task[]             @relation("TaskAssignee")
+  tickets           Ticket[]           @relation("TicketUser")
+  freelancerProfile FreelancerProfile?
+  sentMessages      Message[]          @relation("UserMessages")
+  createdAt         DateTime           @default(now())
+  updatedAt         DateTime           @updatedAt
+  requestedAiRuns   AiRun[]            @relation("UserRequestedAiRuns")
 }
 
 model Session {
@@ -80,31 +83,47 @@ model Employee {
 }
 
 model Project {
-  id          String      @id @default(cuid())
-  name        String
-  description String?
-  status      String      @default("ACTIVE")
-  client      Client      @relation(fields: [clientId], references: [id])
-  clientId    String
-  owner       User?       @relation("ProjectOwner", fields: [ownerId], references: [id])
-  ownerId     String?
-  milestones  Milestone[]
-  tasks       Task[]
-  tickets     Ticket[]
-  invoices    Invoice[]
-  createdAt   DateTime    @default(now())
-  updatedAt   DateTime    @updatedAt
+  id                    String      @id @default(cuid())
+  name                  String
+  description           String?
+  status                String      @default("ACTIVE")
+  client                Client      @relation(fields: [clientId], references: [id])
+  clientId              String
+  owner                 User?       @relation("ProjectOwner", fields: [ownerId], references: [id])
+  ownerId               String?
+  milestones            Milestone[]
+  tasks                 Task[]
+  tickets               Ticket[]
+  invoices              Invoice[]
+  aiRuns                AiRun[]
+  scope                 Json?
+  estimatedBudget       Decimal?    @db.Decimal(14, 2)
+  estimatedTimelineDays Int?
+  messages              Message[]
+  createdAt             DateTime    @default(now())
+  updatedAt             DateTime    @updatedAt
+}
+
+enum EscrowStatus {
+  PENDING
+  HOLD
+  RELEASED
+  DISPUTE
 }
 
 model Milestone {
-  id        String    @id @default(cuid())
-  title     String
-  status    String    @default("PLANNED")
-  dueDate   DateTime?
-  project   Project   @relation(fields: [projectId], references: [id], onDelete: Cascade)
-  projectId String
-  createdAt DateTime  @default(now())
-  updatedAt DateTime  @updatedAt
+  id                 String       @id @default(cuid())
+  title              String
+  status             String       @default("PLANNED")
+  dueDate            DateTime?
+  amountCents        Int          @default(0)
+  platformFeePercent Decimal      @default(10.0) @db.Decimal(5, 2)
+  escrowStatus       EscrowStatus @default(PENDING)
+  project            Project      @relation(fields: [projectId], references: [id], onDelete: Cascade)
+  projectId          String
+  payments           Payment[]
+  createdAt          DateTime     @default(now())
+  updatedAt          DateTime     @updatedAt
 }
 
 model Task {
@@ -141,7 +160,7 @@ model Invoice {
   number     String    @unique
   amount     Decimal   @db.Decimal(14, 2)
   currency   String    @default("INR")
-  gstPercent Decimal   @db.Decimal(5, 2) @default(0.0)
+  gstPercent Decimal   @default(0.0) @db.Decimal(5, 2)
   status     String    @default("DRAFT")
   project    Project?  @relation(fields: [projectId], references: [id])
   projectId  String?
@@ -153,16 +172,18 @@ model Invoice {
 }
 
 model Payment {
-  id          String   @id @default(cuid())
+  id          String     @id @default(cuid())
   provider    String
-  amount      Decimal  @db.Decimal(14, 2)
-  currency    String   @default("INR")
-  status      String   @default("PENDING")
-  invoice     Invoice  @relation(fields: [invoiceId], references: [id], onDelete: Cascade)
+  amount      Decimal    @db.Decimal(14, 2)
+  currency    String     @default("INR")
+  status      String     @default("PENDING")
+  invoice     Invoice    @relation(fields: [invoiceId], references: [id], onDelete: Cascade)
   invoiceId   String
+  milestone   Milestone? @relation(fields: [milestoneId], references: [id])
+  milestoneId String?
   providerRef String?
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt
+  createdAt   DateTime   @default(now())
+  updatedAt   DateTime   @updatedAt
 }
 
 model AuditLog {
@@ -174,4 +195,78 @@ model AuditLog {
   entityId  String?
   metadata  Json?
   createdAt DateTime @default(now())
+}
+
+model AutomationLog {
+  id        String   @id @default(cuid())
+  type      String
+  payload   Json
+  createdAt DateTime @default(now())
+}
+
+model Service {
+  id           String   @id @default(cuid())
+  slug         String   @unique
+  title        String
+  category     String
+  description  String?
+  deliverables String[]
+  priceCents   Int
+  customQuote  Boolean  @default(false)
+  aiTags       String[] @default([])
+  status       Status   @default(ACTIVE)
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+}
+
+model FreelancerProfile {
+  id              String   @id @default(cuid())
+  user            User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  userId          String   @unique
+  skills          String[]
+  availability    Json?
+  portfolio       Json?
+  rating          Float    @default(0)
+  hourlyRateCents Int?
+  verified        Boolean  @default(false)
+  status          Status   @default(ACTIVE)
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+}
+
+model Message {
+  id        String   @id @default(cuid())
+  project   Project? @relation(fields: [projectId], references: [id])
+  projectId String?
+  sender    User     @relation("UserMessages", fields: [senderId], references: [id])
+  senderId  String
+  body      String
+  channel   String   @default("workspace")
+  metadata  Json?
+  createdAt DateTime @default(now())
+}
+
+model Product {
+  id              String   @id @default(cuid())
+  name            String
+  sku             String   @unique
+  description     String?
+  priceCents      Int
+  instantDelivery Boolean  @default(true)
+  assets          Json?
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+}
+
+model AiRun {
+  id          String   @id @default(cuid())
+  project     Project? @relation(fields: [projectId], references: [id])
+  projectId   String?
+  type        String
+  result      Json
+  confidence  Float    @default(0)
+  agentLabel  String?
+  requester   User?    @relation("UserRequestedAiRuns", fields: [requesterId], references: [id])
+  requesterId String?
+  createdAt   DateTime @default(now())
 }

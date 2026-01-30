@@ -2,7 +2,18 @@
 
 import { motion } from 'framer-motion'
 
-export default function ServicesHero() {
+interface ServicesHeroProps {
+  servicesCount?: number
+  customQuote?: number
+}
+
+const counters = (servicesCount = 0, customQuote = 0) => [
+  { label: 'Service buckets', value: servicesCount || 8 },
+  { label: 'Custom engagements', value: customQuote || 3 },
+  { label: 'Automation sprints', value: '24/7 ops' },
+]
+
+export default function ServicesHero({ servicesCount, customQuote }: ServicesHeroProps) {
   return (
     <section className="relative pt-32 pb-20 bg-gradient-to-br from-primary via-primary-dark to-primary text-white overflow-hidden">
       <div className="absolute inset-0 opacity-10">
@@ -32,6 +43,14 @@ export default function ServicesHero() {
           <p className="text-xl md:text-2xl text-gray-200 max-w-3xl mx-auto text-balance">
             From readiness assessments to SLA-backed support, Fluxorae delivers measurable products and automation with security, governance, and ROI dashboards.
           </p>
+          <div className="mt-12 grid gap-6 sm:grid-cols-3">
+            {counters(servicesCount, customQuote).map((counter) => (
+              <div key={counter.label} className="rounded-2xl bg-white/10 px-4 py-6">
+                <p className="text-sm text-gray-300">{counter.label}</p>
+                <p className="text-2xl font-semibold">{counter.value}</p>
+              </div>
+            ))}
+          </div>
         </motion.div>
       </div>
     </section>

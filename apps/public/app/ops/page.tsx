@@ -1,4 +1,20 @@
-import { ArrowRight, Sparkles, Wifi, Zap, ShieldCheck, Activity, Cpu, Bell } from 'lucide-react'
+import {
+  ArrowRight,
+  Sparkles,
+  Wifi,
+  Zap,
+  ShieldCheck,
+  Activity,
+  Cpu,
+  Bell,
+} from 'lucide-react'
+import AiAnalyzerCard from '@/components/ops/AiAnalyzerCard'
+import FreelancerOnboardCard from '@/components/ops/FreelancerOnboardCard'
+import WorkspaceMessageCard from '@/components/ops/WorkspaceMessageCard'
+import MilestonePaymentCard from '@/components/ops/MilestonePaymentCard'
+import ProjectsPanel from '@/components/ops/ProjectsPanel'
+import AdminUsersPanel from '@/components/ops/AdminUsersPanel'
+import CTA from '@/components/common/CTA'
 
 type Summary = Awaited<ReturnType<typeof getSummary>>
 
@@ -14,6 +30,17 @@ async function getSummary() {
   }
 }
 
+async function getServicesCatalog() {
+  const base = process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000'
+  try {
+    const res = await fetch(`${base}/api/services`, { next: { revalidate: 120 } })
+    if (!res.ok) return []
+    return (await res.json()) as { title: string; slug: string }[]
+  } catch {
+    return []
+  }
+}
+
 const statusTone: Record<string, string> = {
   'In Progress': 'text-amber-200 bg-amber-500/10 border border-amber-300/20',
   Blocked: 'text-red-200 bg-red-500/10 border border-red-300/20',
@@ -22,6 +49,7 @@ const statusTone: Record<string, string> = {
 
 export default async function OpsPage() {
   const data: Summary = await getSummary()
+  const services = await getServicesCatalog()
 
   return (
     <div className="space-y-10">
@@ -78,22 +106,22 @@ export default async function OpsPage() {
               Export log <ArrowRight size={16} />
             </button>
           </div>
-          <div className="space-y-4">
-            {data.timeline.map((item) => (
-              <div
-                key={`${item.time}-${item.title}`}
-                className="rounded-2xl border border-white/10 bg-primary-light/40 p-4 flex items-center justify-between"
-              >
-                <div>
-                  <p className="text-xs text-gray-400">{item.time}</p>
-                  <p className="text-white font-medium">{item.title}</p>
-                  <p className="text-xs text-gray-400">Owner: {item.owner}</p>
+            <div className="space-y-4">
+              {data.timeline.map((item) => (
+                <div
+                  key={`${item.time}-${item.title}`}
+                  className="rounded-2xl border border-white/10 bg-primary-light/40 p-4 flex items-center justify-between"
+                >
+                  <div>
+                    <p className="text-xs text-gray-400">{item.time}</p>
+                    <p className="text-white font-medium">{item.title}</p>
+                    <p className="text-xs text-gray-400">Owner: {item.owner}</p>
+                  </div>
+                  <div className="h-2 w-2 rounded-full bg-emerald-400 animate-pulse" />
                 </div>
-                <div className="h-2 w-2 rounded-full bg-emerald-400 animate-pulse" />
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
-        </div>
 
         <div className="rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur-xl space-y-6">
           <div className="flex items-center justify-between">
@@ -157,6 +185,52 @@ export default async function OpsPage() {
           </div>
         </div>
       </div>
+
+      <section className="rounded-3xl border border-white/10 bg-white/5 p-8">
+        <div className="flex items-center justify-between mb-4">
+          <div>
+            <p className="text-xs uppercase tracking-[0.4em] text-gray-400">Catalog sync</p>
+            <h2 className="text-2xl font-display text-white">Service coverage</h2>
+          </div>
+          <span className="text-sm text-gray-400">{services.length} services</span>
+        </div>
+        <div className="flex flex-wrap gap-2">
+          {services.slice(0, 6).map((service) => (
+            <span key={service.slug} className="rounded-full border border-white/10 px-4 py-2 text-xs text-gray-200">
+              {service.title}
+            </span>
+          ))}
+        </div>
+      </section>
+
+      <div className="grid gap-6 lg:grid-cols-3">
+        <ProjectsPanel />
+        <AdminUsersPanel />
+        <div className="rounded-3xl border border-white/10 bg-white/5 p-6 space-y-3">
+          <p className="text-xs uppercase tracking-[0.4em] text-gray-400">Automation rules</p>
+          <h3 className="text-xl font-semibold text-white">Live queue</h3>
+          <ul className="space-y-3 text-sm text-gray-300">
+            <li>• Milestone delay alert</li>
+            <li>• AI risk pulses</li>
+            <li>• Escrow-linked QA review</li>
+            <li>• Idle client follow-up</li>
+          </ul>
+        </div>
+      </div>
+
+      <div className="grid gap-6 lg:grid-cols-2">
+        <AiAnalyzerCard />
+        <FreelancerOnboardCard />
+        <WorkspaceMessageCard />
+        <MilestonePaymentCard />
+      </div>
+
+      <CTA
+        title="Ops-ready control plane"
+        description="Keep the AI analyzer, workspace, and payments flows within human review and trace every request."
+        primaryButton={{ text: 'Book a Call', href: '/book-call' }}
+        secondaryButton={{ text: 'Explore Solutions', href: '/solutions' }}
+      />
     </div>
   )
 }
